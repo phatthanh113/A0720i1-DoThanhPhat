@@ -4,6 +4,20 @@
     <meta charset="UTF-8">
     <title>Market Research Survey</title>
 </head>
+<style>
+    table {
+        border-collapse: collapse;
+    }
+    th{
+        text-align: left;
+    }
+    table, th, td {
+        border: 1px solid black;
+    }
+    tr:nth-child(odd) {
+        background: bisque;
+    }
+</style>
 <body>
 <form action="BT3.html" method="post">
     <h2>Market Research Survey</h2>
@@ -37,7 +51,40 @@
     <input type="radio" name="frequency" id="weekly"><label for="weekly">Weekly</label><br/>
     <input type="radio" name="frequency" id="monthly"><label for="monthly">Monthly</label><br/>
     <h2>What would you pay for the new product?</h2>
-    $<input type="number" name="decimals" size="5">.<input type="number1" name="percentage" size="1">
+    $<input type="number" name="decimals" size="5">.<input type="number1" name="percentage" size="1"><br>
+    <h3>What features would you like to see in the new product</h3>
+    <textarea cols="50">input</textarea>
+    <p>Please rate your level of agreement with the following statements</p>
+    <table cellpadding="10">
+        <tr>
+            <th></th>
+            <th>Strongly Disagree</th>
+            <th>Disagree</th>
+            <th>Agree</th>
+            <th>Strongly Agree</th>
+        </tr>
+        <tr>
+            <th>Our products are priced fairly</th>
+            <td><input type="radio" name="rate">1</td>
+            <td><input type="radio" name="rate">2</td>
+            <td><input type="radio" name="rate">3</td>
+            <td><input type="radio" name="rate">4</td>
+        </tr>
+        <tr>
+            <th>Our products are high quality</th>
+            <td><input type="radio" name="rate">1</td>
+            <td><input type="radio" name="rate">2</td>
+            <td><input type="radio" name="rate">3</td>
+            <td><input type="radio" name="rate">4</td>
+        </tr>
+        <tr>
+            <th> You would recommend our product to a friend or coworker</th>
+            <td><input type="radio" name="rate">1</td>
+            <td><input type="radio" name="rate">2</td>
+            <td><input type="radio" name="rate">3</td>
+            <td><input type="radio" name="rate">4</td>
+        </tr>
+    </table>
 </form>
 </body>
 </html>
