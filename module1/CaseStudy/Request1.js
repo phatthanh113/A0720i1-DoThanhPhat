@@ -22,7 +22,7 @@ function clickMouse() {
     let rentDays = Number(document.getElementById("rentDays").value);
     //Gọi biến cho loại dịch vụ,giá loại dịch vụ
     let houseEle = document.getElementById("typeOfHouse");
-    let typeOfHouse = houseEle.options[houseEle.selectedIndex].text;
+    let typeOfHouse = houseEle.text
     let priceHouse = Number(houseEle.options[houseEle.selectedIndex].value);
     // gọi biến cho loại phòng
     let roomEle = document.getElementById("typeOfRoom");
