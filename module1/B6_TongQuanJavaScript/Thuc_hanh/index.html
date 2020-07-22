@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Onchange</title>
+</head>
+<body>
+<select id="mySelect" onchange="doSomeThing()">
+    <option value="Java">Java</option>
+    <option value="HTML">HTML</option>
+    <option value="CSS">CSS</option>
+</select>
+<p onmouseover="mouseOver()" onmouseout="mouseOut()" id="text"> Đây là một đoạn văn bản </p>
+<h1 onclick="clickMouse()" id="click">Click </h1>
+<script>
+    // let selectedElement = document.getElementById("mySelect")
+    // selectedElement.addEventListener('change', doSomeThing)
+    function doSomeThing() {
+        let selectedValue = document.getElementById("mySelect").value;
+        alert(selectedValue)
+    }
+    function mouseOver() {
+        document.getElementById("text").style.color = "red"
+    }
+    function mouseOut() {
+        document.getElementById("text").style.color = "black"
+    }
+    //     let selectedElement = document.getElementById("click")
+    //     selectedElement.addEventListener("click",clickMouse)
+    function clickMouse() {
+        alert('Hello World')
+        console.log('Hello World')
+    }
+</script>
+</body>
+</html>

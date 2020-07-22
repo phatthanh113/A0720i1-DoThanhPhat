@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<select id="ddlViewBy" onchange="count()">
+    <option value="1">test1</option>
+    <option value="2">test2</option>
+    <option value="3">test3</option>
+</select>
+    <script>
+    // var e = document.getElementById("ddlViewBy");
+    // var strUser = e.options[e.selectedIndex].value;
+    // alert(strUser)
+        function count() {
+            var e = document.getElementById("ddlViewBy");
+            var strUser = e.options[e.selectedIndex].value;
+            alert(strUser)
+        }
+    </script>
+</select>
+</body>
+</html>

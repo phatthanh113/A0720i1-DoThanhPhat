@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nhúng JavaScript</title>
+</head>
+<body>
+<!--Thực hành 1- Nhúng script trực tiếp vào thẻ HTML -->
+<button type="button" onclick="alert('Xin chào!');">Click Me!</button></br></br>
+<!--Thực hành 2 -Nhúng script bằng tag <script>-->
+<button type="button" onclick="showMessage();">Nhấn vào!</button><br><br>
+<script>
+    function showMessage(){
+        alert('Xin chào!');
+    }
+</script><br>
+<!--Thực hành 3 - Nhúng script bắng file index.js-->
+<div id="text">Nơi này sẽ bị thay đổi </div>
+<button onclick="clickMouse()">Nhấn vào</button>
+<script src="index.js"></script>
+
+</body>
+</html>
