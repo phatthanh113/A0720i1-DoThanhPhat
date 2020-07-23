@@ -13,7 +13,7 @@ function clickMouse() {
     //gọi biến cho khách hàng,giá đã giảm
     let cusEle = document.getElementById("customer");
     let customer = cusEle.options[cusEle.selectedIndex].text;
-    let cusDis = Number(cusEle.options[cusEle.selectedIndex].value);
+    let cusDis = Number(cusEle.value);
     //Gọi biến cho mã giảm giá
     let discount = document.getElementById("discount").value;
     //gọi biến cho số lượng người đi cùng
@@ -22,11 +22,11 @@ function clickMouse() {
     let rentDays = Number(document.getElementById("rentDays").value);
     //Gọi biến cho loại dịch vụ,giá loại dịch vụ
     let houseEle = document.getElementById("typeOfHouse");
-    let typeOfHouse = houseEle.text
-    let priceHouse = Number(houseEle.options[houseEle.selectedIndex].value);
+    let typeOfHouse = houseEle.options[houseEle.selectedIndex].text;
+    let priceHouse = Number(houseEle.value);
     // gọi biến cho loại phòng
     let roomEle = document.getElementById("typeOfRoom");
-    let typeOfRoom = roomEle.options[roomEle.selectedIndex].value;
+    let typeOfRoom = roomEle.value;
     confirm("Thông tin của bạn" + "\n" + "Your Name :" + name + "\n" + "ID Number :" + idNumber + "\n" + "Date Of Birth :" + dateOfBirth
         + "\n" + "Email :" + mail + "\n" + "Address :" + address + "\n" + "Customer :" + customer + "\n" + "Discount Code :" + discount
         + "\n" + "Amount of people :" + amount + "\n" + "Rent Days :" + rentDays + "\n" + "Rent Days :" + rentDays
