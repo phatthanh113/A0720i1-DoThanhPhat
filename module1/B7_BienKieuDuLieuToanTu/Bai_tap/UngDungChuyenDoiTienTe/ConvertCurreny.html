@@ -13,11 +13,13 @@
             <th>To Currency</th>
         </tr>
         <tr>
-            <th><input type="number" id="amount"></th>
+            <th><input type="money" id="money"></th>
             <td><select id="fromCurrency">
-                <option>VietNam</option>
+                <option>USD</option>
+                <option>VND</option>
             </select></td>
             <td><select id="toCurrency">
+                <option>VND</option>
                 <option>USD</option>
             </select>
             </td>
@@ -26,11 +28,33 @@
         </tr>
         <tr>
             <th colspan="3"></th>
-            <th><button type="submit" onclick="convertCurrency()">Chuyển đổi</button> </th>
+            <th>
+                <button type="submit" onclick="convertCurrency()">Chuyển đổi</button>
+            </th>
         </tr>
 
     </table>
     <script src="ConvertCurrency.js"></script>
+<!--    <script>-->
+<!--        function convertMoney() {-->
+<!--            let result = 0;-->
+<!--            let money = document.getElementById("money");-->
+<!--            if (isNaN(money.value) || money.value <0) {-->
+<!--                result = "Bạn đã nhập số tiền không đúng"-->
+<!--            } else {-->
+<!--                let fromCurrency = document.getElementById("fromCurrency");-->
+<!--                let toCurrency = document.getElementById("toCurrency");-->
+<!--                if (fromCurrency.value === "USD" && toCurrency.value === "VND") {-->
+<!--                    result = money.value * 23000 + " VND";-->
+<!--                } else if (fromCurrency.value === "VND" && toCurrency.value === "USD") {-->
+<!--                    result = money.value / 23000 + " $";-->
+<!--                } else {-->
+<!--                    result = "Mời bạn nhập lại"-->
+<!--                }-->
+<!--            }-->
+<!--            alert(result);-->
+<!--        }-->
+<!--    </script>-->
 </form>
 </body>
 </html>

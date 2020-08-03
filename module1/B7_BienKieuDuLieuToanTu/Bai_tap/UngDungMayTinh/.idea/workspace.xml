@@ -2,15 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc4feda7-86d0-43f4-87f8-86079be5ca4f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../B5_HTMLform&amp;Table/Bai_tap/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../B6_TongQuanJavaScript/Thuc_hanh/Output.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../B6_TongQuanJavaScript/Thuc_hanh/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../B6_TongQuanJavaScript/Thuc_hanh/nhungJavaScript.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Thuc_hanh/khaiBaoVaKieuDuLieu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../B5_HTMLform&amp;Table/Bai_tap/BT1_taoFormDonGIan_P1.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../B5_HTMLform&amp;Table/Bai_tap/BT1_taoFormDonGIan_P1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../B5_HTMLform&amp;Table/Bai_tap/BT1_taoFormDonGian_P2.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../B5_HTMLform&amp;Table/Bai_tap/BT1_taoFormDonGian_P2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../B5_HTMLform&amp;Table/Bai_tap/BT2_taoFormLaySurveyKH.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../B5_HTMLform&amp;Table/Bai_tap/BT2_taoFormLaySurveyKH.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../B5_HTMLform&amp;Table/Bai_tap/BT5_P2_taoLichMotThang.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../B5_HTMLform&amp;Table/Bai_tap/BT5_P2_taoLichMotThang.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../B8_CauTrucDieuKien1/Thuc_hanh/CauLenh_If_Else.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../B8_CauTrucDieuKien1/Thuc_hanh/LuyenTapToanTuBaNgoi.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bien_KieuDuLieu_ToanTu/Demo.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Bien_KieuDuLieu_ToanTu/Demo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UngDungChuyenDoiTienTe/ConvertCurrency.js" beforeDir="false" afterPath="$PROJECT_DIR$/../UngDungChuyenDoiTienTe/ConvertCurrency.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UngDungChuyenDoiTienTe/ConvertCurreny.html" beforeDir="false" afterPath="$PROJECT_DIR$/../UngDungChuyenDoiTienTe/ConvertCurreny.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UngDungMayTinh.html" beforeDir="false" afterPath="$PROJECT_DIR$/UngDungMayTinh.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UngDungMayTinh.js" beforeDir="false" afterPath="$PROJECT_DIR$/UngDungMayTinh.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../B8_CauTrucDieuKien1/LeapYear.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +39,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Bien_KieuDuLieu_ToanTu" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../B9_CauTrucDieuKien2/Bai_tap" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -52,6 +52,7 @@
       <option name="presentableId" value="Default" />
       <updated>1595385599428</updated>
       <workItem from="1595385600607" duration="4545000" />
+      <workItem from="1595604926107" duration="6386000" />
     </task>
     <servers />
   </component>
@@ -59,9 +60,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1595421903482">
+    <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1595647709577">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1595647709577" />
     <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1595421903482" />
   </component>
 </project>

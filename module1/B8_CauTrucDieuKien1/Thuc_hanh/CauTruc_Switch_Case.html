@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cau truc Switch-Case</title>
+</head>
+<body>
+<select id="browse">
+    <option>Edge</option>
+    <option>Chrome</option>
+    <option>Firefox</option>
+    <option>Safari</option>
+    <option>Opera</option>
+    <option>Others</option>
+</select>
+<button type="submit" onclick="choose()">Chọn</button>
+
+<script>
+    let browse = document.getElementById('browse');
+
+    function choose() {
+        switch (browse.value) {
+            case "Edge" :
+                alert("You are got the Edge");
+                break;
+            case "Chrome":
+            case  "Firefox":
+            case "Safari":
+            case "Opera":
+                alert("Okay we support these browse too");
+                break;
+            default:
+                alert("We hope the page looks ok!");
+        }
+    }
+</script>
+</body>
+</html>

@@ -6,17 +6,19 @@
 </head>
 <body>
 <select id="ddlViewBy" onchange="count()">
-    <option value="1">test1</option>
-    <option value="2">test2</option>
-    <option value="3">test3</option>
+    <option>test1</option>
+    <option>test2</option>
+    <option>test3</option>
 </select>
     <script>
     // var e = document.getElementById("ddlViewBy");
     // var strUser = e.options[e.selectedIndex].value;
     // alert(strUser)
+    let e = document.getElementById("ddlViewBy");
+    // var strUser = e.options[e.selectedIndex].value;
+    alert(strUser)
         function count() {
-            var e = document.getElementById("ddlViewBy");
-            var strUser = e.options[e.selectedIndex].value;
+            var strUser = e.value;
             alert(strUser)
         }
     </script>
