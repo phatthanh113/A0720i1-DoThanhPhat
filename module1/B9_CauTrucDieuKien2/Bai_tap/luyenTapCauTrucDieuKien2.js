@@ -106,5 +106,16 @@ function  calculate7() {
         rectangleArea= 0.5*Number(firstSide.value)*Number(secondSide.value);
     }
     document.getElementById('resultDisplay7').innerHTML='Diện tích tam giác vuông là: '+rectangleArea;
+}
 
+//Bài tập 8
+function calculate8() {
+    let age =document.getElementById("age");
+    let condition1 =parseInt(age.value)>0 || parseInt(age.value)<!20
+    if (condition1) {
+        result = 'Đây là tuổi một người';
+    }else {
+        result ="Đây không phải là tuổi một người"
+    }
+    alert(result)
 }
