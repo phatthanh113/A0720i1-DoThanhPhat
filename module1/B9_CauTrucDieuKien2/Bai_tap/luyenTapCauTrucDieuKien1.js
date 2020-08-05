@@ -87,3 +87,43 @@ function calculate5() {
     document.getElementById("result5").innerHTML='Điểm tổng kết của bạn là '+result;
     document.getElementById("resultDisplay5").innerHTML= 'Bạn được loại '+resultDisplay
 }
+
+//Bài tập 6
+function calculate6() {
+    let sales=document.getElementById('sales');
+    let reward=0;
+    let salary=0;
+    let salesValue=parseInt(sales.value)
+    if(salesValue>8000000) {
+        reward=3/100
+    }
+    else if (salesValue<=8000000 && salesValue>5000000){
+        reward=2/100
+    }
+    else if (salesValue<=5000000 && salesValue>3000000){
+        reward=1/100
+    }
+    salary= salesValue+reward*salesValue;
+    document.getElementById('resultDisplay6').innerHTML='Tiền lương của bạn là '+salary+'VND';
+}
+
+//Bài tập 7
+function calculate7() {
+    let fixedCharge=0;
+    fixedCharge=25000;
+    let price=0;
+    let result=0;
+    let minute=document.getElementById('minute');
+    let minuteValue=parseInt(minute.value);
+    if(0<minuteValue && minuteValue<=50){
+        price=600;
+    }
+    else if(50<minuteValue && minuteValue<=200){
+        price=400;
+    }
+    else if(2000<minuteValue){
+        price=200;
+    }
+    result=fixedCharge+price*minuteValue;
+    document.getElementById('resultDisplay7').innerHTML='Tổng tiền điện thoại của bạn là: '+result+'VNĐ'
+}

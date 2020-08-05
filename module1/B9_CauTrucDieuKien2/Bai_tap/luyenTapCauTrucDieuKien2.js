@@ -111,11 +111,62 @@ function  calculate7() {
 //Bài tập 8
 function calculate8() {
     let age =document.getElementById("age");
-    let condition1 =parseInt(age.value)>0 || parseInt(age.value)<!20
+    let result='';
+    let condition1 =parseInt(age.value)>0 && parseInt(age.value)<120;
     if (condition1) {
         result = 'Đây là tuổi một người';
     }else {
-        result ="Đây không phải là tuổi một người"
+        result ="Đây không phải là tuổi một người";
     }
-    alert(result)
+    document.getElementById('resultDisplay8').innerHTML=result
+}
+//Bài tập 9
+function calculate9() {
+    let aSide=document.getElementById("aSide");
+    let bSide=document.getElementById("bSide");
+    let cSide=document.getElementById("cSide");
+    let condition1= Number(aSide.value)>0&&Number(bSide.value)>0&&Number(cSide.value)>0;
+    let condition2=(Number(aSide.value)+Number(bSide.value))>Number(cSide.value);
+    let condition3=(Number(bSide.value)+Number(cSide.value))>Number(aSide.value);
+    let condition4=(Number(aSide.value)+Number(cSide.value))>Number(bSide.value);
+    let result=''
+    if(condition1&&condition2&&condition3&&condition4){
+        result='Đây là 3 cạnh tam giác '
+    }
+    else {
+        result='Đây không phải là 3 canh tam giác'
+    }
+    document.getElementById('resultDisplay9').innerHTML=result
+}
+//Bài tập 10
+function calculate10() {
+    let number=document.getElementById("number");
+    number=parseInt(number.value);
+    let price=0;
+    let result=0;
+    if(number>0&&number<=50){
+        price=1678;
+        result=number*price;
+    }
+    else if(number>50&&number<=100){
+        price=1734;
+        result=50*1678+(number-50)*price
+    }
+    else if(number>100&&number<=200){
+        price=2014;
+        result=50*1678+50*1734+(number-100)*price;
+    }
+    else if(number>200&&number<=300){
+        price=2.536;
+        result=50*1678+50*1734+100*2014-(number-200)*price;
+    }
+    else if(number>300&&number<=400){
+        price=2.834;
+        result=50*1678+50*1734+100*2014+100*2536+(number-300)*price;
+    }
+    else if(number>400){
+        price=2.927;
+        result=50*1678+50*1734+100*2014+100*2536+100*2834+(number-400)*price;
+    }
+    document.getElementById('resultDisplay10').innerHTML='Giá tiền điện của bạn là: '+result+'VNĐ'
 }
