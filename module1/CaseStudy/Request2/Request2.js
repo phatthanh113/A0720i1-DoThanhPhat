@@ -9,7 +9,6 @@ let amount = document.getElementById('amount');
 let rentDays = document.getElementById('rentDays');
 let typeOfHouse= document.getElementById('typeOfHouse');
 let typeOfRoom= document.getElementById('rentDays');
-
 function clickMouse() {
         let options= parseInt(prompt('1.Show Information Customer\n'+
         '2.Edit Information Customer\n'+
@@ -40,11 +39,8 @@ function showInformation() {
 }
 function calculate() {
     let priceHouse=0 ;
-    let discountAddress=0;
-    let discountRentDays=0;
-    let discountCustomer =0;
+    let discount=0;
     let price=0 ;
-    let totalDiscount =0
     rentDays=parseInt(rentDays.value)
     // Giá loại dịch vụ
     switch (typeOfHouse.value) {
@@ -52,62 +48,61 @@ function calculate() {
             priceHouse = 500;
             break ;
         case 'House' :
-            priceHouse = 500;
+            priceHouse = 300;
             break ;
         case 'Room' :
-            priceHouse = 500;
+            priceHouse = 100;
             break ;
     }
     // Giảm giá theo địa chỉ
     switch (address.value) {
         case 'Đà Nẵng' :
-            discountAddress = 20;
+            discount += 20;
             break ;
         case 'Huế' :
-            discountAddress = 10;
+            discount += 10;
             break ;
         case 'Quảng Nam' :
-            discountAddress = 5;
+            discount += 5;
             break ;
         default:
             break ;
     }
     // Giảm giá theo số ngày thuê phòng
     if(rentDays>7) {
-        discountRentDays = 30;
+        discount += 30;
     }
     else if(rentDays>=5 && rentDays<=7) {
-        discountRentDays = 20;
+        discount += 20;
     }
     else if(rentDays>2 && rentDays<=4) {
-        discountRentDays = 10;
+        discount += 10;
     }
     // Giảm giá theo loại khách hàng
     switch (customer.value) {
         case "Diamond":{
-            discountCustomer=15 ;
+            discount +=15 ;
             break;
         }
         case "Platinum":{
-            discountCustomer=10 ;
+            discount +=10 ;
             break;
         }
         case "Gold":{
-            discountCustomer=5 ;
+            discount +=5 ;
             break;
         }
         case "Silver":{
-            discountCustomer=2 ;
+            discount +=2 ;
             break;
         }
         case "Member":{
-            discountCustomer=0 ;
+            discount +=0 ;
             break;
         }
     }
     // Tính tiền cần phải trả
-    totalDiscount =discountAddress+discountRentDays+discountCustomer;
-    price = priceHouse*rentDays-totalDiscount;
-    alert('Tổng số tiền bạn đã được giảm '+totalDiscount+'$' +'\n'+
+    price = priceHouse*rentDays-discount;
+    alert('Tổng số tiền bạn đã được giảm '+discount+'$' +'\n'+
             'Tổng số tiền bạn phải trả '+price+'$')
 }

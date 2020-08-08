@@ -92,19 +92,20 @@ function calculate5() {
 function calculate6() {
     let sales=document.getElementById('sales');
     let reward=0;
-    let salary=0;
+    let result=0;
     let salesValue=parseInt(sales.value)
     if(salesValue>8000000) {
-        reward=3/100
+        reward=3/100;
     }
     else if (salesValue<=8000000 && salesValue>5000000){
-        reward=2/100
+        reward=2/100;
     }
     else if (salesValue<=5000000 && salesValue>3000000){
-        reward=1/100
+        reward=1/100;
     }
-    salary= salesValue+reward*salesValue;
-    document.getElementById('resultDisplay6').innerHTML='Tiền lương của bạn là '+salary+'VND';
+
+    result= reward*salesValue;
+    document.getElementById('resultDisplay6').innerHTML='Tiền hoa hồng bạn nhận được là '+result+'VND';
 }
 
 //Bài tập 7

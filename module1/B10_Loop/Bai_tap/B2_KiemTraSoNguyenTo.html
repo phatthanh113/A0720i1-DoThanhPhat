@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra số nguyên tố</title>
+</head>
+<body>
+<script>
+    let numbers = parseInt(prompt('Nhập một số bất kỳ'));
+    let count = 0;
+    let number = 2;
+    let result=0;
+
+    function isPrime(n) {
+        let check = true;
+        for (let i = 2; i <= Math.sqrt(n); i++) {
+            if(n%i===0) {
+                check=false;
+            }
+        }
+        return check;
+    }
+    while (count < numbers) {
+        if (isPrime(number)) {
+            result= number;
+            count++;
+            document.writeln(result);
+        }
+        number++;
+    }
+</script>
+</body>
+</html>

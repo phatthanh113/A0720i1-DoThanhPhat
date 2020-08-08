@@ -170,3 +170,57 @@ function calculate10() {
     }
     document.getElementById('resultDisplay10').innerHTML='Giá tiền điện của bạn là: '+result+'VNĐ'
 }
+//Bài tập 11
+let salary=document.getElementById('salary');
+function calculate11() {
+    salary=parseInt(salary.value);
+    let tax=0;
+    let result=0;
+    if(salary<5000000){
+        tax=5/100;
+    }
+    else if (salary>=5000000&&salary<10000000){
+        tax=10/100;
+    }
+    else if (salary>=10000000&&salary<18000000){
+        tax=15/100;
+    }
+    else if (salary>=18000000&&salary<32000000){
+        tax=20/100;
+    }
+    else if (salary>=32000000&&salary<52000000){
+        tax=25/100;
+    }
+    else if (salary>=52000000&&salary<80000000){
+        tax=30/100;
+    }
+    else if (salary>80000000){
+        tax=25/100;
+    }
+    result=salary*tax;
+    document.getElementById('resultDisplay11').innerHTML='Thuế thu nhập cá nhân của bạn là :'+result+'VND'
+}
+
+//Bài tập 12
+function calculate12() {
+    let money=document.getElementById('money');
+    money=parseInt(money.value);
+    let month=document.getElementById('month');
+    month=parseInt(month.value);
+    let rate=0;
+    let profitAmonut=0;
+    if(month<3){
+        rate =5.8/100;
+    }
+    else if(month>=3&&month<6){
+        rate =6/100;
+    }
+    else if(month>=6&&month>12){
+        rate =6.5/100;
+    }
+    else if(month>=12){
+        rate =7/100;
+    }
+    profitAmonut=money*(rate/12)*month;
+    document.getElementById('resultDisplay12').innerHTML='Tiền lãi của bạn một tháng là'+profitAmonut+'VND'
+}

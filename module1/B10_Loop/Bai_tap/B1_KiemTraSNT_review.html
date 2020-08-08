@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function main() {
+            let result ='';
+            let count =0;
+            let maxPrimeWantDisplay = prompt("Yêu cầu nhập số lượng số nguyên tố cần hiển thị");
+            let number = 2;
+            while (count <= maxPrimeWantDisplay) {
+                if(isPrime(number)) {
+                   result += number +" là số nguyên tố" +"<br>"
+                    count++;
+                }
+                number++;
+            }
+            document.write(result);
+        }
+
+        function isPrime(temp) {
+            if (temp < 2) {
+               return false;
+            }
+            for (let i = 2; i <= Math.sqrt(temp); i++) {
+                if (temp % i === 0) {
+                   return false;
+                }
+            }
+            return true;
+        }
+        main()
+    </script>
+</body>
+
+</html>
