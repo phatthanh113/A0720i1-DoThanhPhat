@@ -24,7 +24,13 @@ function clickMouse() {
         alert('Cmnd Sai');
         return;
     }
-    // //Điều kiện email
+    //Điều kiện ngày sinh
+    dateOfBirth=dateOfBirth.value;
+    if(dateOfBirth===''){
+        alert('Bạn cần nhâp ngày sinh');
+        return;
+    }
+    // Điều kiện email
     let tempEmail=email.value;
     let countAt=0;
     let countDoc=0
@@ -83,21 +89,7 @@ function clickMouse() {
         tempName+=name.charAt(i)
     }
     name=tempName;
-    // Chuẩn hóa dữ liệu Address
-    address= address.value;
-    let tempAddress='';
-    address=address.trim().toLowerCase();
-    for (let i=0;i<name.length;i++){
-        if(address.charAt(i)===' ' && address.charAt(i+1)===' '){
-            continue
-        }
-        if(i===0 || name.charAt(i-1)===' '){
-            tempAddress+=address.charAt(i).toUpperCase();
-            continue;
-        }
-        tempAddress+=address.charAt(i)
-    }
-    address=tempAddress;
+    //Vì address cho là các options nên ko cần chuẩn hóa
     //Chạy chương trình chính
     let options = parseInt(prompt('1.Show Information Customer\n' +
         '2.Edit Information Customer\n' +
