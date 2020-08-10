@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url("https://studio.megabits.vn/wp-content/uploads/2018/11/123.jpg");
+            height: 700px;
+            /*background: antiquewhite;*/
+        }
+        form {
+            background: white;
+        }
+        table{
+            border: solid 1px cornflowerblue;
+            padding: 20px;
+            background: aliceblue;
+        }
+        tr, th, td {
+            border: none;
+            text-align: left;
+        }
+
+        th {
+            color: black;
+            width: auto;
+        }
+
+        input, select {
+            padding: 0;
+            margin: 0;
+            width: 300px;
+            height: auto;
+            border: 1px black solid;
+        }
+        tr:nth-child(12) th:nth-child(1){
+            text-align: center;
+            padding-left: 100px;
+        }
+        h2 {
+            color: maroon;
+            text-align: center;
+        }
+        tr:nth-child(12) th:nth-child(2){
+            padding: 20px 0px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <form action="" method="">
+        <h2>Thông tin Khách hàng/Customer Information</h2>
+        <table>
+            <tr>
+                <th>Họ và tên/Full Name</th>
+                <td><input type="text" name="name" id="name"></td>
+            </tr>
+            <tr>
+                <th>Số CMND/ID Number</th>
+                <td><input type="number" name="idNumber" id="idNumber"></td>
+            </tr>
+            <tr>
+                <th>Ngày sinh/Date of Birth</th>
+                <td><input type="date" name="dateOfBirth" id="dateOfBirth"></td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <th><input type="text" name="email" id="email"></th>
+            </tr>
+            <tr>
+                <th>Địa chỉ/Address</th>
+                <td><select name="address" id="address">
+                    <option>Đà Nẵng</option>
+                    <option>Huế</option>
+                    <option>Quảng Nam</option>
+                    <option>Other</option>
+                </select></td>
+            </tr>
+            <tr>
+                <th>Khách hách/Customer</th>
+                <td><select name="customer" id="customer">
+                    <option>Diamond</option>
+                    <option>Platinum</option>
+                    <option>Gold</option>
+                    <option>Silver</option>
+                    <option>Member</option>
+                </select></td>
+            </tr>
+            <tr>
+                <th>Mã giảm giá/Discount Code</th>
+                <td><input type="text" name="discount" id="discount"></td>
+            </tr>
+            <tr>
+                <th>Số lượng người đi kèm/Amount of people</th>
+                <td><input type="number" name="amount" id="amount"></td>
+            </tr>
+            <tr>
+                <th>Số ngày thuê/Rent Days</th>
+                <td><input type="number" name="rentDays" id="rentDays"></td>
+            </tr>
+            <tr>
+                <th>Loại dịch vụ/Type of house</th>
+                <td><select name="typeOfHouse" id="typeOfHouse">
+                    <option>Villa</option>
+                    <option>House</option>
+                    <option>Room</option>
+                </select></td>
+            </tr>
+            <tr>
+                <th>Loại phòng thuê/Type of Room</th>
+                <td><select name="typeOfRoom" id="typeOfRoom">
+                    <option>Vip</option>
+                    <option>Business</option>
+                    <option>Normal</option>
+                </select></td>
+            </tr>
+            <tr>
+                <th></th>
+                <th>
+                    <button type="submit" onclick="clickMouse(); return false" >Send Request</button>
+                    <button type="reset" onclick="resetClick()">Reset</button>
+                </th>
+            </tr>
+        </table>
+    </form>
+</div>
+<script src="Request3.js"></script>
+</body>
+</html>

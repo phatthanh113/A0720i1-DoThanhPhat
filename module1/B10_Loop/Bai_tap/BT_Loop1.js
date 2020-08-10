@@ -46,9 +46,9 @@ function calculate1() {
 }
 //Bài tập 2 :Lấy thông tin nhiệt độ
 function calculate2() {
-    let n=true;
+    let check=true;
     let degree='';
-    while (n) {
+    while (check) {
         degree = parseInt(prompt('Nhập nhiệt độ của bạn'));
         if(degree<20){
             alert('Bạn cần tăng nhiệt độ')
@@ -57,11 +57,10 @@ function calculate2() {
             alert('Bạn cần giảm nhiệt độ')
         }
         else{
-            break;
+            check=false
         }
-        n++;
     }
-    document.writeln(degree)
+    document.write(degree)
 }
 //Bài tập 3 : in ra 20 số trong dãy fibonaci
 function calculate3() {
