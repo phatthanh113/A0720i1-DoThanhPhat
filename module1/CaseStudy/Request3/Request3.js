@@ -50,13 +50,15 @@ function clickMouse() {
         tempRentDays=parseFloat(tempRentDays);
         if(!Number.isInteger(tempRentDays)||tempRentDays<0){
             alert('Bạn đã nhập sai số ngày thuê ');
+            return;
         }
     }
     //Điều kiện số người đi cùng
     let tempAmount=amount.value;
+    let check=false;
     if (!isNaN(tempAmount)){
         tempAmount=parseFloat(tempAmount);
-        if(Number.isInteger(tempAmount)||tempAmount>0){
+        if(Number.isInteger(tempAmount)&&tempAmount>0){
             check=true;
         }
     }
