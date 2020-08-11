@@ -15,14 +15,10 @@ function clickMouse() {
     let tempNumber;
     if (!isNaN(idNumber.value)) {
         tempNumber = parseFloat(idNumber.value);
-    }
-    if (!Number.isInteger(tempNumber)) {
-        alert('Cmnd Sai');
-        return;
-    }
-    if (tempNumber < 10000000 || tempNumber > 99999999) {
-        alert('Cmnd Sai');
-        return;
+        if (!Number.isInteger(tempNumber)|| tempNumber < 10000000 || tempNumber > 99999999) {
+            alert('Cmnd Sai');
+            return;
+        }
     }
     //Điều kiện ngày sinh
     dateOfBirth=dateOfBirth.value;
@@ -33,7 +29,7 @@ function clickMouse() {
     // Điều kiện email
     let tempEmail=email.value;
     let countAt=0;
-    let countDoc=0
+    let countDoc=0;
     for (let i=0;i<tempEmail.length;i++) {
         if (tempEmail.charAt(i) === '@') {
             countAt++;
@@ -50,23 +46,17 @@ function clickMouse() {
     }
     //Diều kiện rentDays
     let tempRentDays=rentDays.value;
-    let check=false;
     if (!isNaN(tempRentDays)){
         tempRentDays=parseFloat(tempRentDays);
-        if(Number.isInteger(tempRentDays)&&tempRentDays>0){
-            check=true;
+        if(!Number.isInteger(tempRentDays)||tempRentDays<0){
+            alert('Bạn đã nhập sai số ngày thuê ');
         }
-    }
-    if(!check){
-        alert('Bạn đã nhập sai số ngày thuê ');
-        return;
     }
     //Điều kiện số người đi cùng
     let tempAmount=amount.value;
-    check=false;
     if (!isNaN(tempAmount)){
         tempAmount=parseFloat(tempAmount);
-        if(Number.isInteger(tempAmount)&&tempAmount>0){
+        if(Number.isInteger(tempAmount)||tempAmount>0){
             check=true;
         }
     }
