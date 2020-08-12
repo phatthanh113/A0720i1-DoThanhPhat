@@ -152,7 +152,7 @@ function calculate7() {
 function calculate8() {
     let up= parseFloat(prompt('mời bạn nhập khoảng trên '));
     let down= parseFloat(prompt('mời bạn nhập khoảng dưới '));
-    let result = Number.isInteger(Math.random()*(up-down+1)+down);
+    let result = parseInt(Math.random()*(up-down+1)+down);
     let n=0;
     while(n<3){
         let number = parseFloat(prompt('Mời bạn nhập số bạn chọn'));
