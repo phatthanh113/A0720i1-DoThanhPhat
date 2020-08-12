@@ -14,8 +14,32 @@ function calculate() {
             calculate3();
             break;
         }
+        case '4' : {
+            calculate4()
+            break;
+        }
+        case '5' : {
+            calculate5();
+            break;
+        }
+        case '6' : {
+            calculate6();
+            break;
+        }
+        case '7' : {
+            calculate7()
+            break;
+        }
+        case '8' : {
+            calculate8();
+            break;
+        }
+        case '9' : {
+            calculate9();
+            break;
+        }
         default : {
-            alert('vui lòng nhập tên bài từ 1 đến 3')
+            alert('vui lòng nhập tên bài từ 1 đến 9')
         }
     }
 }
@@ -49,5 +73,7 @@ function calculate2() {
         }
     }
     document.writeln('Số lớn nhất trong dãy là '+max+'<br>'+'Nằm ở vị trí '+ j);
+}
+function calculate3() {
 
 }

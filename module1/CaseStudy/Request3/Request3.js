@@ -72,7 +72,7 @@ function clickMouse() {
     name=name.trim().toLowerCase();
     for (let i=0;i<name.length;i++){
         if(name.charAt(i)===' ' && name.charAt(i+1)===' '){
-            continue
+            continue;
         }
         if(i===0 || name.charAt(i-1)===' '){
             tempName+=name.charAt(i).toUpperCase();

@@ -31,6 +31,10 @@ function calculateDisplay() {
             calculate7();
             break;
         }
+        case 8: {
+            calculate8();
+            break;
+        }
     }
 
 }
@@ -120,7 +124,7 @@ function calculate6() {
     }
     document.write(result)
 }
-//Bài tập 7
+//Bài tập 7 : tìm số chia hết cho 3 hoặc 5 hoặc cả 3 và 5
 function calculate7() {
     let result='';
     let number='';
@@ -143,4 +147,22 @@ function calculate7() {
         result+=number
     }
     document.writeln(result)
+}
+// Game đoán số
+function calculate8() {
+    let up= parseFloat(prompt('mời bạn nhập khoảng trên '));
+    let down= parseFloat(prompt('mời bạn nhập khoảng dưới '));
+    let result = Math.round(Math.random()*(up-down+1)+down);
+    let n=0;
+    while(n<3){
+        let number = parseFloat(prompt('Mời bạn nhập số bạn chọn'));
+        if(number==result){
+            alert('bạn đã đoán đúng');
+            break;
+        }
+        else {
+            alert('Mời bạn đoán lại');
+            n++;
+        }
+    }
 }

@@ -23,20 +23,17 @@
     // if(countAt ==0||countDoc<1){
     //     alert('email sai');
     // }
-    let name=prompt('Nhập tên');
-    let tempName='';
-    name=name.trim().toLowerCase();
-    for (let i=0;i<name.length;i++){
-        if(name.charAt(i)===' ' && name.charAt(i+1)===' '){
-            continue
+    let tempAmount=9;
+    let check=false;
+    if (!isNaN(tempAmount)){
+        tempAmount=parseFloat(tempAmount);
+        if(Number.isInteger(tempAmount)&&tempAmount>0){
+            check=true;
         }
-        if(i===0 || name.charAt(i-1)===' '){
-            tempName+=name.charAt(i).toUpperCase();
-            continue;
-        }
-        tempName+=name.charAt(i)
     }
-    document.write(tempName)
+    if(!check){
+        alert('Bạn đã nhập sai số lượng người đi cùng');
+    }
 // for (let i=0;i<5;i++){
 //     alert(i)
 // }

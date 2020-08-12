@@ -23,14 +23,6 @@ function calculate() {
             calculate5();
             break;
         }
-        case 6: {
-            calculate6();
-            break;
-        }
-        case 7: {
-            calculate7();
-            break;
-        }
     }
 }
 
