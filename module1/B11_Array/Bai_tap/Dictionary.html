@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển cơ bản</title>
+</head>
+<body>
+    <script>
+        function search(input) {
+            input=prompt('Nhập từ bạn muốn tìm trong 3 từ research,devise,revolutionary ');
+            let english=['research','devise','revolutionary'];
+            let vietnamese=['nghiên cứu','phát minh','thuộc về cách mạng'];
+            let result=''
+            for(let i=0;i<english.length;i++){
+                if(input===english[i]){
+                    result=vietnamese[i];
+                    break;
+                }
+                else {
+                    result='Không có từ này trong từ điển '
+                }
+            }
+            document.writeln(result)
+        }
+    search()
+
+    </script>
+</body>
+</html>
