@@ -9,21 +9,72 @@ let amount = document.getElementById('amount');
 let rentDays = document.getElementById('rentDays');
 let typeOfHouse = document.getElementById('typeOfHouse');
 let typeOfRoom = document.getElementById('rentDays');
+let temp=true;
+let arrNameCustomers=new Array();
 
 function clickMouse() {
+    // temp=true;
+    condition();
+    //Chạy chương trình chính
+    if(temp){
+        showMenu()
+        switch (options) {
+            case 1: {
+                showInformation();
+                break;
+            }
+            case 2 : {
+                break;
+            }
+            case 3: {
+                calculate();
+                break;
+            }
+            case 4: {
+                addNameCustomer();
+                break;
+            }
+            case 5: {
+                deleteCustomer();
+                break;
+            }
+            default: {
+                alert('Bạn chỉ được chọn các đề xuất trên')
+                break;
+            }
+        }
+    }
+}
+function showMenu(){
+        options = parseInt(prompt('1.Show Information Customer\n' +
+        '2.Edit Information Customer\n' +
+        '3.Show the amount to be paid after discount'));
+}
+//Show thông tin khách hàng
+function showInformation() {
+    alert("Thông tin của bạn\n" + "Your Name :" + name + "\n" + "ID Number :" + idNumber.value + "\n" + "Date Of Birth :" + dateOfBirth
+        + "\n" + "Email :" + email.value + "\n" + "Address :" + address.value + "\n" + "Customer :" + customer.value + "\n" + "Discount Code :" + discount.value
+        + "\n" + "Amount of people :" + amount.value + "\n" + "Rent Days :" + rentDays.value + "\n" +
+        "Type Of House:" + typeOfHouse.value + "\n" + "Type Of Room:" + typeOfRoom.value
+    )
+}
+//Điều kiện
+function condition() {
     // ĐIều kiện CMND
     let tempNumber;
     if (!isNaN(idNumber.value)) {
         tempNumber = parseFloat(idNumber.value);
         if (!Number.isInteger(tempNumber)|| tempNumber < 10000000 || tempNumber > 99999999) {
             alert('Cmnd Sai');
+            temp=false;
             return;
         }
     }
     //Điều kiện ngày sinh
     dateOfBirth=dateOfBirth.value;
-    if(dateOfBirth===''){
+    if(dateOfBirth===null){
         alert('Bạn cần nhâp ngày sinh');
+        temp=false;
         return;
     }
     // Điều kiện email
@@ -42,6 +93,7 @@ function clickMouse() {
     }
     if(countAt ==0||countDoc<1){
         alert('email sai');
+        temp=false;
         return;
     }
     //Diều kiện rentDays
@@ -50,6 +102,7 @@ function clickMouse() {
         tempRentDays=parseFloat(tempRentDays);
         if(!Number.isInteger(tempRentDays)||tempRentDays<0){
             alert('Bạn đã nhập sai số ngày thuê ');
+            temp=false
             return;
         }
     }
@@ -64,6 +117,7 @@ function clickMouse() {
     }
     if(!check){
         alert('Bạn đã nhập sai số lượng người đi cùng');
+        temp=false;
         return;
     }
     //Chuẩn hóa dữ liệu name
@@ -81,36 +135,8 @@ function clickMouse() {
         tempName+=name.charAt(i)
     }
     name=tempName;
-    //Chạy chương trình chính
-    let options = parseInt(prompt('1.Show Information Customer\n' +
-        '2.Edit Information Customer\n' +
-        '3.Show the amount to be paid after discount'));
-    switch (options) {
-        case 1: {
-            showInformation();
-            break;
-        }
-        case 2 : {
-            break;
-        }
-        case 3: {
-            calculate();
-            break;
-        }
-        default: {
-            break;
-        }
-    }
 }
-
-function showInformation() {
-    alert("Thông tin của bạn\n" + "Your Name :" + name + "\n" + "ID Number :" + idNumber.value + "\n" + "Date Of Birth :" + dateOfBirth.value
-        + "\n" + "Email :" + email.value + "\n" + "Address :" + address.value + "\n" + "Customer :" + customer.value + "\n" + "Discount Code :" + discount.value
-        + "\n" + "Amount of people :" + amount.value + "\n" + "Rent Days :" + rentDays.value + "\n" +
-        "Type Of House:" + typeOfHouse.value + "\n" + "Type Of Room:" + typeOfRoom.value
-    )
-}
-
+//Tính giá tiền
 function calculate() {
     let priceHouse = 0;
     let discount = 0;
@@ -178,3 +204,22 @@ function calculate() {
     alert('Tổng số tiền bạn đã được giảm ' + discount + '$' + '\n' +
         'Tổng số tiền bạn phải trả ' + price + '$')
 }
+//Thêm người dùng vào Danh sách
+function  addNameCustomer() {
+    for (let i=0; i< amount.value;i++){
+        let nameCustomer=prompt('Nhập tên của khách hàng '+ (i+1));
+        let ageCustomer=prompt('Nhập tuổi khách hàng ' + (i+1));
+        let idCustomer=prompt('Nhập cmnd khách hàng ' + (i+1));
+        arrNameCustomers[i]= new Array();
+        for(let j=0; j<3;j++ ){
+            arrNameCustomers[i][0]=nameCustomer;
+            arrNameCustomers[i][1]=ageCustomer;
+            arrNameCustomers[i][2]=idCustomer +'<br>';
+        }
+    }
+    document.writeln(arrNameCustomers)
+}
+// function deleteCustomer() {
+//     let index =prompt('Nhập số thứ tự khách hàng muốn xóa');
+//     arrNameCustomers.splice(index-1;1);
+// }
