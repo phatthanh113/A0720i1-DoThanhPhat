@@ -10,45 +10,50 @@ let rentDays = document.getElementById('rentDays');
 let typeOfHouse = document.getElementById('typeOfHouse');
 let typeOfRoom = document.getElementById('rentDays');
 let temp=true;
-let arrNameCustomers=new Array();
+
+
 
 function clickMouse() {
-    // temp=true;
     condition();
     //Chạy chương trình chính
-    if(temp){
-        showMenu()
-        switch (options) {
-            case 1: {
-                showInformation();
-                break;
-            }
-            case 2 : {
-                break;
-            }
-            case 3: {
-                calculate();
-                break;
-            }
-            case 4: {
-                addNameCustomer();
-                break;
-            }
-            case 5: {
-                deleteCustomer();
-                break;
-            }
-            default: {
-                alert('Bạn chỉ được chọn các đề xuất trên')
-                break;
+    if(temp) {
+        while (true) {
+            showMenu();
+            switch (options) {
+                case 1: {
+                    showInformation();
+                    break;
+                }
+                case 2 : {
+                    return;
+                    break;
+                }
+                case 3: {
+                    calculate();
+                    break;
+                }
+                case 4: {
+                    addNameCustomer();
+                    break;
+                }
+                case 5: {
+                    deleteCustomer();
+                    break;
+                }
+                default: {
+                    alert('Bạn chỉ được chọn các đề xuất trên')
+                    break;
+                }
             }
         }
     }
 }
 function showMenu(){
-        options = parseInt(prompt('1.Show Information Customer\n' +
-        '2.Edit Information Customer\n' +
-        '3.Show the amount to be paid after discount'));
+        options = parseInt(  prompt('1.Show Information Customer\n'+
+            '2.Edit Information Customer\n'+
+            '3.Show the amount to be paid after discount\n'+
+            '4.Add Customers to the list\n'+
+            '5.Delete Customers from the list')
 }
 //Show thông tin khách hàng
 function showInformation() {
@@ -102,7 +107,7 @@ function condition() {
         tempRentDays=parseFloat(tempRentDays);
         if(!Number.isInteger(tempRentDays)||tempRentDays<0){
             alert('Bạn đã nhập sai số ngày thuê ');
-            temp=false
+            temp=false;
             return;
         }
     }
@@ -204,22 +209,38 @@ function calculate() {
     alert('Tổng số tiền bạn đã được giảm ' + discount + '$' + '\n' +
         'Tổng số tiền bạn phải trả ' + price + '$')
 }
-//Thêm người dùng vào Danh sách
+// Thêm người dùng vào Danh sách
+let arrNameCustomers=new Array();
 function  addNameCustomer() {
-    for (let i=0; i< amount.value;i++){
-        let nameCustomer=prompt('Nhập tên của khách hàng '+ (i+1));
-        let ageCustomer=prompt('Nhập tuổi khách hàng ' + (i+1));
-        let idCustomer=prompt('Nhập cmnd khách hàng ' + (i+1));
-        arrNameCustomers[i]= new Array();
-        for(let j=0; j<3;j++ ){
-            arrNameCustomers[i][0]=nameCustomer;
-            arrNameCustomers[i][1]=ageCustomer;
-            arrNameCustomers[i][2]=idCustomer +'<br>';
+    let number = parseInt(prompt('Nhập số lượng khách hàng bạn muốn thêm'));
+    for (let i=0; i < number;i++) {
+        let nameCustomer=prompt('Nhập tên của khách hàng ');
+        arrNameCustomers.push(nameCustomer);
+    }
+    let result ='Danh sách khách hàng bạn muốn thêm : \n';
+    arrNameCustomers.sort();
+    for (let i=0 ; i<arrNameCustomers.length;i++){
+        result+='No '+(i+1)+': '+ arrNameCustomers[i] + '\n';
+    }
+    alert(result)
+}
+//Xóa người dùng khỏi danh sách
+function deleteCustomer() {
+    let check=false;
+    let numberCustormer=parseInt(prompt('Nhập số thứ tự tên mà bạn muốn xóa '));
+    for(let i=0;i<arrNameCustomers.length;i++) {
+        if(numberCustormer === (i+1)){
+            arrNameCustomers.splice(i,1);
+            check =true;
         }
     }
-    document.writeln(arrNameCustomers)
+    if(!check){
+        alert("Sự lựa chọn này không có")
+    }
+    let result ='Danh sách sau khi chỉnh sửa : \n';
+    arrNameCustomers.sort();
+    for (let i=0 ; i<arrNameCustomers.length;i++){
+        result+='No '+(i+1)+': '+ arrNameCustomers[i] + '\n';
+    }
+    alert(result)
 }
-// function deleteCustomer() {
-//     let index =prompt('Nhập số thứ tự khách hàng muốn xóa');
-//     arrNameCustomers.splice(index-1;1);
-// }
