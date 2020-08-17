@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra số nguyên tố</title>
+</head>
+<body>
+    <script>
+        function isPrime(number) {
+            number=parseFloat(prompt('Nhập vào số bạn muốn kiểm tra'));
+            let check=true ;
+            if(isNaN(number) || !Number.isInteger(number) || number <2) {
+                return alert(number+' đã sai định dạng');
+            }
+            for(let i=2; i<=Math.sqrt(number); i++){
+                if(number%i === 0) {
+                  return   alert(number+ ' không phải là số nguyên tố');
+                  check=false;
+                }
+            }
+            if(check) {
+                alert(number+ ' là số nguyên tố');
+            }
+        }
+        isPrime();
+    </script>
+</body>
+</html>

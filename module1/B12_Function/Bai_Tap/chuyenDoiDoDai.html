@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hàm chuyển đổi độ dài </title>
+</head>
+<body>
+<form>
+    <p>
+        <label>Nhập :</label>
+        <input id="input" type="number"
+               oninput="temperatureConverter(this.value)">
+        <select id="options" onchange="temperatureConverter(input.value)">
+            <option>meter</option>
+            <option>footer</option>
+        </select>
+    </p>
+    <p><span id="output"></span></p>
+</form>
+
+<script>
+
+    function temperatureConverter(number) {
+        let options =document.getElementById('options');
+        let result=0;
+        number = parseFloat(number);
+        if(options.value==='meter') {
+            result=number*0.305;
+            document.getElementById("output").innerHTML = 'Footer :'+ result+'ft';
+        }
+        else {
+            result=number*3.279;
+            document.getElementById("output").innerHTML = 'Meter :'+ result+'m';
+        }
+    }
+
+</script>
+</body>
+</html>

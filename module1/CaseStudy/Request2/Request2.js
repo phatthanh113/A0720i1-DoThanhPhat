@@ -26,10 +26,6 @@ function clickMouse() {
                 calculate();
                 break;
             }
-            case 4: {
-                addNameCustomer();
-                break;
-            }
             default:{
                 break;
             }
@@ -111,18 +107,5 @@ function calculate() {
     alert('Tổng số tiền bạn đã được giảm '+discount+'$' +'\n'+
             'Tổng số tiền bạn phải trả '+price+'$')
 }
-function  addNameCustomer() {
-    for (let i=0; i<amount.value;i++){
-        let nameCustomer=prompt('Nhập tên của khách hàng '+(i+1));
-        let ageCustomer=prompt('Nhập tuổi khách hàng' +(i+1));
-        let idCustomer=prompt('Nhập cmnd khách hàng' +(i+1));
-        arrNameCustomers[i]= new Array();
-        for(let j=0; j<3;j++ ){
-            arrNameCustomers[i][0]=nameCustomer;
-            arrNameCustomers[i][1]=ageCustomer;
-            arrNameCustomers[i][2]=idCustomer +'<br>';
-        }
-    }
-    console.log(arrNameCustomers)
-}
+
 
