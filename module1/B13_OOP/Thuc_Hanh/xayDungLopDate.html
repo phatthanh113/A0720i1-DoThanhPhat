@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp Date</title>
+</head>
+<body>
+<script>
+    class MyDate{
+        constructor(day, month,year) {
+            this.day=day;
+            this.month=month;
+            this.year=year;
+        }
+        getDay(day) {
+            return this.day;
+        }
+        getMonth(month) {
+            return this.month;
+        }
+        getYear(year) {
+            return this.year;
+        }
+    }
+    let date= new MyDate(21,8,2020);
+    document.writeln(date.getDay(21)+'/'+date.getMonth(8)+'/'+date.getYear(2020)+'<br>');
+    document.writeln(date.day+'/'+date.month+'/'+date.year)
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng vui Faking TextArea On Typing</title>
+</head>
+<body>
+    <textarea id="input" onkeypress="changeElement()"></textarea>
+<script>
+    function changeElement(value) {
+        let input=document.getElementById('input');
+        let str='Đây là một ô trống';
+        for(let i=0; i<str.length;i++) {
+            input.value +=str[i];
+        }
+        return input.value;
+    }
+</script>
+</body>
+</html>

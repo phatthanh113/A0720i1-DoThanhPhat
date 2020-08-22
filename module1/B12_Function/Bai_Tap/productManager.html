@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrayProduct=['Sony','Nokia','Samsung'];
+    function addProduct() {
+        document.body.innerHTML='';
+        let sort='<h2>Add new product</h2><br>';
+        sort+='<input type="text" id="newProduct">';
+        sort+='<input type="submit" value="Add" onclick="addNewProduct()"><br>';
+        sort+='<table>';
+        for(let i in arrayProduct) {
+            sort+='<tr><td>'+arrayProduct[i]+'</td>' +
+                '<td><input type="submit" value="Sửa" onclick="displayFormEditProduct('+i+')"></td>' +
+                '<td><input type="submit" value="Xóa" onclick="deleteProduct('+i+')"></td></tr>'
+        }
+        sort+='</table>';
+        document.writeln(sort);
+    }
+    function addNewProduct() {
+        let newProduct=document.getElementById('newProduct');
+        arrayProduct.push(newProduct.value);
+        addProduct()
+    }
+    function displayFormEditProduct(index) {
+        let sort='<h2>Edit product</h2><br>';
+        sort+='<input type="text" value="'+arrayProduct[index]+'" id="newProductEdited">';
+        sort+='<input type="submit" value="Add" onclick="editProduct('+index+')"><br>';
+        addProduct();
+        document.writeln(sort);
+    }
+    function editProduct(index) {
+        let newProductEdited=document.getElementById('newProductEdited').value;
+        arrayProduct[index]=newProductEdited;
+        addProduct()
+    }
+    function deleteProduct(index) {
+        if(confirm('Are you sure to delete this product ?')) {
+            arrayProduct.splice(index,1);
+        }
+        addProduct();
+    }
+    addProduct()
+</script>
+</body>
+</html>

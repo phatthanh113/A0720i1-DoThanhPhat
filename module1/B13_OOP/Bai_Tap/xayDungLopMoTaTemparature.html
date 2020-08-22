@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp mô tả Temparature</title>
+</head>
+<body>
+    <script>
+        class Temparature {
+            constructor(celsius) {
+                this.celsius=celsius;
+            }
+            covertCtoF(celsius) {
+                if(this.celsius<0) {
+                    return alert('Nhập số sai')
+                }
+                else {
+                    return 1.8*this.celsius+32
+                }
+            }
+            covertCtoK(celsius) {
+                return this.celsius+273;
+            }
+        }
+        let tempature= new Temparature(25);
+        document.writeln(tempature.covertCtoF()+'<br>')
+        document.writeln(tempature.covertCtoK()+'<br>')
+    </script>
+</body>
+</html>

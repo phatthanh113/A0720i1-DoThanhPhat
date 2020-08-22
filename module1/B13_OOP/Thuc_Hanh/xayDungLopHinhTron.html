@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp hình tròn</title>
+</head>
+<body>
+<script>
+    class Circle {
+        constructor(radius,color) {
+            this.radius=radius;
+            this.color=color;
+        }
+        getArea(area) {
+           return area=Math.pow(this.radius,2)*Math.PI;
+        }
+        getRadius() {
+            return this.radius
+        }
+    }
+    let circle = new Circle(4,'red');
+    document.writeln(circle.getArea());
+</script>
+</body>
+</html>

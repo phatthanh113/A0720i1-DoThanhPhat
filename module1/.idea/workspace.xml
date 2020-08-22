@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cd577702-c240-4fc2-a957-9c43623cfdc8" name="Default Changelist" comment="" />
+    <list default="true" id="cd577702-c240-4fc2-a957-9c43623cfdc8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/B12_Function/Bai_Tap/kiemTraTinhDoiXung.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B12_Function/Bai_Tap/productManager.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B12_Function/Bai_Tap/ungDungQuanLiSanPham.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B13_OOP/Bai_Tap/xayDungLopMoTaDienThoai.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B13_OOP/Bai_Tap/xayDungLopMoTaTemparature.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B13_OOP/Thuc_Hanh/funnyCircle.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B13_OOP/Thuc_Hanh/xayDungLopDate.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B13_OOP/Thuc_Hanh/xayDungLopHinhTron.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CaseStudy/Request5/Request5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CaseStudy/Request5/Request5.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,6 +23,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -25,9 +38,10 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="D:/GitProject" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/CaseStudy/Request5" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -43,6 +57,7 @@
       <workItem from="1594037611865" duration="629000" />
       <workItem from="1594178983712" duration="35000" />
       <workItem from="1594460279758" duration="80000" />
+      <workItem from="1598013409662" duration="8371000" />
     </task>
     <servers />
   </component>
@@ -50,9 +65,14 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1594460349047">
+    <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1598024453440">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1598024453440" />
     <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1594460349046" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1598016223907">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1598016223907" />
   </component>
 </project>

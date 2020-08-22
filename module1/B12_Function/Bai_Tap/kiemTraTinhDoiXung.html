@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra tính đối xứng</title>
+</head>
+<body>
+    <script>
+        function checkSymetry(string) {
+            string=prompt('Nhập vào string bạn muốn kiểm tra');
+            let result='';
+            for(let i=0; i<(string.length/2);i++) {
+                if(string[i] !== string[string.length-1-i]) {
+                     result='Đây không phải hàm đổi xứng';
+                     break;
+                }
+                else {
+                    result='Đây là hàm đối xứng'
+                }
+            }
+            alert(result)
+        }
+        checkSymetry()
+    </script>
+</body>
+</html>
