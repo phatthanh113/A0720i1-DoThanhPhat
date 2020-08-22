@@ -72,10 +72,11 @@ function displayInfoCustomer() {
         'Date Of Birth: '+arrListCustomer[numberCustomer][3]+'\n'+
         'Email: '+arrListCustomer[numberCustomer][4]+'\n'+
         'Address: '+arrListCustomer[numberCustomer][5]+'\n'+
-        'Discount tyoe: '+arrListCustomer[numberCustomer][6]+'\n'+
-        'Amount: '+arrListCustomer[numberCustomer][7]+'\n'+
-        'Type of room : '+arrListCustomer[numberCustomer][8]+'\n'+
-        'Tyoe of house: '+arrListCustomer[numberCustomer][9]+'\n');
+        'Customer type: '+arrListCustomer[numberCustomer][6]+'\n'+
+        'Discount: '+arrListCustomer[numberCustomer][7]+'\n'+
+        'Amount: '+arrListCustomer[numberCustomer][8]+'\n'+
+        'Type of room : '+arrListCustomer[numberCustomer][9]+'\n'+
+        'Type of house: '+arrListCustomer[numberCustomer][10]+'\n');
     displayMainMenu();
 }
 //Sửa thông tin người dùng
@@ -88,7 +89,8 @@ function editInfoCustomer() {
     alert(result);
     //Sửa thông tin khách hàng
     let numberCustomer=parseFloat(prompt('Nhập số thứ tự khách hàng bạn muốn chỉnh sửa'));
-    let choice=parseFloat(prompt('Nhập sự lựa chọn bạn muốn sửa'+'\n'));
+    let choice=parseFloat(prompt('Nhập sự lựa chọn bạn muốn sửa'+'\n'+
+    '0.Name\n'+'1.Age\n'+'3.ID Number\n'+'4.Email\n'+'5.Address\n'+'6.Customer Type\n'+'7.Discount\n'+'8.Amount\n'+'9.Type of room\n'+'10.Type of house\n'));
     let check=false;
     for(let i=0; i < arrListCustomer[numberCustomer].length;i++) {
         if(i === choice) {
