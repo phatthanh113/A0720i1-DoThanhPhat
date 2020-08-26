@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mô phỏng câu chuyện Adam Và Eva</title>
+</head>
+<body>
+    <script>
+        class Apple {
+            constructor(weight) {
+                this.weight=weight;
+            }
+
+            isEmpty() {
+                if(this.weight===0) {
+                    return true;
+                }
+            }
+            decrease() {
+                if(!this.isEmpty()){
+                    this.weight--
+                }
+                else {
+                    alert('Quả táo không có khối lượng')
+                }
+            }
+            getWeight() {
+                return this.weight;
+            }
+            setWeight(weight) {
+                return this.weight=weight;
+            }
+        }
+        class Human{
+            constructor(name,gender,weight) {
+                this.name=name;
+                this.gender=gender;
+                this.weight=weight;
+            }
+            isMale() {
+                return this.gender;
+            }
+            changeGender() {
+                this.gender=!this.gender;
+            }
+            saySomething(something) {
+                return something;
+            }
+            eatApple(apple) {
+                if(apple.isEmpty()) {
+                    alert('Quả táo không có khối lượng')
+                }
+                else {
+                    this.weight++;
+                    apple.decrease();
+                }
+            }
+            getName() {
+                return this.name;
+            }
+            setName(name) {
+                return this.name=name;
+            }
+            getWeight() {
+                return this.weight;
+            }
+            setWeight(weight) {
+                return this.weight=weight;
+            }
+        }
+
+        let apple=new Apple(3);
+        let adam=new Human('Adam',true,65);
+        // apple.setWeight(0);
+        adam.eatApple(apple);
+        alert(adam.getWeight());
+        alert(apple.getWeight())
+    </script>
+</body>
+</html>

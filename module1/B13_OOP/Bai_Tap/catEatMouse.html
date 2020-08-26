@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng mèo ăn chuột </title>
+</head>
+<body>
+<script>
+    class Mouse {
+        constructor(name,weight,speed,dead) {
+            this.name=name;
+            this.weight=weight;
+            this.speed=speed;
+            this.dead=dead;
+        }
+        isDead() {
+            return this.dead;
+        }
+    }
+    class Cat {
+        constructor(name,weight,speed,stomach) {
+            this.name=name;
+            this.weight=weight;
+            this.speed=speed;
+            this.stomach=stomach;
+        }
+        //Gọi hàm bắt chuột, chỉ bắt được khi mèo chạy nhanh hơn
+        catchMouse(mouse) {
+            if(this.speed > mouse.speed) {
+                alert('Mèo đã bắt được chuột')
+            }
+            else {
+                alert('Mèo không bắt được chuột')
+            }
+        }
+        //gọi hàm ăn chuột , chỉ ăn khi chuột sống
+        eatMouse(mouse) {
+            if(!mouse.isDead()) {
+                this.stomach.push(mouse.name);
+                this.weight+=mouse.weight;
+            }
+            else {
+                alert('Con chuột đã chết')
+            }
+        }
+    }
+    let jerry= new Mouse('Jerry',1,10,false);
+    let tom=new Cat('Tom',3,30,[]);
+    tom.catchMouse(jerry);
+    tom.eatMouse(jerry);
+    document.writeln(tom.stomach);
+</script>
+</body>
+</html>

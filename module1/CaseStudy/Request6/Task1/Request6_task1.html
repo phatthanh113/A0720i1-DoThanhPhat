@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="Customer.js"></script>
+</head>
+<body>
+<script>
+    let arrayListCustomer=[];
+    function displayMainMenu(options) {
+        options=parseInt(prompt('1.Add New Customer'+
+            '\n 2.Display Information Customer'+
+            '\n 3.Edit Information Customer'+
+            '\n 4.Delete Customer'+
+            '\n 5.Exit'));
+        switch (options) {
+            case 1: {
+                addNewCustomer();
+                break;
+            }
+            case 2: {
+                displayInfoCustomer();
+                break;
+            }
+            case 3: {
+                editInfoCustomer();
+                break;
+            }
+            case 4: {
+                deleteCustomer();
+                break;
+            }
+            case 5: {
+                break;
+            }
+            default: {
+                alert('Không có sự lựa chọn này');
+                break;
+            }
+        }
+    }
+    //Thêm người dùng mới
+    function addNewCustomer() {
+        let customer=new Customer();
+        let name=prompt('Input Name Person');
+        let age=prompt('Input Age');
+        let idNumber=prompt('Input ID Number');
+        let dateOfBirth=prompt('Input Date Of Birth');
+        let email=prompt('Input Email');
+        let address=prompt('Input Address');
+        let customerType=prompt('Input Customer Type');
+        let discount=prompt('Input Discount');
+        let rentDays=prompt('Input rent days');
+        let amount=prompt('Input Amount');
+        let typeOfRoom=prompt('Input Type of Room');
+        let typeOfHouse=prompt('Input Type Of House');
+        customer.setName(name);
+        customer.setAge(age);
+        customer.setIdNumber(idNumber);
+        customer.setDateOfBirth(dateOfBirth);
+        customer.setEmail(email);
+        customer.setAddress(address);
+        customer.setCustomerType(customerType);
+        customer.setDiscount(discount   );
+        customer.setRentDays(rentDays);
+        customer.setAmount(amount);
+        customer.setTypeOfRoom(typeOfRoom);
+        customer.setTypeOfHouse(typeOfHouse);
+        arrayListCustomer.push(customer);
+    }
+</script>
+</body>
+</html>

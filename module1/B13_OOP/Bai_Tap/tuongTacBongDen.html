@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img src="img/pic_bulboff.gif" id="image">
+<button onclick="changeSwitch()">On-off</button>
+<script>
+    class SwitchButton{
+        constructor(status,lamp) {
+            this.status=status;
+            this.lamp=lamp;
+        }
+        isStatus() {
+            if(this.status) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    changeStatus() {
+            this.status=!this.status
+    }
+    }
+    class Lamp{
+        constructor(status) {
+            this.status=status;
+        }
+        changeStatus() {
+            this.status=!this.status;
+        }
+    }
+    lamp=new Lamp(true)
+    switchButton=new SwitchButton('lamp1',true);
+    function changeSwitch() {
+        let image=document.getElementById('image');
+        if(switchButton.isStatus()) {
+            image.src='img/pic_bulbon.gif';
+        }
+        else {
+            image.src='img/pic_bulboff.gif'
+        }
+        switchButton.changeStatus()
+    }
+</script>
+</body>
+</html>

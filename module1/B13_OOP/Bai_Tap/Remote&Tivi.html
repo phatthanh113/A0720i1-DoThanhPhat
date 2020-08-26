@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Remote Và Tivi</title>
+</head>
+<body>
+<script>
+    class Remote{
+        constructor(code) {
+            this.code=code;
+        }
+        changeChannel(television,channel) {
+            television.changeChannel(channel);
+        }
+        changeVolume(television,status) {
+            television.changeVolume(status);
+        }
+        changeStatus(television) {
+            television.changeStatus();
+        }
+    }
+    class Television{
+        constructor(channel,volume,status) {
+            this.channel=channel;
+            this.volume=volume;
+            this.status=status;
+        }
+        //Kiểm tra trạng thái bật tắt
+        isOn() {
+            return this.status;
+        }
+        //Thay đổi trạng thái bật tắt
+        changeStatus() {
+            return this.status=!this.status;
+        }
+        //Thay đổi kênh
+        changeChannel(channel) {
+            if(this.isOn()) {
+                this.channel=channel;
+            }
+            else {
+                alert('TV đã tắt');
+            }
+        }
+        changeVolume(status) {
+            if(this.isOn()) {
+               if(status=='up') {
+                   this.volume++;
+               }
+                if(status=='down') {
+                   this.volume--;
+               }
+            }
+            else {
+                alert('TV đã tắt');
+            }
+        }
+    }
+    let tivi=new Television(3,23,false);
+    let remote=new Remote(123);
+    //Bật tivi
+    tivi.changeStatus();
+    //Chuyển đến kênh 7
+    tivi.changeChannel(7);
+    //Tăng âm lượng lên 2 đơn vị
+    tivi.changeVolume('up');
+    tivi.changeVolume('up');
+    //Dùng remote Chuyển đến kênh 3
+    remote.changeChannel(tivi,9);
+    // Dùng remote tắt tivi
+    remote.changeStatus(tivi);
+    document.writeln(tivi.isOn());
+</script>
+</body>
+</html>
