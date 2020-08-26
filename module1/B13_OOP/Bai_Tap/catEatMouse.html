@@ -13,6 +13,7 @@
             this.speed=speed;
             this.dead=dead;
         }
+        //Xem chuột chết hay chưa
         isDead() {
             return this.dead;
         }
@@ -27,26 +28,29 @@
         //Gọi hàm bắt chuột, chỉ bắt được khi mèo chạy nhanh hơn
         catchMouse(mouse) {
             if(this.speed > mouse.speed) {
-                alert('Mèo đã bắt được chuột')
+                return true;
             }
             else {
-                alert('Mèo không bắt được chuột')
+                alert('Chuột chạy nhanh hơn mèo');
+                return false;
             }
         }
-        //gọi hàm ăn chuột , chỉ ăn khi chuột sống
+        //Gọi hàm ăn chuột , chỉ ăn khi chuột sống
         eatMouse(mouse) {
-            if(!mouse.isDead()) {
-                this.stomach.push(mouse.name);
-                this.weight+=mouse.weight;
+            if(!mouse.isDead()){
+                if(this.catchMouse(mouse)) {
+                    this.stomach.push(mouse.name);
+                    this.weight+=mouse.weight;
+                    alert('Mèo đã ăn được chuột')
+                }
             }
             else {
                 alert('Con chuột đã chết')
             }
         }
     }
-    let jerry= new Mouse('Jerry',1,10,false);
+    let jerry= new Mouse('Jerry',1,20,false);
     let tom=new Cat('Tom',3,30,[]);
-    tom.catchMouse(jerry);
     tom.eatMouse(jerry);
     document.writeln(tom.stomach);
 </script>
