@@ -17,6 +17,9 @@
         isDead() {
             return this.dead;
         }
+        changeDead() {
+            this.dead=!this.dead;
+        }
     }
     class Cat {
         constructor(name,weight,speed,stomach) {
@@ -41,7 +44,8 @@
                 if(this.catchMouse(mouse)) {
                     this.stomach.push(mouse.name);
                     this.weight+=mouse.weight;
-                    alert('Mèo đã ăn được chuột')
+                    alert('Mèo đã ăn được chuột');
+                    mouse.changeDead();
                 }
             }
             else {
@@ -53,6 +57,7 @@
     let tom=new Cat('Tom',3,30,[]);
     tom.eatMouse(jerry);
     document.writeln(tom.stomach);
+
 </script>
 </body>
 </html>

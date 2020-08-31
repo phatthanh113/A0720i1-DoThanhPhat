@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Human {
+        constructor(name,array,point) {
+            this.array=array;
+            this.point=point;
+        }
+        getPoint() {
+            return this.point;
+        }
+        setArray() {
+            for(let i=0;i<3;i++) {
+                let element=parseFloat(prompt('Nhập số bạn muốn thêm vào array' ));
+                this.array.push(element);
+            }
+        }
+        compare(human) {
+            for(let i in this.array) {
+                if(this.array[i]>human.array[i]) {
+                    this.point++
+                }
+                else if(this.array[i]<human.array[i]) {
+                    human.point++
+                }
+            }
+        }
+    }
+    let man =new Human('Nam',[],0);
+    let woman=new Human('Nu',[],0);
+    man.setArray();
+    woman.setArray();
+    man.compare(woman);
+    alert(man.getPoint());
+    alert(woman.getPoint());
+</script>
+</body>
+</html>
