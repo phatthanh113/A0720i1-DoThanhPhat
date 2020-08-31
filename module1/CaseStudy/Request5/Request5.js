@@ -35,8 +35,6 @@ displayMainMenu();
 //Thêm người dùng vào danh sách
 function addNewCustomer() {
     alert('Hiện tại trong danh sách có '+arrListCustomer.length+' khách hàng');
-    let number=parseFloat(prompt('Nhập số khách hàng bạn muốn thêm vào'));
-    for(let i=0;i< number;i++){
         let name=prompt('Input Name Person');
         let age=prompt('Input Age');
         let idNumber=prompt('Input ID Number');
@@ -52,7 +50,6 @@ function addNewCustomer() {
         // arrCustomerInfo.push(name);
         arrCustomerInfo.push(name,age,idNumber,dateOfBirth,email,address,customerType,discount,amount,typeOfHouse,typeOfRoom);
         arrListCustomer.push(arrCustomerInfo);
-    }
     alert(arrListCustomer);
     displayMainMenu();
 }
