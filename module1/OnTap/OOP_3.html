@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Student {
+        constructor(code, name, birthday, gender, school, course) {
+            this.code = code;
+            this.name = name;
+            this.birthday = birthday;
+            this.gender = gender;
+            this.school = school;
+            this.course = course;
+        }
+
+        setInfoStudent(code, name, birthday, gender, school, course) {
+            code = prompt('Input code');
+            this.code = code;
+            name = prompt('Input name');
+            this.name = name;
+            birthday = prompt('Input birthday');
+            this.birthday = birthday;
+            gender = prompt('Input gender');
+            this.gender = gender;
+            school = prompt('Input school');
+            this.school = school;
+            course = prompt('Input course');
+            this.course = course;
+        }
+        getInfoStudent(infoStudent) {
+            infoStudent = [];
+            infoStudent.push(this.code, this.name, this.birthday, this.gender, this.school, this.course);
+            return infoStudent;
+        }
+    }
+</script>
+</body>
+</html>

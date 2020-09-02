@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nhập danh sách thí sinh</title>
+</head>
+<body>
+<script>
+    class Candidate {
+        constructor(code, name, birthday, mathGrade, literatureGrade, englishGrade) {
+            this.code = code;
+            this.name = name;
+            this.birthday = birthday;
+            this.mathGrade = mathGrade;
+            this.literatureGrade = literatureGrade;
+            this.englishGrade = englishGrade
+        }
+        setInforCandidate(code, name, birthday, mathGrade, literatureGrade, englishGrade) {
+            code = prompt('Nhập mã số thí sinh');
+            this.code = code;
+            name = prompt('Nhập tên thí sinh');
+            this.name = name;
+            birthday = prompt('Nhập ngày sinh');
+            this.birthday = birthday;
+            mathGrade = parseInt(prompt('Nhập điểm toán'));
+            this.mathGrade = mathGrade;
+            literatureGrade = parseInt(prompt('Nhập điểm văn'));
+            this.literatureGrade = literatureGrade;
+            englishGrade = parseInt(prompt('Nhập điểm anh'));
+            this.englishGrade = englishGrade;
+        }
+        getInforCandidate() {
+            let arrInfo = [];
+            arrInfo.push(this.code, this.name, this.birthday, this.mathGrade, this.literatureGrade, this.englishGrade);
+            return arrInfo;
+        }
+
+        getSumGrade() {
+            return this.mathGrade + this.englishGrade + this.literatureGrade;
+        }
+    }
+
+    class TestCandidate {
+        constructor(number, listCandidate) {
+            this.number = number;
+            this.listCandidate = listCandidate;
+        }
+        setNumber(number) {
+            number=prompt('Nhập vào số thí sinh bạn muốn thêm');
+            return this.number=number;
+        }
+        setTest(listCandidate,candidate) {
+            for (let i = 0; i < this.number; i++) {
+                candidate.setInforCandidate();
+                listCandidate.push(candidate);
+            }
+            return this.listCandidate = listCandidate;
+        }
+        getListCandidate() {
+            return this.listCandidate;
+        }
+        testOverGrade15(count) {
+            count=0;
+            for (let i = 0; i < this.listCandidate.length; i++) {
+                if (this.listCandidate[i].getSumGrade() > 15) {
+                    count++
+                }
+            }
+            return count;
+        }
+    }
+    let candidate=new Candidate();
+    // candidate.setInforCandidate();
+    // console.log(candidate.getInforCandidate());
+    // candidate.setInforCandidate(prompt('Nhập code bạn muốn sửa'));
+    // candidate.setInforCandidate(prompt('Nhập tên muốn sửa'));
+    // console.log(candidate.getInforCandidate())
+    // console.log(candidate.getSumGrade());
+    let testCandidate=new TestCandidate();
+    testCandidate.setNumber();
+    testCandidate.setTest([],candidate);
+    console.log(testCandidate.getListCandidate());
+    console.log(testCandidate.getListCandidate()[0].getInforCandidate());
+    console.log(testCandidate.testOverGrade15());
+</script>
+</body>
+</html>

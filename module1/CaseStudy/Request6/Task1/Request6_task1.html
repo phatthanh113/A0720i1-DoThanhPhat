@@ -11,9 +11,10 @@
     function displayMainMenu(options) {
         options=parseInt(prompt('1.Add New Customer'+
             '\n 2.Display Information Customer'+
-            '\n 3.Edit Information Customer'+
-            '\n 4.Delete Customer'+
-            '\n 5.Exit'));
+            '\n 3.Display Total Pays'+
+            '\n 4.Edit Information Customer'+
+            '\n 5.Delete Customer'+
+            '\n 6.Exit'));
         switch (options) {
             case 1: {
                 addNewCustomer();
@@ -28,10 +29,14 @@
                 break;
             }
             case 4: {
-                deleteCustomer();
+                editInfoCustomer();
                 break;
             }
             case 5: {
+                deleteCustomer();
+                break;
+            }
+            case 6: {
                 break;
             }
             default: {
@@ -40,7 +45,9 @@
             }
         }
     }
-    //Thêm người dùng mới
+    // Hiển thị menu cho người dùng nhập
+    displayMainMenu();
+    //Hàm thêm người dùng mới
     function addNewCustomer() {
         let checkValid=false;
         let customer=new Customer();
@@ -56,17 +63,20 @@
                 alert('Bạn đã nhập tuổi sai')
             }
         }while (!checkValid);
+
         //Id number
         checkValid=false;
-        let regexIDNumber=/^[\d]{8,8}+$/;
+        // /^[\d]{8,8}+$/
+        let regexIDNumber=/^[0-9]{1,}$/;
         do{
             let idNumber=prompt('Input ID Number');
             if(regexIDNumber.test(idNumber)) {
                 checkValid=true;
             }else {
-                alert('bạn nhập số CMND sai');
+                alert('Bạn nhập số CMND sai');
             }
         }while (!checkValid);
+
         //Birthday
         checkValid=false;
         let regexBirthday=/^([0-9]{2})-([0-9]{2})-([0-9]{4})$/;
@@ -75,9 +85,10 @@
             if(regexBirthday.test(dateOfBirth)) {
                 checkValid = true;
             }else {
-                alert('Email bạn nhập không hợp lệ')
+                alert('Birthday bạn nhập không hợp lệ')
             }
         }while (!checkValid);
+
         //Email
         checkValid=false;
         let regexEmail=/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -113,8 +124,85 @@
         alert('Bạn đã thêm thành công');
         displayMainMenu();
     }
+    // Hiển thị thông tin người dùng
+    function displayInfoCustomer() {
+        let result='Bạn muốn hiển thị thông tin thanh toán khách hàng nào ?\n';
+        for(let i=0;i<arrayListCustomer.length;i++) {
+            result+= i+'. ' + arrayListCustomer[i].getName() + '\n';
+        }
+        let numberCustomer=parseInt(prompt(result));
+        alert(  alert('Name: '+arrayListCustomer[numberCustomer].getName()+'\n'+
+            'Age: '+arrayListCustomer[numberCustomer].getAge()+'\n'+
+            'ID Number: '+arrayListCustomer[numberCustomer].getIdNumber()+'\n'+
+            'Date Of Birth: '+arrayListCustomer[numberCustomer].getDateOfBirth()+'\n'+
+            'Email: '+arrayListCustomer[numberCustomer].getEmail()+'\n'+
+            'Address: '+arrayListCustomer[numberCustomer].getAddress()+'\n'+
+            'Customer type: '+arrayListCustomer[numberCustomer].getCustomerType()+'\n'+
+            'Discount: '+arrayListCustomer[numberCustomer].getDiscount()+'\n'+
+            'Amount: '+arrayListCustomer[numberCustomer].getAmount()+'\n'+
+            'Type of room : '+arrayListCustomer[numberCustomer].getTypeOfRoom()+'\n'+
+            'Type of house: '+arrayListCustomer[numberCustomer].getTypeOfHouse()+'\n'));
+        displayMainMenu()
+    }
+    // Hiển thị tổng số tiền phải trả
     function displayTotalPays() {
+        let result='Bạn muốn hiển thị thông tin thanh toán khách hàng nào ?\n';
+        for(let i=0;i<arrayListCustomer.length;i++) {
+            result+= i+'. ' + arrayListCustomer[i].getName() + '\n';
+        }
+        let choose=parseInt(prompt(result));
+        alert('Tổng tiền thanh toán của bạn là '+ arrayListCustomer[choose].getTotayPays());
+        displayMainMenu();
+    }
 
+    function editInfoCustomer() {
+        let result='Bạn muốn xóa khách hàng nào ?\n';
+        for(let i=0;i<arrayListCustomer.length;i++) {
+            result+= i+'. ' + arrayListCustomer[i].getName() + '\n';
+        }
+        let choice=parseFloat(prompt(result));
+        let choose=parseFloat(prompt('Nhập sự lựa chọn bạn muốn sửa'+'\n'+
+            '0.Name\n'+'1.Age\n'+'2.ID Number\n'+'3.Birthday\n'+'4.Email\n'+'5.Address\n'+
+            '6.Customer Type\n'+'7.Discount\n'+'8.Amount\n'+'9.Type of room\n'+'10.Type of house\n'));
+        switch (choose) {
+            case 0 :
+                arrayListCustomer[choice].setName(prompt('Edit Name'));
+            case 1 :
+                arrayListCustomer[choice].setAge(prompt('Edit Age'));
+            case 2 :
+                arrayListCustomer[choice].setIdNumber(prompt('Edit Id Number'));
+            case 3 :
+                arrayListCustomer[choice].setDateOfBirth(prompt('Edit Birthday'));
+            case 4 :
+                arrayListCustomer[choice].setEmail(prompt('Edit Email'));
+            case 5 :
+                arrayListCustomer[choice].setAddress(prompt('Edit Address'));
+            case 6 :
+                arrayListCustomer[choice].setCustomerType(prompt('Edit Customer Type'));
+            case 7 :
+                arrayListCustomer[choice].setDiscount(prompt('Edit Discount'));
+            case 8 :
+                arrayListCustomer[choice].setAmount(prompt('Edit Amount'));
+            case 9 :
+                arrayListCustomer[choice].setTypeOfRoom(prompt('Edit Type Of Room'));
+            case 10 :
+                arrayListCustomer[choice].setTypeOfHouse(prompt('Edit Type Of House'));
+        }
+        alert('Bạn đã sửa thành công');
+        displayMainMenu();
+    }
+    function deleteCustomer() {
+        //Hiển thị tên khách hàng cho người dùng biết
+        let result='Bạn muốn xóa khách hàng nào ?\n';
+        for(let i=0;i<arrayListCustomer.length;i++) {
+            result+= i+'. ' + arrayListCustomer[i].getName() + '\n';
+        }
+        let numberCustomer=parseFloat(prompt(result));
+        if(confirm('Bạn có chắc chắn muốn xóa khách hàng này không')) {
+            arrayListCustomer.splice(numberCustomer,1);
+            alert('Bạn đã xóa thành công')
+        }
+        displayMainMenu();
     }
 </script>
 </body>
