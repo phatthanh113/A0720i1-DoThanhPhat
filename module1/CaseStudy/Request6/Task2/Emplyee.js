@@ -41,7 +41,15 @@ class Employee {
     }
 
     setDateOfBirth(dateOfBirth) {
-        dateOfBirth=prompt('Nhập Birthday');
+        let regexBirthday=/^([0-9]{2})-([0-9]{2})-([0-9]{4})$/;
+        do {
+            dateOfBirth=prompt('Nhập Birthday');
+            if(regexBirthday.test(dateOfBirth)) {
+                break;
+            }else {
+                alert('Bạn nhập sai định dạng');
+            }
+        }while (true);
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -69,7 +77,15 @@ class Employee {
     }
 
     setPhoneNumber(phoneNumber) {
-        phoneNumber=prompt('Nhập số đthoai');
+        let regexPhoneNum=/^[\d]{9,10}$/;
+        do{
+            phoneNumber=prompt('Nhập số đthoai');
+            if(regexPhoneNum.test(phoneNumber)){
+                break;
+            }else {
+                alert('Bạn đã nhập sai định dạng số đt');
+            }
+        }while (true);
         this.phoneNumber=phoneNumber;
     }
     getLevel() {
@@ -85,7 +101,7 @@ class Employee {
     }
 
     setPosition(position) {
-        position=prompt('Nhập vị trí(Manager,sale,marketing)');
+        position=prompt('Nhập vị trí(Manager,Sale,Marketing)');
         position.toLowerCase();
         this.position=position;
     }
