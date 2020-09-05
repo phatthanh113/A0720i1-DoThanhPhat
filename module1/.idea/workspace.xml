@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd577702-c240-4fc2-a957-9c43623cfdc8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/CaseStudy/Request6/Task2/Emplyee.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnTap/OOP_2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnTap/OOP_3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CaseStudy/Request6/Task2/Employee.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CaseStudy/Request5/Request5.js" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy/Request5/Request5.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CaseStudy/Request6/Task1/Request6_task1.html" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy/Request6/Task1/Request6_task1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy/Request6/Task2/Emplyee.js" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy/Request6/Task2/Emplyee.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnTap/GiaiThuat.js" beforeDir="false" afterPath="$PROJECT_DIR$/OnTap/GiaiThuat.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +16,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -56,7 +55,8 @@
       <workItem from="1598613140265" duration="10174000" />
       <workItem from="1598667031657" duration="3069000" />
       <workItem from="1598689924428" duration="26693000" />
-      <workItem from="1599032414735" duration="3118000" />
+      <workItem from="1599032414735" duration="5667000" />
+      <workItem from="1599058225171" duration="9236000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1598863221829</created>
@@ -93,10 +93,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="98" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1598863234650" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1599033713722">
+    <state x="339" y="162" key="run.anything.popup" timestamp="1599220057760">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1599033713722" />
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1599220057760" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1598876669099">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

@@ -51,6 +51,7 @@ function calculate() {
         }
     }
 }
+
 //
 function calculate1() {
     let result = '';
@@ -99,129 +100,143 @@ function calculate2() {
             break;
         }
     }
-    alert('Tháng '+month+' Năm '+year+' Có '+day+' ngày ');
+    alert('Tháng ' + month + ' Năm ' + year + ' Có ' + day + ' ngày ');
 }
+
 //
 function calculate3(number) {
-    number=parseInt(prompt('Nhập số bạn muốn tính'));
-    let result=0;
-    for(let i=1; i <= number;i++) {
-        result+=1/i
+    number = parseInt(prompt('Nhập số bạn muốn tính'));
+    let result = 0;
+    for (let i = 1; i <= number; i++) {
+        result += 1 / i
     }
     alert(result)
 }
+
 //
 function calculate4(number) {
-    number=parseInt(prompt('Nhập số phần tử bạn muốn tính'));
-    let result=0;
-    for(let i=1; i <= number;i++) {
-        if(i%2===0) {
-            result += 1/i;
-        }else {
-            result += -1/i;
+    number = parseInt(prompt('Nhập số phần tử bạn muốn tính'));
+    let result = 15;
+    let denominator = 1;
+    for (let i = 1; i <= number; i++) {
+        for (let j = 1; j <= i; j++) {
+            denominator *= j;
+        }
+        if (i % 2 === 0) {
+            result += 1 / denominator;
+        } else {
+            result += -1 / denominator;
         }
     }
-    alert(result)
+    alert(result);
 }
+
 //
 function calculate5(number) {
-    number=parseInt(prompt('Nhập số phần tử bạn muốn tính'));
-    let result=0;
-    for(let i=1; i <= 2*number-1;i+=2) {
-        result+=1/i;
+    number = parseInt(prompt('Nhập số phần tử bạn muốn tính'));
+    let result = 0;
+    let denominator = 1
+    for (let i = 1; i <= 2 * number - 1; i += 2) {
+        for(let j=1;j<=i;j++) {
+            denominator*=j;
+        }
+        result+= 1/denominator;
     }
     alert(result)
 }
+
 //
 function calculate6(number) {
-    number=parseInt(prompt('Nhập số phần tử bạn muốn tính'));
-    let evenFactorial=1;
-    let oddFactorial=1;
-    for(let i=2;i<=2*number;i+=2){
-        evenFactorial*=i;
+    number = parseInt(prompt('Nhập số phần tử bạn muốn tính'));
+    let evenFactorial = 1;
+    let oddFactorial = 1;
+    for (let i = 2; i <= 2 * number; i += 2) {
+        evenFactorial *= i;
     }
-    for(let i=1;i<=2*number-1;i+=2){
-        oddFactorial*=i;
+    for (let i = 1; i <= 2 * number - 1; i += 2) {
+        oddFactorial *= i;
     }
     alert(evenFactorial);
     alert(oddFactorial);
 }
+
 //
 function calculate7(number) {
-    number=prompt('Nhập vào số bạn muốn tính tổng các chữ số');
-    let result=0;
-    for (let i=0; i < number.length;i++) {
-        result+=parseInt(i);
+    number = prompt('Nhập vào số bạn muốn tính tổng các chữ số');
+    let result = 0;
+    for (let i = 0; i < number.length; i++) {
+        result += parseInt(i);
     }
     alert(result);
 }
+
 //
-function calculate8(numberA,numberB) {
-    numberA=parseInt(prompt('Nhập vào số bạn muốn tính tổng các chữ số'));
-    numberB=parseInt(prompt('Nhập vào số bạn muốn tính tổng các chữ số'));
-    let maxCommon=0;
-    let minCommon=0;
-    if(numberA>numberB) {
-        for(let i=1; i<numberB ;i++) {
+function calculate8(numberA, numberB) {
+    numberA = parseInt(prompt('Nhập vào số bạn muốn tính tổng các chữ số'));
+    numberB = parseInt(prompt('Nhập vào số bạn muốn tính tổng các chữ số'));
+    let maxCommon = 0;
+    let minCommon = 0;
+    if (numberA > numberB) {
+        for (let i = 1; i < numberB; i++) {
 
         }
     }
 
 }
-// 
+
+//
 function calculate9(string) {
-    string=prompt('Nhập chuỗi');
-    let reverseString='';
-    for(let i=string.length-1;i>=0;i--) {
-        reverseString+=string[i];
+    string = prompt('Nhập chuỗi');
+    let reverseString = '';
+    for (let i = string.length - 1; i >= 0; i--) {
+        reverseString += string[i];
     }
     alert(reverseString);
     alert(string.toUpperCase());
     alert(string.toLowerCase());
-    let newString='';
-    for(let j=0;j<string.length;j++) {
-        if(string[j]===string[j].toLowerCase()) {
-            newString+=string[j].toUpperCase();
-        }
-        else if(string[j]===string[j].toUpperCase()) {
-            newString+=string[j].toLowerCase();
+    let newString = '';
+    for (let j = 0; j < string.length; j++) {
+        if (string[j] === string[j].toLowerCase()) {
+            newString += string[j].toUpperCase();
+        } else if (string[j] === string[j].toUpperCase()) {
+            newString += string[j].toLowerCase();
         }
     }
     alert(newString);
 }
+
 //
 function calculate10(string) {
-    string=prompt('Nhập chuỗi');
+    string = prompt('Nhập chuỗi');
     string.trim();
-    let result='';
-    let number=1;
-    for(let i=0; i<string.length;i++) {
-        if(string[i-1] !==' ' && string[i] !== ' '){
-            result+=string[i];
-        }
-        else if(string[i] ===' ' && string[i+1] === ' ') {
+    let result = '';
+    let number = 1;
+    for (let i = 0; i < string.length; i++) {
+        if (string[i - 1] !== ' ' && string[i] !== ' ') {
+            result += string[i];
+        } else if (string[i] === ' ' && string[i + 1] === ' ') {
             continue;
-        }
-        else if(string[i-1] ===' ' && string[i] !== ' ') {
-            result+='\n'+string[i];
-            number+=1;
+        } else if (string[i - 1] === ' ' && string[i] !== ' ') {
+            result += '\n' + string[i];
+            number += 1;
         }
     }
     alert(result);
     alert(number);
 }
+
 //
 function calculate11(array) {
-    array=[];
-    let number=parseInt(prompt('Nhập vào sô phần tử bạn muốn có trong mảng'));
-    for(let i=0;i<number;i++) {
-        let element=parseInt(prompt('Nhập các phần tử nguyên'));
+    array = [];
+    let number = parseInt(prompt('Nhập vào sô phần tử bạn muốn có trong mảng'));
+    for (let i = 0; i < number; i++) {
+        let element = parseInt(prompt('Nhập các phần tử nguyên'));
         array.push(element);
     }
-    let oddSum=0;
-    for(let arr of array) {
-        if(arr%2 !== 0) {
-            sum+=arr
+    let oddSum = 0;
+    for (let arr of array) {
+        if (arr % 2 !== 0) {
+            oddSum += arr
         }
     }
     alert(oddSum);

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="Emplyee.js"></script>
+<script>
+    let arrayEmployee=[];
+    function displayMainMenu(options) {
+        options=parseInt(prompt('1.Add New Employee'+
+            '\n 2.Display Information Employee'+
+            '\n 3.Display Salary of Employee'+
+            '\n 4.Exit'));
+        switch (options) {
+            case 1: {
+                addNewEmployee();
+                break;
+            }
+            case 2: {
+                displayInfoEmployee();
+                break;
+            }
+            case 3: {
+                displaySalaryEmployee();
+                break;
+            }
+            case 4: {
+                break;
+            }
+            default: {
+                alert('Không có sự lựa chọn này');
+                break;
+            }
+        }
+    }
+//    Thềm thông tin nhân viên
+    function addNewEmployee() {
+        let employee=new Employee();
+        employee.setName();
+        employee.setIdNumber();
+        employee.setDateOfBirth();
+        employee.setEmail();
+        employee.setPhoneNumber();
+        employee.setLevel();
+        employee.setPosition();
+        arrayEmployee.push(employee);
+        alert('Bạn đã thêm thành công');
+        displayMainMenu();
+    }
+//    Hiển thị thông tin nhân viên
+    function displayInfoEmployee() {
+        let result='Bạn muốn hiển thị thông tin nhân viên nào nào ?\n';
+        for(let i=0;i<arrayEmployee.length;i++) {
+            result+=i+'. '+arrayEmployee[i].getName()+'\n';
+        }
+        let choose=parseInt(prompt(result));
+        alert('Name: '+arrayEmployee[choose].getName()+'\n'+
+            'ID Number: '+arrayEmployee[choose].getIdNumber()+'\n'+
+            'Date Of Birth: '+arrayEmployee[choose].getDateOfBirth()+'\n'+
+            'Email: '+arrayEmployee[choose].getEmail()+'\n'+
+            'PhoneNumber: '+arrayEmployee[choose].getPhoneNumber()+'\n'+
+            'Level: '+arrayEmployee[choose].getLevel()+'\n'+
+            'Positions: '+arrayEmployee[choose].getPosition()+'\n');
+        displayMainMenu();
+    }
+//    Hiển thị thông tin lương nhân viên
+    function displaySalaryEmployee() {
+        let result='Bạn muốn hiển thị thông tin lương nhân viên nào nào ?\n';
+        for(let i=0;i<arrayEmployee.length;i++) {
+            result+=i+'. '+arrayEmployee[i].getName()+'\n';
+        }
+        let choose=parseInt(prompt(result));
+        alert('Lương của nhân viên này là '+arrayEmployee[choose].getSalary());
+        displayMainMenu()
+    }
+
+displayMainMenu()
+</script>
+</body>
+</html>

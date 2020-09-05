@@ -66,8 +66,7 @@
 
         //Id number
         checkValid=false;
-        // /^[\d]{8,8}+$/
-        let regexIDNumber=/^[0-9]{1,}$/;
+        let regexIDNumber=/^[0-9]{8,8}$/;
         do{
             let idNumber=prompt('Input ID Number');
             if(regexIDNumber.test(idNumber)) {
