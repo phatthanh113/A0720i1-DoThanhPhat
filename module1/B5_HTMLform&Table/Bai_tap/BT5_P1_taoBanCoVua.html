@@ -141,4 +141,19 @@
 </div>
 </table>
 </body>
+<script>
+    function init() {
+        let sort = '<div class="container">'+'<table cellpadding="20px">'
+        for(let i =0; i<8; i++) {
+            sort+='<tr><th>i</th>'
+            for(let j=0; j<8 ; j++) {
+                sort+= '<td></td>'
+            }
+            sort+='</tr>'
+        }
+        sort+='</table>';
+        document.writeln(sort)
+    }
+    init()
+</script>
 </html>

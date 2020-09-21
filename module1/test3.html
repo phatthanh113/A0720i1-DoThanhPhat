@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    table {
+        border-collapse: collapse;
+
+    }
+    table, th, td {
+        border: 1px solid black;
+    }
+    td{
+        background: yellow;
+    }
+</style>
+<body>
+<script>
+
+    //khoi tao class book
+    class Book {
+        constructor(code, name, year, number, status) {
+            this.code = code;
+            this.name = name;
+            this.year = year;
+            this.number = number;
+            this.status = status;
+        }
+
+        getCode() {
+            return this.code;
+        }
+
+        setCode(code) {
+            this.code = code;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setName(name) {
+            this.name = name
+        }
+
+        getYear() {
+            return this.year;
+        }
+
+        setYear(year) {
+            this.year = year
+        }
+
+        getNumber() {
+            return this.number;
+        }
+
+        setNumber(number) {
+            this.number = number
+        }
+
+        getStatus() {
+            return this.status;
+        }
+        setStatus(status) {
+            this.status = status;
+        }
+    }
+    let arrayBook = [];
+    let toan = new Book('123', 'Toan', '2000', 3, true);
+    let van = new Book('123', 'Toan', '2000', 3, true);
+    arrayBook.push(toan, van);
+    // Goi ham hien thi
+    function displayProduct() {
+        document.body.innerHTML = '';
+        let temp= '<h2>Quan ly sach</h2>'
+         temp += "<table cellpadding='20px' border='1px'><tr><td>Mã số sách</td><td>Tên sách</td><td>Năm xuất bản</td><td>Số quyển</td><td>Tình trạng</td></tr>";
+        for (let i = 0; i < arrayBook.length; i++) {
+            temp += "<tr><td>" + arrayBook[i].getCode() + "</td>" +
+                "<td>" + arrayBook[i].getName() + "</td>" +
+                "<td>" + arrayBook[i].getYear() + "</td>" +
+                "<td>" + arrayBook[i].getNumber() + "</td>" +
+                "<td>" + arrayBook[i].getStatus() + "</td>" +
+                "</tr>"
+        }
+
+        temp+= '</table><br><br>';
+        temp += "<input type = 'button' value = 'Add Book' onclick ='addNewBook()'>"
+        document.write(temp);
+    }
+    displayProduct();
+    //Goi ham them
+    function addNewBook() {
+        let checkValid = true;
+        let newProduct = new Book();
+        let code = prompt('input code');
+        newProduct.setCode(code);
+        let name = prompt('input name');
+        newProduct.setName(name);
+        //
+        checkValid = false;
+        let regexYear = /^[0-9]{4,4}$/;
+        do {
+            let year = prompt('input year');
+            if (regexYear.test(year)) {
+                newProduct.setYear(year);
+                checkValid = true;
+            } else {
+                alert('Wrong');
+            }
+        } while (!checkValid);
+        //
+        let number = parseInt(prompt('input number'));
+        newProduct.setNumber(number);
+        //
+        if (number === 0) {
+            newProduct.setStatus(false);
+        }else {
+            newProduct.setStatus(true);
+        }
+        arrayBook.push(newProduct);
+        displayProduct();
+    }
+</script>
+
+</body>
+</html>

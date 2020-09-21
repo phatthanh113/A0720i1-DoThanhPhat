@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //Tạo mảng 2 chiều
+    // let column=parseInt(prompt('Nhập số cột bạn muốn thêm'));
+    // let row=parseInt(prompt('Nhập số hàng bạn muốn thêm'));
+    // let array=new Array();
+    // for(let i=0; i<row;i++) {
+    //     array[i]=new Array();
+    //     for (let j=0;j<column;j++){
+    //         let element=parseInt(prompt('Nhập phần tử con'));
+    //         array[i].push(element);
+    //     }
+    // }
+    // console.log(array);
+    // //Tính tích bội số của 3 tại dòng đầu tiên
+    // let firstSum=0;
+    // for(let i=0;i<array[0].length;i++) {
+    //     if(array[0][i]%3===0) {
+    //         firstSum *= array[0][i];
+    //     }
+    // }
+    // alert(firstSum);
+    let array = [[1, 3, 3],
+                 [1, 3, 10],
+                [1, 12, 3]];
+    //Tạo mảng mới với các giá trị lớn nhất trên các dòng
+    let newArray=[];
+    for(let i=0;i<array.length;i++) {
+        let max=array[i][0];
+        for(let j =0;j<array[i].length;j++) {
+            if(max < array[i][j]) {
+                max = array[i][j];
+            }
+        }
+        newArray.push(max)
+    }
+    alert(newArray);
+    //Xóa phần tử đầu tiên của mảng mới
+    for(let i=0;i<newArray.length;i++) {
+        newArray[i-1] = newArray[i];
+    }
+    newArray.pop();
+    alert(newArray)
+</script>
+</body>
+</html>

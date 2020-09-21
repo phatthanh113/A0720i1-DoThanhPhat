@@ -58,7 +58,7 @@ function clickMouse() {
     let check=false;
     if (!isNaN(tempAmount)){
         tempAmount=parseFloat(tempAmount);
-        if(Number.isInteger(tempAmount)&&tempAmount>0){
+        if(Number.isInteger(tempAmount) && tempAmount>0){
             check=true;
         }
     }

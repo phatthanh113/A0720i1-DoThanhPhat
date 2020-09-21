@@ -8,16 +8,19 @@ function check(option) {
             if (cheap.checked && fast.checked) {
                 fast.checked = false ;
             }
-        } break ;
+        }
+        break ;
         case 2 : {
             if (good.checked && cheap.checked) {
                 cheap.checked = false ;
             }
-        } break ;
+        }
+        break ;
         case 3 : {
             if (good.checked && fast.checked) {
                 good.checked = false ;
             }
-        } break ;
+        }
+        break ;
     }
 }

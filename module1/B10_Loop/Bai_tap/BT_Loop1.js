@@ -41,12 +41,11 @@ function calculateDisplay() {
 //Bài tập 1 : In ra 100 số đầu tiên
 function calculate1() {
     for (let i = 1; i <= 100; i++) {
-        if (i === 100) {
-            break;
+        if (i === 99) {
+            alert('Đã Hoàn Thành')
         }
-        document.write(i + ',')
+        document.write(i + '<br>')
     }
-    alert('Đã hoàn thành')
 }
 //Bài tập 2 :Lấy thông tin nhiệt độ
 function calculate2() {

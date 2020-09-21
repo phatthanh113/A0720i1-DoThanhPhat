@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function init(array) {
+        array = [];
+        let evenSum = 0;
+        let average =0;
+        let count=0
+
+        // let check=false;
+        while (true) {
+            let number = parseInt(prompt('Nhập vào sô phần tử bạn muốn có trong mảng'));
+            if (!Number.isNaN(number) && number <= 50 && number > 0) {
+                for (let i = 0; i < number; i++) {
+                    let element = parseInt(prompt('Nhập các phần tử nguyên'));
+                    array.push(element);
+                }
+                for (let i = 0; i < array.length; i++) {
+                    if (i % 2 === 0) {
+                        if (array[i] % 2 !== 0) {
+                            evenSum += array[i];
+                            count++;
+                        }
+                    }
+                }
+                average = evenSum / count;
+                alert(average);
+                check=true;
+                break;
+            } else {
+                alert('so phan tu nhap vao sai');
+            }
+        }
+    }
+init()
+</script>
+</body>
+</html>

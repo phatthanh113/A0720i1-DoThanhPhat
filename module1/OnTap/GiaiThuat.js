@@ -30,8 +30,12 @@ function calculate() {
             calculate7();
             break;
         }
-        case '8' : {
-            calculate8();
+        case '8a' : {
+            calculate8a();
+            break;
+        }
+        case '8b' : {
+            calculate8b();
             break;
         }
         case '9' : {
@@ -46,13 +50,17 @@ function calculate() {
             calculate11();
             break;
         }
+        case '12' : {
+            calculate12();
+            break;
+        }
         default : {
             alert('Vui lòng nhập tên bài từ 1 đến 5')
         }
     }
 }
 
-//
+//in ra các dấu * theo cấu trúc cho sẵn
 function calculate1() {
     let result = '';
     for (let i = 0; i < 9; i++) {
@@ -64,7 +72,7 @@ function calculate1() {
     document.writeln(result);
 }
 
-//
+//In ra ngày tháng năm tương ứng
 function isLeapYear(year) {
     return ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0);
 }
@@ -103,7 +111,7 @@ function calculate2() {
     alert('Tháng ' + month + ' Năm ' + year + ' Có ' + day + ' ngày ');
 }
 
-//
+//Viết chương trình tính tổng các phân số
 function calculate3(number) {
     number = parseInt(prompt('Nhập số bạn muốn tính'));
     let result = 0;
@@ -113,7 +121,7 @@ function calculate3(number) {
     alert(result)
 }
 
-//
+//Viết chương trình tính tổng các phân số
 function calculate4(number) {
     number = parseInt(prompt('Nhập số phần tử bạn muốn tính'));
     let result = 15;
@@ -131,11 +139,11 @@ function calculate4(number) {
     alert(result);
 }
 
-//
+//Viết chương trình tính tổng các phân số
 function calculate5(number) {
     number = parseInt(prompt('Nhập số phần tử bạn muốn tính'));
     let result = 0;
-    let denominator = 1
+    let denominator = 1;
     for (let i = 1; i <= 2 * number - 1; i += 2) {
         for(let j=1;j<=i;j++) {
             denominator*=j;
@@ -145,7 +153,7 @@ function calculate5(number) {
     alert(result)
 }
 
-//
+//tính giai thừa các số chẵn , lẻ
 function calculate6(number) {
     number = parseInt(prompt('Nhập số phần tử bạn muốn tính'));
     let evenFactorial = 1;
@@ -160,40 +168,65 @@ function calculate6(number) {
     alert(oddFactorial);
 }
 
-//
+//Tỉnh tổng và tính các chữ số của 1 số cho trước
 function calculate7(number) {
-    number = prompt('Nhập vào số bạn muốn tính tổng các chữ số');
-    let result = 0;
+    number = prompt('Nhập vào số bạn muốn tính tổng và tích các chữ số');
+    let sum = 0;
+    let product=1;
     for (let i = 0; i < number.length; i++) {
-        result += parseInt(i);
+        sum += parseInt(number.charAt(i));
+        product*= parseInt(number.charAt(i));
     }
-    alert(result);
+    alert('sum: '+sum);
+    alert('product: '+product);
 }
 
-//
-function calculate8(numberA, numberB) {
-    numberA = parseInt(prompt('Nhập vào số bạn muốn tính tổng các chữ số'));
-    numberB = parseInt(prompt('Nhập vào số bạn muốn tính tổng các chữ số'));
-    let maxCommon = 0;
-    let minCommon = 0;
-    if (numberA > numberB) {
-        for (let i = 1; i < numberB; i++) {
-
+//Tìm ước chung nhỏ nhất của 2 số
+function calculate8a(numberA, numberB) {
+    numberA = parseInt(prompt('Nhập vào số thứ nhất'));
+    numberB = parseInt(prompt('Nhập vào số thứ hai'));
+    let result=0;
+    if (numberA==0 || numberB==0) {
+        result = numberA + numberB ;
+    }
+    while (numberA!=numberB) {
+        if(numberA > numberB) {
+            numberA -= numberB;
+        }else {
+            numberB -= numberA;
         }
     }
-
+    result=numberB;
+    alert('UCLN của 2 số  là '+result);
 }
-
-//
-function calculate9(string) {
+//tìm bội chung nhỏ nhất của 2 số
+function calculate8b(a,b) {
+    a = parseInt(prompt('Nhập vào số thứ nhất'));
+    b = parseInt(prompt('Nhập vào số thứ hai'));
+    let max = a*b;
+    let lcm=0;
+    for(let i=maxNumber(a,b);i<=max ;i++) {
+        if(i%a===0 && i%b ===0) {
+            lcm=i;
+            break;
+        }
+    }
+    alert('Bội chung nhỏ nhất của 2 số là '+lcm)
+}
+//Thực hiện các công việc với chuỗi
+function calculate9(string{
     string = prompt('Nhập chuỗi');
+    //Đảo ngược chuỗi
     let reverseString = '';
     for (let i = string.length - 1; i >= 0; i--) {
         reverseString += string[i];
     }
     alert(reverseString);
+    // Đổi chuỗi sang chữ hoa
     alert(string.toUpperCase());
+    // Đổi chuỗi sang chữ thường
     alert(string.toLowerCase());
+    //Đổi chữ hoa thành chữ thường và ngược lại
     let newString = '';
     for (let j = 0; j < string.length; j++) {
         if (string[j] === string[j].toLowerCase()) {
@@ -205,18 +238,19 @@ function calculate9(string) {
     alert(newString);
 }
 
-//
+//Làm các công việc với chuỗi
 function calculate10(string) {
     string = prompt('Nhập chuỗi');
+    //In mỗi từ trên mỗi dòng
     string.trim();
     let result = '';
     let number = 1;
     for (let i = 0; i < string.length; i++) {
-        if (string[i - 1] !== ' ' && string[i] !== ' ') {
+        if (string[i-1] !== ' ' && string[i] !== ' ') {
             result += string[i];
-        } else if (string[i] === ' ' && string[i + 1] === ' ') {
+        } else if (string[i] === ' ' && string[i+1] === ' ') {
             continue;
-        } else if (string[i - 1] === ' ' && string[i] !== ' ') {
+        } else if (string[i-1] === ' ' && string[i] !== ' ') {
             result += '\n' + string[i];
             number += 1;
         }
@@ -235,9 +269,28 @@ function calculate11(array) {
     }
     let oddSum = 0;
     for (let arr of array) {
-        if (arr % 2 !== 0) {
+        if (arr % 2 !== 0 &&  arr > 0) {
             oddSum += arr
         }
     }
     alert(oddSum);
+    array.sort((a,b) => a-b) ;
+    alert(array);
+    let addElement=parseInt(prompt('Nhập phần tử bạn muốn thêm'));
+    array.push(addElement);
+    array.sort((a,b) => a-b) ;
+    alert(array);
+}
+// TÌm bội chung nhỏ nhất của 2 số
+function maxNumber(a,b) {
+    if(a == b || a > b) {
+        return a
+    }else {
+        return b
+    }
+}
+
+//
+function calculate12() {
+
 }

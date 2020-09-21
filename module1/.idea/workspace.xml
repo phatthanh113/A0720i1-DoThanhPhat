@@ -2,10 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd577702-c240-4fc2-a957-9c43623cfdc8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/CaseStudy/Request6/Task2/Employee.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bouncing_game/Bouncing_game.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnTap/giaithuat_12.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test3.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CaseStudy/Request6/Task1/Request6_task1.html" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy/Request6/Task1/Request6_task1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CaseStudy/Request6/Task2/Emplyee.js" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy/Request6/Task2/Emplyee.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B10_Loop/Bai_tap/B1_KiemTraSNT_review.html" beforeDir="false" afterPath="$PROJECT_DIR$/B10_Loop/Bai_tap/B1_KiemTraSNT_review.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B10_Loop/Bai_tap/BT_Loop1.js" beforeDir="false" afterPath="$PROJECT_DIR$/B10_Loop/Bai_tap/BT_Loop1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B12_Function/Bai_Tap/ungDungQuanLiSanPham.html" beforeDir="false" afterPath="$PROJECT_DIR$/B12_Function/Bai_Tap/ungDungQuanLiSanPham.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B13_OOP/Bai_Tap/dienthaoi.html" beforeDir="false" afterPath="$PROJECT_DIR$/B13_OOP/Bai_Tap/dienthaoi.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B13_OOP/Bai_Tap/moPhongAdam&amp;Eva.html" beforeDir="false" afterPath="$PROJECT_DIR$/B13_OOP/Bai_Tap/moPhongAdam&amp;Eva.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B13_OOP/Bai_Tap/mobile_ver2.html" beforeDir="false" afterPath="$PROJECT_DIR$/B13_OOP/Bai_Tap/mobile_ver2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B5_HTMLform&amp;Table/Bai_tap/BT5_P1_taoBanCoVua.html" beforeDir="false" afterPath="$PROJECT_DIR$/B5_HTMLform&amp;Table/Bai_tap/BT5_P1_taoBanCoVua.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B7_BienKieuDuLieuToanTu/Bai_tap/UngDungChuyenDoiTienTe/ConvertCurreny.html" beforeDir="false" afterPath="$PROJECT_DIR$/B7_BienKieuDuLieuToanTu/Bai_tap/UngDungChuyenDoiTienTe/ConvertCurreny.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B9_CauTrucDieuKien2/Bai_tap/goodFastCheap.js" beforeDir="false" afterPath="$PROJECT_DIR$/B9_CauTrucDieuKien2/Bai_tap/goodFastCheap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy/Request3/Request3.js" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy/Request3/Request3.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy/Request4/Request4.html" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy/Request4/Request4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy/Request4/Request4.js" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy/Request4/Request4.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnTap/GiaiThuat.js" beforeDir="false" afterPath="$PROJECT_DIR$/OnTap/GiaiThuat.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,6 +51,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -56,7 +72,11 @@
       <workItem from="1598667031657" duration="3069000" />
       <workItem from="1598689924428" duration="26693000" />
       <workItem from="1599032414735" duration="5667000" />
-      <workItem from="1599058225171" duration="9236000" />
+      <workItem from="1599058225171" duration="10752000" />
+      <workItem from="1599398850629" duration="13527000" />
+      <workItem from="1599648661000" duration="25005000" />
+      <workItem from="1599986215462" duration="17358000" />
+      <workItem from="1600157484161" duration="6193000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1598863221829</created>
@@ -65,7 +85,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598863221829</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="update">
+      <created>1599294963048</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1599294963048</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -80,19 +107,24 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="450" y="168" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1598620786315" />
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1598863219748">
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1599294961218">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1598863219748" />
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1599294961218" />
     <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1598024453440">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1598024453440" />
     <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1594460349046" />
-    <state x="275" y="98" key="Vcs.Push.Dialog.v2" timestamp="1598863234650">
+    <state x="184" y="7" key="SettingsEditor" timestamp="1599484865552">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="98" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1598863234650" />
+    <state x="184" y="7" key="SettingsEditor/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1599398888364" />
+    <state x="184" y="7" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1599484865552" />
+    <state x="275" y="98" key="Vcs.Push.Dialog.v2" timestamp="1599294968016">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="98" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1599294968016" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1599220057760">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

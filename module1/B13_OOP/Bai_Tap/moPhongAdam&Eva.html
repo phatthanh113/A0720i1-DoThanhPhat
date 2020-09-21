@@ -10,7 +10,6 @@
             constructor(weight) {
                 this.weight=weight;
             }
-
             isEmpty() {
                 if(this.weight===0) {
                     return true;
@@ -36,6 +35,7 @@
                 this.name=name;
                 this.gender=gender;
                 this.weight=weight;
+                this.voice='';
             }
             isMale() {
                 return this.gender;
@@ -43,8 +43,8 @@
             changeGender() {
                 this.gender=!this.gender;
             }
-            saySomething(something) {
-                return something;
+            saySomething(voice) {
+                return this.voice=voice;
             }
             eatApple(apple) {
                 if(apple.isEmpty()) {
@@ -70,11 +70,16 @@
         }
 
         let apple=new Apple(3);
-        let adam=new Human('Adam',true,65);
+        let adam=new Human('Adam',true,65,'');
         // apple.setWeight(0);
         adam.eatApple(apple);
-        alert(adam.getWeight());
-        alert(apple.getWeight())
+        // alert(adam.getWeight());
+        // alert(apple.getWeight())
+        document.writeln(adam.saySomething('Ngoc oi'));
+        document.writeln(adam.isMale());
+        let eva= new Human();
+        eva.setName('Eva');
+        document.writeln(eva.getName());
     </script>
 </body>
 </html>
