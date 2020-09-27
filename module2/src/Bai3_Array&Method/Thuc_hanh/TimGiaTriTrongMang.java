@@ -10,7 +10,7 @@ public class TimGiaTriTrongMang {
         String nameStudent=scanner.nextLine();
         boolean check=false;
         for(int i = 0; i < students.length; i++) {
-            if(students[i].equals(nameStudent)) {
+            if(students[i].equalsIgnoreCase(nameStudent)) {
                 System.out.println("Position of the students in the list " + nameStudent + " is: " + (i + 1));
                 check=true;
                 break;

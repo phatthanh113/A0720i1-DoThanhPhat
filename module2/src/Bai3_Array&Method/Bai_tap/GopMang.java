@@ -1,7 +1,5 @@
 package Bai3_Array.Bai_tap;
 
-import java.sql.Array;
-
 public class GopMang {
     public static void main(String[] args) {
         int[] array1={3,4,5,6};
