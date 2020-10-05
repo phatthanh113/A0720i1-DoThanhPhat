@@ -17,10 +17,17 @@ public class TinhTongCacSoODuongCheo {
             }
         }
 //        Tính tổng hàng chéo
-        int sum=0;
-        for(int i=0;i<array.length;i++) {
-            sum+=array[i][i];
+//        int sum=0;
+//        for(int i=0;i<array.length;i++) {
+//            sum+=array[i][i];
+//        }
+        System.out.println("Tổng bạn cần tìm là "+sumCross(array));
+    }
+    private static int sumCross(int[][] array) {
+        int sum = 0;
+        for (int i = 0; i < array.length;i++){
+            sum += array[i][i];
         }
-        System.out.println("Tổng bạn cần tìm là "+sum);
+        return sum;
     }
 }

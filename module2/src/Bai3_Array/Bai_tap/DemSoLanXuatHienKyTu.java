@@ -7,7 +7,8 @@ public class DemSoLanXuatHienKyTu {
         Scanner scanner=new Scanner(System.in);
         System.out.println("Nhập chuỗi");
         String string=scanner.nextLine();
-        char element = 'e';
+        System.out.println("Nhập kí tự");
+        char element = scanner.nextLine().charAt(0);
         System.out.println("Số ký tự xuất hiện của kí tự "+element+ " là "+ count(string.toLowerCase(),element));
     }
     public static int count(String string, char element ) {

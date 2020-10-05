@@ -21,17 +21,32 @@ public class TimGTLNCuaMangHaiChieu {
         int[][] array = new int[size][sizeElement];
         for(int i=0;i<size;i++) {
             for(int j=0;j<sizeElement;j++) {
-                System.out.println("Nhập phần tử thứ " + j +" của mảng con "+ i);
+                System.out.print("Nhập phần tử thứ " + j +" của mảng con "+ i);
                 array[i][j] = scanner.nextInt();
             }
         } //
-        int max= array[0][0];
+//        int max= array[0][0];
+//        for(int i=0;i<array.length;i++) {
+//            for(int j=0;j<sizeElement;j++) {
+//                if(max<array[i][j])
+//                    max=array[i][j];
+//            }
+        getMaxInArray(array,array[0][0]);
+        }
+
+    private static void getMaxInArray(int[][] array,int maxElement) {
+        int inputX=0;
+        int inputY=0;
         for(int i=0;i<array.length;i++) {
-            for(int j=0;j<sizeElement;j++) {
-                if(max<array[i][j])
-                    max=array[i][j];
+            for(int j=0;j<array[i].length;j++) {
+                if(maxElement<array[i][j])
+                    maxElement=array[i][j];
+                inputX=i;
+                inputY=j;
             }
         }
-        System.out.println("Phần tử lớn nhất trong ma trận là "+max);
+        System.out.println("Max "+maxElement);
+        System.out.println("Tọa độ x : "+inputX);
+        System.out.println("Tọa độ x : "+inputY);
     }
 }

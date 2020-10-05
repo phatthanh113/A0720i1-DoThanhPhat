@@ -45,7 +45,6 @@ public class XoaPhanTuKhoiMang {
             int temp=array[i];
             array[i]=array[i+1];
             array[i+1]=temp;
-
         }
         for(int element : array) {
             System.out.println(element+"\t");
