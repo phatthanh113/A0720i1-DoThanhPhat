@@ -3,14 +3,11 @@ package bai06_inheritance.bai_tap.triangle;
 import bai06_inheritance.thuc_hanh.Shape;
 
 public class Triangle extends Shape {
-    private double side1;
-    private double side2;
-    private double side3;
+    private double side1=1.0;
+    private double side2=1.0;
+    private double side3=1.0;
 
     public Triangle() {
-        side1=1.0;
-        side2=1.0;
-        side3=1.0;
     }
 
     public Triangle(double side1, double side2, double side3) {
@@ -64,6 +61,6 @@ public class Triangle extends Shape {
                 "side1=" + side1 +
                 ", side2=" + side2 +
                 ", side3=" + side3 +
-                '}';
+                "} " + super.toString();
     }
 }

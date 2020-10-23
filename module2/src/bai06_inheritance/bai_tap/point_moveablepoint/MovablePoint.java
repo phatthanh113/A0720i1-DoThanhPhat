@@ -1,6 +1,6 @@
 package bai06_inheritance.bai_tap.point_moveablepoint;
 
-public final class MovablePoint extends Point {
+public class MovablePoint extends Point {
     float xSpeed;
     float ySpeed;
 

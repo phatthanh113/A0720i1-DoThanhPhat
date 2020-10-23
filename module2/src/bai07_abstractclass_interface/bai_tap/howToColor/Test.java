@@ -8,9 +8,11 @@ public class Test {
         shapes[2]= new Square(5);
         for (Shape shape:shapes
              ) {
-            System.out.println("Diện tích hình là "+shape.getArea());
+            if (shape instanceof IHowToColor){
+                ((IHowToColor)shape).howToColor("Red");
+            }
+            System.out.println("Area is : "+shape.getArea()+shape.toString());
         }
-        Square square = (Square) shapes[2];
-        square.howToColor("Red");
+
     }
 }
