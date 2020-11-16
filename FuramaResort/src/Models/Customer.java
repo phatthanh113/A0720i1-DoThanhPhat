@@ -1,6 +1,6 @@
 package Models;
 
-public class Customer{
+public class Customer implements Comparable<Customer>{
     private String name;
     private String dayOfBirth;
     private String gender;
@@ -77,8 +77,8 @@ public class Customer{
     public void setAddress(String address) {
         this.address = address;
     }
-    public void useServices(Services services) {
-        System.out.println("bạn đang sử dụng dịch vụ"+services.getNameService());
+    public Services useServices(Services services) {
+        return services ;
     }
 
     @Override
@@ -94,4 +94,12 @@ public class Customer{
                 '}';
     }
 
+    @Override
+    public int compareTo(Customer customer) {
+        int tempName= this.name.compareTo(customer.getName());
+//        int tempYear= Integer.parseInt(this.dayOfBirth.substring(6,9))-Integer.parseInt(customer.dayOfBirth.substring(6,9));
+//        if(tempName!=0) {
+            return tempName;
+//      }else return tempYear;
+    }
 }

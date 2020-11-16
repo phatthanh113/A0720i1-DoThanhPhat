@@ -12,6 +12,7 @@ public class MethodFileVillaCSV {
     private static final String COMMA_DELIMITER = "," ;
     private static final String NEW_LINE_SEPARATOR = "\n";
     private static final String fileVilla = "src/Data/Villa.csv";
+    static ArrayList<Villa> villaArrayList= new ArrayList<>();
 //    Header file CSV Villa
     private static final String FILE_HEADER =  "nameService, usedArea, priceRent, numberPeople, rentType, id,standardsRoom,facilities,areaPool,floor";
 //    Write file CSV
@@ -58,7 +59,6 @@ public class MethodFileVillaCSV {
 //    Đọc file CSV
     public static ArrayList<Villa> getFileCSV() {
         BufferedReader bufferedReader = null ;
-        ArrayList<Villa> villaArrayList= new ArrayList<>();
         Path path = Paths.get(fileVilla);
         if (!Files.exists(path)) {
             try{

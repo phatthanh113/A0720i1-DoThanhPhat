@@ -1,6 +1,6 @@
 package Models;
 
-public class Room extends Services{
+public class Room extends Services implements Comparable<Room>{
     private String freeServices ;
 
 
@@ -32,5 +32,8 @@ public class Room extends Services{
                 "freeServices='" + freeServices + '\'' +
                 "} " + super.toString();
     }
-
+    @Override
+    public int compareTo(Room room) {
+        return this.getNameService().compareTo(room.getNameService());
+    }
 }

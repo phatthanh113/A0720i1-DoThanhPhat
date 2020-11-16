@@ -4,18 +4,18 @@ import Commons.MethodFileHouseCSV;
 import Commons.MethodFileVillaCSV;
 import Models.House;
 import Models.Services;
+import Models.House;
 
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class HouseController {
     static Scanner scanner = new Scanner(System.in);
     static ArrayList<House> listHouse = new ArrayList<>();
+
     //    Hàm write villa
     static void addNewHouse() {
-        Services house = new House(null,0,0,0,0,0);
+        Services house = new House(null, 0, 0, 0, 0, 0);
 
         try {
             System.out.println("Input Name Services");
@@ -37,7 +37,7 @@ public class HouseController {
             ((House) house).setFacilities(scanner.nextLine());
             System.out.println("Input Floor");
             ((House) house).setFloor(scanner.nextInt());
-        }catch (Exception e) {
+        } catch (Exception e) {
             System.out.println("error input");
         }
 // Add house
@@ -48,11 +48,12 @@ public class HouseController {
         System.out.println("add new villa completed");
         MainController.displayMainMenu();
     }
+
     //    Hàm show House
     public static void showAllHouse() {
         listHouse = MethodFileHouseCSV.getFileCSV();
         for (House house : listHouse) {
-            System.out.println("================");
+            System.out.println("=================");
             System.out.println("Name Services :" + house.getNameService());
             System.out.println("Used Area :" + house.getUsedArea());
             System.out.println("Price Rent :" + house.getPriceRent());
@@ -65,5 +66,19 @@ public class HouseController {
             System.out.println("=================");
         }
         MainController.displayMainMenu();
+    }
+
+    public static void showAllHouseNotDuplicate() {
+        Set<House> listHouseNotDuplicate = new TreeSet<>();
+        for (House house : listHouseNotDuplicate) {
+            if (house.getNameService().equals("nameServices")) continue;
+            listHouseNotDuplicate.add(house);
+        }
+        System.out.println("Danh sách các villa không bị trùng tên");
+        int i = 0;
+        for (House house : listHouseNotDuplicate) {
+            System.out.println(i + ". " + house.getNameService());
+            i++;
+        }
     }
 }

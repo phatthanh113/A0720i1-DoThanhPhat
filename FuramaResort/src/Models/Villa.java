@@ -1,6 +1,8 @@
 package Models;
 
-public class Villa extends Services {
+import java.util.Comparator;
+
+public class Villa extends Services implements Comparable<Villa> {
     private String standardsRoom;
     private String facilities ;
     private double areaPool ;
@@ -62,5 +64,10 @@ public class Villa extends Services {
                 ", areaPool=" + areaPool +
                 ", floor=" + floor +
                 "} " + super.toString();
+    }
+
+    @Override
+    public int compareTo(Villa villa) {
+        return this.getNameService().compareTo(villa.getNameService());
     }
 }

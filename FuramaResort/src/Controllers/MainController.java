@@ -32,7 +32,7 @@ public class MainController {
                 CustomerController.showInfomationCustomer();
                 break;
             case 5:
-
+                BookingController.addNewBooking();
                 break;
             case 6:
                 break;
@@ -102,10 +102,13 @@ public class MainController {
                 RoomController.showAllRoom();
                 break;
             case 4:
+                VillaController.showAllVillaNotDuplicate();
                 break;
             case 5:
+                HouseController.showAllHouseNotDuplicate();
                 break;
             case 6:
+                RoomController.showAllRoomNotDuplicate();
                 break;
             case 7:
                 break;
@@ -121,7 +124,7 @@ public class MainController {
     }
 
     public static void main(String[] args) {
-        displayMainMenu();
+        EmployeeController.showInformationEmployee();
     }
 }
 

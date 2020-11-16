@@ -4,13 +4,11 @@ import Commons.MethodFileVillaCSV;
 import Models.Services;
 import Models.Villa;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class VillaController {
     static Scanner scanner = new Scanner(System.in);
-    static ArrayList<Villa> listVilla = new ArrayList<>();
+    static ArrayList<Villa> listVilla = MethodFileVillaCSV.getFileCSV();;
 //    Hàm write villa
     static void addNewVilla() {
         Services villa = new Villa(null,0,0,0,0,0);
@@ -24,11 +22,11 @@ public class VillaController {
             System.out.println("Input NumberPeople");
             villa.setNumberPeople(scanner.nextInt());
             System.out.println("Input RentType");
+            scanner.skip("\n");
             villa.setRentType(scanner.nextInt());
             System.out.println("Input Id");
             villa.setId(scanner.nextInt());
             System.out.println("Input Standards Room");
-            scanner.skip("\n");
             ((Villa) villa).setStandardsRoom(scanner.nextLine());
             System.out.println("Input Facilities");
             ((Villa) villa).setFacilities(scanner.nextLine());
@@ -49,7 +47,6 @@ public class VillaController {
     }
 //    Hàm show Villa
     public static void showAllVilla() {
-        listVilla = MethodFileVillaCSV.getFileCSV();
         for (Villa villa : listVilla) {
             System.out.println("================");
             System.out.println("Name Services :" + villa.getNameService());
@@ -65,5 +62,18 @@ public class VillaController {
             System.out.println("=================");
         }
         MainController.displayMainMenu();
+    }
+    public static void showAllVillaNotDuplicate() {
+        Set<Villa> listVillaNotDuplicate = new TreeSet<>();
+        for (Villa villa: listVilla) {
+            if(villa.getNameService().equals("nameServices")) continue;
+            listVillaNotDuplicate.add(villa);
+        }
+        int i = 1 ;
+        System.out.println("Danh sách các villa không bị trùng tên");
+        for (Villa villa : listVillaNotDuplicate) {
+            System.out.println(i+ ". "+villa.getNameService());
+            i++;
+        }
     }
 }

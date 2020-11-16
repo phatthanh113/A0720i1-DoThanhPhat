@@ -2,12 +2,15 @@ package Controllers;
 
 import Commons.MethodFileRoomCSV;
 import Commons.MethodFileVillaCSV;
+import Models.House;
 import Models.Services;
 import Models.Villa;
 import Models.Room;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class RoomController {
     static Scanner scanner = new Scanner(System.in);
@@ -57,5 +60,18 @@ public class RoomController {
             System.out.println("=================");
         }
         MainController.displayMainMenu();
+    }
+    public static void showAllRoomNotDuplicate() {
+        Set<Room> listRoomNotDuplicate = new TreeSet<>();
+        for (Room room: listRoomNotDuplicate) {
+            if(room.getNameService().equals("nameServices")) continue;
+            listRoomNotDuplicate.add(room);
+        }
+        int i = 0 ;
+        System.out.println("Danh sách các villa không bị trùng tên");
+        for (Room room : listRoomNotDuplicate) {
+            System.out.println(i+ ". "+room.getNameService());
+            i++;
+        }
     }
 }

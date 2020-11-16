@@ -1,18 +1,13 @@
 package Controllers;
 
 import Commons.MethodFileCustomerCSV;
-import Commons.MethodFileHouseCSV;
 import Models.Customer;
-import Models.House;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Scanner;
+import java.util.*;
 
 public class CustomerController {
     static Scanner scanner = new Scanner(System.in);
-    static ArrayList<Customer> listCustomer = new ArrayList<>();
+    static ArrayList<Customer> listCustomer = MethodFileCustomerCSV.getFileCSV();
     //    Hàm write Customer
     static void addNewCustomer() {
         Customer customer = new Customer();
@@ -43,8 +38,8 @@ public class CustomerController {
         MainController.displayMainMenu();
     }
     //    Hàm show Tất cả customer
-    public static void showAllCustomer() throws Exception {
-        listCustomer = MethodFileCustomerCSV.getFileCSV();
+    public static void showAllCustomer()  {
+
         for (Customer customer : listCustomer) {
             System.out.println("================");
             System.out.println("Name  :" + customer.getName());
@@ -59,29 +54,25 @@ public class CustomerController {
         MainController.displayMainMenu();
     }
 //    Hàm show thông tin khách hàng
-    public static void showInfomationCustomer(){
-        listCustomer = MethodFileCustomerCSV.getFileCSV();
-        Collections.sort(listCustomer, (customer, oCustomer) -> {
-//                Điều kiện name
-            int tempName = customer.getName().compareTo(oCustomer.getName());
-            if (tempName != 0) {
-                return tempName;
-            } else {
-//                    Điều kiện year
-                int tempYear = Integer.parseInt(customer.getDayOfBirth().substring(6, 10)) - Integer.parseInt(oCustomer.getDayOfBirth().substring(6, 10));
-                return tempYear;
-            }
-        });
-        ArrayList listNameCustomer = new ArrayList();
+    public static void showInfomationCustomer() {
+        ArrayList<Customer> listCustomerSorted = new ArrayList<>();
         for (Customer customer : listCustomer) {
-            listNameCustomer.add(customer.getName());
+            if (customer.getName().equals("name")) {
+                continue;
+            }
+            listCustomerSorted.add(customer);
         }
-        System.out.println("Bạn muốn xem thông tin của khách hàng nào");
-        for (int i = 1; i <listNameCustomer.size() ; i++) {
-            System.out.println(i+". "+listNameCustomer.get(i));
+        Collections.sort(listCustomerSorted);
+        System.out.println("bạn muốn xem thông tin khách hàng nào");
+        int i = 1;
+        for (Customer customer : listCustomerSorted) {
+            System.out.println(i + ". " + customer.getName());
+            i++;
         }
-//        Nhớ tạo exception
-        int choice = scanner.nextInt();
-        System.out.println(listCustomer.get(choice));
+        int choice = Integer.parseInt(scanner.nextLine());
+        System.out.println(listCustomerSorted.get(choice-1));
+        //        Trở về màn hình chính
+        MainController.displayMainMenu();
+        scanner.nextLine();
     }
 }
