@@ -4,22 +4,26 @@ import Commons.*;
 import Models.*;
 import javafx.concurrent.Service;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.*;
 
 public class BookingController {
     static Scanner scanner= new Scanner(System.in);
     static Services services;
-    static ArrayList<Customer> listBookingCustomer = MethodFileBookingCSV.getFileCSV(services);
-    static ArrayList<Customer> listCustomer = MethodFileCustomerCSV.getFileCSV();;
-    static ArrayList<Villa> listVilla = MethodFileVillaCSV.getFileCSV();;
-    static ArrayList<House> listHouse = MethodFileHouseCSV.getFileCSV();
-    static ArrayList<Room> listRoom = MethodFileRoomCSV.getFileCSV();
+    static List<Customer> listBookingCustomer = MethodFileBookingCSV.getFileCSV(services);
+    static List<Customer> listCustomer = MethodFileCustomerCSV.getFileCSV();;
+    static List<Villa> listVilla= MethodFileVillaCSV.getFileCSV();
+    static List<House> listHouse = MethodFileHouseCSV.getFileCSV();
+    static List<Room> listRoom = MethodFileRoomCSV.getFileCSV();
     public static void addNewBooking() {
         System.out.println("Bạn muốn booking cho khách hàng nào");
         for (int i = 1; i < listCustomer.size(); i++) {
             System.out.println(i+ ". "+listCustomer.get(i).getName());
         }
+//        Chọn khách hàng muốn booking
         int choice = Integer.parseInt(scanner.nextLine());
+//        Chọn loại dịch vụ cần booking
         System.out.println("Bạn muốn booking loại dịch vụ nào"+
                 "1.\tBooking Villa\n" +
                 "2.\tBooking House\n" +
@@ -31,19 +35,17 @@ public class BookingController {
 //                Thêm khách hàng vào list booking
                 listBookingCustomer.add(listCustomer.get(choice));
 //                Ghi khách hàng vào danh sách booking
-                MethodFileBookingCSV.writeToCSV(listBookingCustomer,listCustomer.get(choice).useServices(villa));
+                MethodFileBookingCSV.writeToCSV(listBookingCustomer,listCustomer.get(choice).useServices(bookingVilla()));
                 break;
             case 2 :
                 //                Thêm khách hàng vào list booking house
                 listBookingCustomer.add(listCustomer.get(choice));
                 MethodFileBookingCSV.writeToCSV(listBookingCustomer,listCustomer.get(choice).useServices(bookingHouse()));
-                MethodFileBookingCSV.getFileCSV(listCustomer.get(choice).useServices(bookingHouse())).add(listCustomer.get(choice));
                 break;
             case 3 :
                 //                Thêm khách hàng vào list booking room
                 listBookingCustomer.add(listCustomer.get(choice));
                 MethodFileBookingCSV.writeToCSV(listBookingCustomer,listCustomer.get(choice).useServices(bookingRoom()));
-                MethodFileBookingCSV.getFileCSV(listCustomer.get(choice).useServices(bookingRoom())).add(listCustomer.get(choice));
                 break;
         }
         MainController.displayMainMenu();

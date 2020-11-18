@@ -1,40 +1,36 @@
 package Commons;
 
 import Models.Employee;
-import Models.House;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.Writer;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.List;
 
 public class MethodFileEmployeeCSV {
     private static final String COMMA_DELIMITER = "," ;
     private static final String NEW_LINE_SEPARATOR = "\n";
-    private static final String fileEmployee = "src/Data/Employee.csv";
-    private static ArrayList<Employee> employeeArrayList = new ArrayList<>();
+    private static final String EMPLOYEE_CSV = "src/Data/Employee.csv";
+    private static List<Employee> employeeArrayList = new ArrayList<>();
     //    Header file CSV Villa
     private static final String FILE_HEADER =  "name,age,address";
     //    Write file CSV
-    public static void writeToCSV (ArrayList<Employee> list) {
+    public static void writeToCSV (List<Employee> list) {
         FileWriter fileWriter = null ;
+        BufferedWriter bufferedWriter = null;
         try {
-            fileWriter = new FileWriter(fileEmployee);
-            fileWriter.append(FILE_HEADER);
-            fileWriter.append(NEW_LINE_SEPARATOR);
+            fileWriter = new FileWriter(EMPLOYEE_CSV);
+            bufferedWriter = new BufferedWriter(fileWriter);
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.append(FILE_HEADER).append(NEW_LINE_SEPARATOR);
             for (Employee employee : list) {
-                fileWriter.append(employee.getName());
-                fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(employee.getAge());
-                fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(employee.getAddress());
-                fileWriter.append(NEW_LINE_SEPARATOR);
+                stringBuilder.append(employee.getName()).append(COMMA_DELIMITER);
+                stringBuilder.append(employee.getAge()).append(COMMA_DELIMITER);
+                stringBuilder.append(employee.getAddress()).append(COMMA_DELIMITER);
             }
-
+            bufferedWriter.write(String.valueOf(stringBuilder));
         }catch (Exception e) {
             System.out.println("error in CSV writter");
         }finally {
@@ -47,12 +43,12 @@ public class MethodFileEmployeeCSV {
         }
     }
     //    Đọc file CSV
-    public static ArrayList<Employee> getFileCSV() {
+    public static List<Employee> getFileCSV() {
         BufferedReader bufferedReader = null ;
-        Path path = Paths.get(fileEmployee);
+        Path path = Paths.get(EMPLOYEE_CSV);
         if (!Files.exists(path)) {
             try{
-                Writer writer = new FileWriter(fileEmployee);
+                Writer writer = new FileWriter(EMPLOYEE_CSV);
             }catch (Exception e){{
                 System.out.println(e.getMessage());
             }
@@ -61,7 +57,7 @@ public class MethodFileEmployeeCSV {
 
         try {
             String line;
-            bufferedReader = new BufferedReader(new FileReader(fileEmployee));
+            bufferedReader = new BufferedReader(new FileReader(EMPLOYEE_CSV));
             while ((line = bufferedReader.readLine()) != null) {
                 String[] split = line.split(",");
                 if(split[0].equals("nameService")){

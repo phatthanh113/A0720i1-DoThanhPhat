@@ -2,13 +2,14 @@ package Controllers;
 
 import Models.Villa;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class MainController {
     static Scanner scanner = new Scanner(System.in);
 
     //    Ham hien thi menu
-    public static void displayMainMenu()  {
+    public static void displayMainMenu(){
         System.out.println("Ban chon lua chon nao\n" +
                 "1.\t Add New Services\n" +
                 "2.\tShow Services\n" +
@@ -17,7 +18,7 @@ public class MainController {
                 "5.\tAdd New Booking\n" +
                 "6.\tShow Information of Employee\n" +
                 "7.\tExit\n");
-        int choice = Integer.parseInt(scanner.nextLine());
+        int choice = CheckInput.checkInputInterger();
         switch (choice) {
             case 1:
                 addNewServices();
@@ -55,7 +56,7 @@ public class MainController {
                 "3.\tAdd New Room\n" +
                 "4.\tBack to menu\n" +
                 "5.\tExit\n");
-        int choice = Integer.parseInt(scanner.nextLine());
+        int choice = CheckInput.checkInputInterger();
         switch (choice) {
             case 1:
                 VillaController.addNewVilla();
@@ -111,6 +112,7 @@ public class MainController {
                 RoomController.showAllRoomNotDuplicate();
                 break;
             case 7:
+                displayMainMenu();
                 break;
             case 8:
                 System.exit(0);
@@ -124,7 +126,7 @@ public class MainController {
     }
 
     public static void main(String[] args) {
-        EmployeeController.showInformationEmployee();
+        displayMainMenu();
     }
 }
 

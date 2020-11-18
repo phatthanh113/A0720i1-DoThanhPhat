@@ -7,14 +7,11 @@ import Models.Services;
 import Models.Villa;
 import Models.Room;
 
-import java.util.ArrayList;
-import java.util.Scanner;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 public class RoomController {
     static Scanner scanner = new Scanner(System.in);
-    static ArrayList<Room> listRoom = new ArrayList<>();
+    static List<Room> listRoom = new ArrayList<>();
     //    Hàm write villa
     static void addNewRoom() {
         Services room = new Room(null,0,0,0,0,0);
@@ -31,9 +28,9 @@ public class RoomController {
             room.setRentType(scanner.nextInt());
             System.out.println("Input Id");
             room.setId(scanner.nextInt());
+            scanner.skip("\n");
             System.out.println("Input Free Services");
             ((Room) room).setFreeServices(scanner.nextLine());
-
         }catch (Exception e) {
             System.out.println("error input");
         }
@@ -50,13 +47,7 @@ public class RoomController {
         listRoom = MethodFileRoomCSV.getFileCSV();
         for (Room room : listRoom) {
             System.out.println("================");
-            System.out.println("Name Services :" + room.getNameService());
-            System.out.println("Used Area :" + room.getUsedArea());
-            System.out.println("Price Rent :" + room.getPriceRent());
-            System.out.println("NumberPeople :" + room.getNumberPeople());
-            System.out.println("RentType :" + room.getRentType());
-            System.out.println("ID :" + room.getId());
-            System.out.println("Free Services :" + room.getFreeServices());
+            System.out.println(room.toString());
             System.out.println("=================");
         }
         MainController.displayMainMenu();

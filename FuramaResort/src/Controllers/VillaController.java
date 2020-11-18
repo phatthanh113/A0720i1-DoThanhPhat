@@ -7,10 +7,12 @@ import Models.Villa;
 import java.util.*;
 
 public class VillaController {
+
     static Scanner scanner = new Scanner(System.in);
-    static ArrayList<Villa> listVilla = MethodFileVillaCSV.getFileCSV();;
-//    Hàm write villa
+    static List<Villa> listVilla = MethodFileVillaCSV.getFileCSV();
+//            Hàm write villa
     static void addNewVilla() {
+        listVilla = MethodFileVillaCSV.getFileCSV();
         Services villa = new Villa(null,0,0,0,0,0);
         try {
             System.out.println("Input Name Services");
@@ -22,10 +24,10 @@ public class VillaController {
             System.out.println("Input NumberPeople");
             villa.setNumberPeople(scanner.nextInt());
             System.out.println("Input RentType");
-            scanner.skip("\n");
             villa.setRentType(scanner.nextInt());
             System.out.println("Input Id");
             villa.setId(scanner.nextInt());
+            scanner.nextLine();
             System.out.println("Input Standards Room");
             ((Villa) villa).setStandardsRoom(scanner.nextLine());
             System.out.println("Input Facilities");
@@ -34,35 +36,27 @@ public class VillaController {
             ((Villa) villa).setAreaPool(scanner.nextDouble());
             System.out.println("Input Floor");
             ((Villa) villa).setFloor(scanner.nextInt());
+            scanner.skip("\n");
         }catch (Exception e) {
             System.out.println("error input");
         }
-//
+//      Ghi villa vào file CSV
         listVilla.add((Villa) villa);
         MethodFileVillaCSV.writeToCSV(listVilla);
-
 //
         System.out.println("add new villa completed");
         MainController.displayMainMenu();
     }
-//    Hàm show Villa
+    //       Hàm show Villa
     public static void showAllVilla() {
         for (Villa villa : listVilla) {
-            System.out.println("================");
-            System.out.println("Name Services :" + villa.getNameService());
-            System.out.println("Used Area :" + villa.getUsedArea());
-            System.out.println("Price Rent :" + villa.getPriceRent());
-            System.out.println("NumberPeople :" + villa.getNumberPeople());
-            System.out.println("RentType :" + villa.getRentType());
-            System.out.println("ID :" + villa.getId());
-            System.out.println("StardRoom :" + villa.getStandardsRoom());
-            System.out.println("Facilities :" + villa.getFacilities());
-            System.out.println("getAreaPool :" + villa.getAreaPool());
-            System.out.println("Floor :" + villa.getFloor());
+            System.out.println("=================");
+            System.out.println(villa.toString());
             System.out.println("=================");
         }
         MainController.displayMainMenu();
     }
+//    Hàm show Villa không bị lặp tên
     public static void showAllVillaNotDuplicate() {
         Set<Villa> listVillaNotDuplicate = new TreeSet<>();
         for (Villa villa: listVilla) {

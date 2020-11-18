@@ -102,4 +102,9 @@ public class Customer implements Comparable<Customer>{
             return tempName;
 //      }else return tempYear;
     }
+//    Khách hàng mua vé xem phim
+    public Customer buyTickerFIlm() {
+        Customer customer = new Customer();
+        return customer;
+    }
 }

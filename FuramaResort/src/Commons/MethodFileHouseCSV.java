@@ -2,68 +2,59 @@ package Commons;
 
 import Models.House;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.Writer;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.List;
 
 public class MethodFileHouseCSV {
     private static final String COMMA_DELIMITER = "," ;
     private static final String NEW_LINE_SEPARATOR = "\n";
-    private static final String fileHouse = "src/Data/House.csv";
-    private static ArrayList<House> houseArrayList = new ArrayList<>();
+    private static final String DATA_HOUSE_CSV = "src/Data/House.csv";
+    private static List<House> houseArrayList = new ArrayList<>();
     //    Header file CSV Villa
     private static final String FILE_HEADER =  "nameService, usedArea, priceRent, numberPeople, rentType, id,standardsRoom,facilities,floor";
     //    Write file CSV
-    public static void writeToCSV (ArrayList<House> list) {
+    public static void writeToCSV (List<House> list) {
         FileWriter fileWriter = null ;
+        BufferedWriter bufferedWriter = null;
         try {
-            fileWriter = new FileWriter(fileHouse);
-            fileWriter.append(FILE_HEADER);
-            fileWriter.append(NEW_LINE_SEPARATOR);
-            for (House house : list) {
-                fileWriter.append(house.getNameService());
-                fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(String.valueOf(house.getUsedArea()));
-                fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(String.valueOf(house.getPriceRent()));
-                fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(String.valueOf(house.getNumberPeople()));
-                fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(String.valueOf(house.getRentType()));
-                fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(String.valueOf(house.getId()));
-                fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(house.getStandardsRoom());
-                fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(house.getFacilities());
-                fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(String.valueOf(house.getFloor()));
-                fileWriter.append(NEW_LINE_SEPARATOR);
+                fileWriter = new FileWriter(DATA_HOUSE_CSV,false);
+                bufferedWriter = new BufferedWriter(fileWriter);
+                StringBuilder stringBuilder = new StringBuilder();
+                stringBuilder.append(FILE_HEADER).append(NEW_LINE_SEPARATOR);
+                for (House house : list) {
+                    stringBuilder.append(house.getNameService()).append(COMMA_DELIMITER);
+                    stringBuilder.append(house.getUsedArea()).append(COMMA_DELIMITER);
+                    stringBuilder.append(house.getPriceRent()).append(COMMA_DELIMITER);
+                    stringBuilder.append(house.getNumberPeople()).append(COMMA_DELIMITER);
+                    stringBuilder.append(house.getRentType()).append(COMMA_DELIMITER);
+                    stringBuilder.append(house.getId()).append(COMMA_DELIMITER);
+                    stringBuilder.append(house.getStandardsRoom()).append(COMMA_DELIMITER);
+                    stringBuilder.append(house.getFacilities()).append(COMMA_DELIMITER);
+                    stringBuilder.append(house.getFloor()).append(NEW_LINE_SEPARATOR);
             }
-
+            bufferedWriter.write(String.valueOf(stringBuilder));
         }catch (Exception e) {
             System.out.println("error in CSV writter");
         }finally {
             try {
-                fileWriter.flush();
-                fileWriter.close();
+                bufferedWriter.flush();
+                bufferedWriter.close();
             }catch (Exception e) {
                 System.out.println("error when flush or close");
             }
         }
     }
     //    Đọc file CSV
-    public static ArrayList<House> getFileCSV() {
+    public static List<House> getFileCSV() {
         BufferedReader bufferedReader = null ;
-        Path path = Paths.get(fileHouse);
+        Path path = Paths.get(DATA_HOUSE_CSV);
         if (!Files.exists(path)) {
             try{
-                Writer writer = new FileWriter(fileHouse);
+                Writer writer = new FileWriter(DATA_HOUSE_CSV);
             }catch (Exception e){{
                 System.out.println(e.getMessage());
             }
@@ -72,7 +63,7 @@ public class MethodFileHouseCSV {
 
         try {
             String line;
-            bufferedReader = new BufferedReader(new FileReader(fileHouse));
+            bufferedReader = new BufferedReader(new FileReader(DATA_HOUSE_CSV));
             while ((line = bufferedReader.readLine()) != null) {
                 String[] split = line.split(",");
                 if(split[0].equals("nameService")){

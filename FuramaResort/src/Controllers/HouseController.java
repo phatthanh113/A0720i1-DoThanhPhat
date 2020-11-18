@@ -1,17 +1,15 @@
 package Controllers;
 
 import Commons.MethodFileHouseCSV;
-import Commons.MethodFileVillaCSV;
 import Models.House;
 import Models.Services;
-import Models.House;
 
 
 import java.util.*;
 
 public class HouseController {
     static Scanner scanner = new Scanner(System.in);
-    static ArrayList<House> listHouse = new ArrayList<>();
+    static List<House> listHouse = MethodFileHouseCSV.getFileCSV();
 
     //    Hàm write villa
     static void addNewHouse() {
@@ -37,12 +35,13 @@ public class HouseController {
             ((House) house).setFacilities(scanner.nextLine());
             System.out.println("Input Floor");
             ((House) house).setFloor(scanner.nextInt());
+            scanner.skip("\n");
         } catch (Exception e) {
             System.out.println("error input");
         }
-// Add house
+// Ghi house vào file CSV
         listHouse.add((House) house);
-        MethodFileHouseCSV.writeToCSV(listHouse);
+        MethodFileHouseCSV.writeToCSV((ArrayList<House>) listHouse);
 
 //
         System.out.println("add new villa completed");
@@ -51,18 +50,9 @@ public class HouseController {
 
     //    Hàm show House
     public static void showAllHouse() {
-        listHouse = MethodFileHouseCSV.getFileCSV();
         for (House house : listHouse) {
-            System.out.println("=================");
-            System.out.println("Name Services :" + house.getNameService());
-            System.out.println("Used Area :" + house.getUsedArea());
-            System.out.println("Price Rent :" + house.getPriceRent());
-            System.out.println("NumberPeople :" + house.getNumberPeople());
-            System.out.println("RentType :" + house.getRentType());
-            System.out.println("ID :" + house.getId());
-            System.out.println("StardRoom :" + house.getStandardsRoom());
-            System.out.println("Facilities :" + house.getFacilities());
-            System.out.println("Floor :" + house.getFloor());
+            System.out.println("================");
+            System.out.println(house.toString());
             System.out.println("=================");
         }
         MainController.displayMainMenu();

@@ -18,6 +18,9 @@ public abstract class Services {
         this.id = id;
     }
 
+    public Services() {
+    }
+
     public String getNameService() {
         return nameService;
     }

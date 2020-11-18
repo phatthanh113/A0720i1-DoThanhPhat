@@ -3,57 +3,52 @@ package Commons;
 import Models.Customer;
 import Models.Services;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.Writer;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.List;
 
 public class MethodFileBookingCSV {
     private static final String COMMA_DELIMITER = ",";
     private static final String NEW_LINE_SEPARATOR = "\n";
-    private static final String fileCustomerBooking = "src/Data/Booking_1.csv";
-    private static ArrayList<Customer> customerBookingList= new ArrayList<>();
+    private static final String DATA_BOOKING_CSV = "src/Data/Booking.csv";
+    private static List<Customer> customerBookingList= new ArrayList<>();
     //    Header file CSV Booking
-    private static final String FILE_HEADER = "name,Name service";
+    private static final String FILE_HEADER = "Name,Name service";
     //    Write file CSV
-    public static void writeToCSV(ArrayList<Customer> list,Services service) {
+    public static void writeToCSV(List<Customer> list,Services service) {
         FileWriter fileWriter = null;
+        BufferedWriter bufferedWriter= null;
         try {
-            fileWriter = new FileWriter(fileCustomerBooking);
-            fileWriter.append(FILE_HEADER);
-            fileWriter.append(NEW_LINE_SEPARATOR);
+            fileWriter = new FileWriter(DATA_BOOKING_CSV);
+            bufferedWriter = new BufferedWriter(fileWriter);
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.append(FILE_HEADER).append(NEW_LINE_SEPARATOR);
             for (Customer customer : list) {
-                if(customer.getName()=="name") {
-                    continue;
-                }
-                fileWriter.append(customer.getName());
-                fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(customer.useServices(service).getNameService());
-                fileWriter.append(NEW_LINE_SEPARATOR);
+                stringBuilder.append(customer.getName()).append(COMMA_DELIMITER);
+                stringBuilder.append(customer.useServices(service).getNameService()).append(COMMA_DELIMITER);
             }
-
+            bufferedWriter.write(String.valueOf(stringBuilder));
         } catch (Exception e) {
             System.out.println("error in CSV writter");
         } finally {
             try {
-                fileWriter.flush();
-                fileWriter.close();
+                bufferedWriter.flush();
+                bufferedWriter.close();
             } catch (Exception e) {
                 System.out.println("error when flush or close");
             }
         }
     }
     //    Đọc file CSV
-    public static ArrayList<Customer> getFileCSV(Services service) {
+    public static List<Customer> getFileCSV(Services service) {
         BufferedReader bufferedReader = null;
-        Path path = Paths.get(fileCustomerBooking);
+        Path path = Paths.get(DATA_BOOKING_CSV);
         if (!Files.exists(path)) {
             try {
-                Writer writer = new FileWriter(fileCustomerBooking);
+                Writer writer = new FileWriter(DATA_BOOKING_CSV);
             } catch (Exception e) {
                 {
                     System.out.println(e.getMessage());
@@ -63,7 +58,7 @@ public class MethodFileBookingCSV {
 
         try {
             String line;
-            bufferedReader = new BufferedReader(new FileReader(fileCustomerBooking));
+            bufferedReader = new BufferedReader(new FileReader(DATA_BOOKING_CSV));
             while ((line = bufferedReader.readLine()) != null) {
                 String[] split = line.split(",");
                 if (split[0].equals("name")) {

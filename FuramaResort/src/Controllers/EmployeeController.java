@@ -7,7 +7,7 @@ import java.util.*;
 
 public class EmployeeController {
     static Scanner scanner = new Scanner(System.in);
-    private static ArrayList<Employee> listEmployee = MethodFileEmployeeCSV.getFileCSV();
+    private static List<Employee> listEmployee = MethodFileEmployeeCSV.getFileCSV();
     public static void showInformationEmployee() {
         Map<String,Employee> listMapEmployee = new LinkedHashMap<>();
         String codeNumber = "00";

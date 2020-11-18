@@ -3,11 +3,12 @@ package Controllers;
 import Commons.MethodFileCustomerCSV;
 import Models.Customer;
 
+import java.io.IOException;
 import java.util.*;
 
 public class CustomerController {
     static Scanner scanner = new Scanner(System.in);
-    static ArrayList<Customer> listCustomer = MethodFileCustomerCSV.getFileCSV();
+    static List<Customer> listCustomer = MethodFileCustomerCSV.getFileCSV();
     //    Hàm write Customer
     static void addNewCustomer() {
         Customer customer = new Customer();
@@ -42,20 +43,14 @@ public class CustomerController {
 
         for (Customer customer : listCustomer) {
             System.out.println("================");
-            System.out.println("Name  :" + customer.getName());
-            System.out.println("Day of birth :" + customer.getDayOfBirth());
-            System.out.println("Gender :" + customer.getGender());
-            System.out.println("ID number :" + customer.getIdNumber());
-            System.out.println("Phone number :" + customer.getPhoneNumber());
-            System.out.println("Customer Type :" + customer.getCustomerType());
-            System.out.println("Address:" + customer.getAddress());
+            System.out.println(customer);
             System.out.println("=================");
         }
         MainController.displayMainMenu();
     }
 //    Hàm show thông tin khách hàng
     public static void showInfomationCustomer() {
-        ArrayList<Customer> listCustomerSorted = new ArrayList<>();
+        List<Customer> listCustomerSorted = new ArrayList<>();
         for (Customer customer : listCustomer) {
             if (customer.getName().equals("name")) {
                 continue;
