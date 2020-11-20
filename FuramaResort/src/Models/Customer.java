@@ -9,6 +9,7 @@ public class Customer implements Comparable<Customer>{
     private String customerType;
     private String address;
 
+
     public Customer() {
     }
 
@@ -97,14 +98,9 @@ public class Customer implements Comparable<Customer>{
     @Override
     public int compareTo(Customer customer) {
         int tempName= this.name.compareTo(customer.getName());
-//        int tempYear= Integer.parseInt(this.dayOfBirth.substring(6,9))-Integer.parseInt(customer.dayOfBirth.substring(6,9));
+//        int tempYear= Integer.parseInt(this.dayOfBirth.substring(6,10))-Integer.parseInt(customer.dayOfBirth.substring(6,10));
 //        if(tempName!=0) {
             return tempName;
 //      }else return tempYear;
-    }
-//    Khách hàng mua vé xem phim
-    public Customer buyTickerFIlm() {
-        Customer customer = new Customer();
-        return customer;
     }
 }

@@ -1,12 +1,9 @@
 package Views;
 
 import Commons.MethodFileCustomerCSV;
-import Commons.MethodFileHouseCSV;
-import Controllers.CheckInput;
+import Commons.exception.InputException;
 import Models.Customer;
-import Models.House;
 
-import java.awt.*;
 import java.util.*;
 import java.util.List;
 
@@ -60,7 +57,7 @@ public class FilmController {
             System.out.println(i + ". "+customer.getName());
             i++;
         }
-        int choice = CheckInput.checkInputInterger();
+        int choice = InputException.getInputList(arrayListCustomer);
        customerQueue.add(arrayListCustomer.get(choice));
        numberTicket--;
        displayMenuCustomerBuyTicket();

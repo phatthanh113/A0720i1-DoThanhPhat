@@ -2,13 +2,13 @@ package Models;
 
 public class AccompanyServices {
     private String nameService ;
-    private int number ;
-    private double priceService ;
+    private String number ;
+    private String priceService ;
 
     public AccompanyServices() {
     }
 
-    public AccompanyServices(String nameService, int number, double priceService) {
+    public AccompanyServices(String nameService, String number, String priceService) {
         this.nameService = nameService;
         this.number = number;
         this.priceService = priceService;
@@ -22,19 +22,19 @@ public class AccompanyServices {
         this.nameService = nameService;
     }
 
-    public int getNumber() {
+    public String getNumber() {
         return number;
     }
 
-    public void setNumber(int number) {
+    public void setNumber(String number) {
         this.number = number;
     }
 
-    public double getPriceService() {
+    public String getPriceService() {
         return priceService;
     }
 
-    public void setPriceService(double priceService) {
+    public void setPriceService(String priceService) {
         this.priceService = priceService;
     }
 }

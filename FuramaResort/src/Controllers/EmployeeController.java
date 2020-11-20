@@ -9,12 +9,12 @@ public class EmployeeController {
     static Scanner scanner = new Scanner(System.in);
     private static List<Employee> listEmployee = MethodFileEmployeeCSV.getFileCSV();
     public static void showInformationEmployee() {
+        if(listEmployee.get(0).getName().equals("name")) listEmployee.remove(0);
         Map<String,Employee> listMapEmployee = new LinkedHashMap<>();
         String codeNumber = "00";
         int count = 0;
 //        Thêm phần tử vào listMap
         for (Employee employee: listEmployee) {
-            if(employee.getName().equals("name")) continue;
             listMapEmployee.put(codeNumber+count,employee);
             count++;
         }

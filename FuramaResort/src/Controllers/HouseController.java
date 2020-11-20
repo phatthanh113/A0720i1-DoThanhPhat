@@ -1,6 +1,7 @@
 package Controllers;
 
 import Commons.MethodFileHouseCSV;
+import Commons.MyRegex;
 import Models.House;
 import Models.Services;
 
@@ -13,38 +14,32 @@ public class HouseController {
 
     //    Hàm write villa
     static void addNewHouse() {
-        Services house = new House(null, 0, 0, 0, 0, 0);
-
-        try {
+        Services house = new House();
+        //       Set các thuộc tính của house
             System.out.println("Input Name Services");
-            house.setNameService(scanner.nextLine());
+            house.setNameService(MyRegex.getName());
             System.out.println("Input UsedArea");
-            house.setUsedArea(scanner.nextDouble());
+            house.setUsedArea(Double.parseDouble(MyRegex.getArea()));
             System.out.println("Input priceRent");
-            house.setPriceRent(scanner.nextDouble());
+            house.setPriceRent(Double.parseDouble(MyRegex.getPrice()));
             System.out.println("Input NumberPeople");
-            house.setNumberPeople(scanner.nextInt());
+            house.setNumberPeople(Integer.parseInt(MyRegex.getNumberPeople()));
             System.out.println("Input RentType");
-            house.setRentType(scanner.nextInt());
+            house.setRentType(MyRegex.getName());
             System.out.println("Input Id");
-            house.setId(scanner.nextInt());
+            house.setId(MyRegex.getId(MyRegex.REGEX_ID_HOUSE));
             System.out.println("Input Standards Room");
-            scanner.skip("\n");
-            ((House) house).setStandardsRoom(scanner.nextLine());
+            ((House) house).setStandardsRoom(MyRegex.getName());
             System.out.println("Input Facilities");
             ((House) house).setFacilities(scanner.nextLine());
             System.out.println("Input Floor");
-            ((House) house).setFloor(scanner.nextInt());
-            scanner.skip("\n");
-        } catch (Exception e) {
-            System.out.println("error input");
-        }
+            ((House) house).setFloor(Integer.parseInt(MyRegex.getFloor()));
 // Ghi house vào file CSV
         listHouse.add((House) house);
-        MethodFileHouseCSV.writeToCSV((ArrayList<House>) listHouse);
+        MethodFileHouseCSV.writeToCSV(listHouse);
 
 //
-        System.out.println("add new villa completed");
+        System.out.println("add new house completed");
         MainController.displayMainMenu();
     }
 
@@ -64,7 +59,7 @@ public class HouseController {
             if (house.getNameService().equals("nameServices")) continue;
             listHouseNotDuplicate.add(house);
         }
-        System.out.println("Danh sách các villa không bị trùng tên");
+        System.out.println("Danh sách các house không bị trùng tên");
         int i = 0;
         for (House house : listHouseNotDuplicate) {
             System.out.println(i + ". " + house.getNameService());

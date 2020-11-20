@@ -1,9 +1,9 @@
 package Controllers;
 
 import Commons.MethodFileCustomerCSV;
+import Commons.exception.*;
 import Models.Customer;
 
-import java.io.IOException;
 import java.util.*;
 
 public class CustomerController {
@@ -12,28 +12,23 @@ public class CustomerController {
     //    Hàm write Customer
     static void addNewCustomer() {
         Customer customer = new Customer();
-        try {
             System.out.println("Input Name ");
-            customer.setName(scanner.nextLine());
+            customer.setName(NameException.getNamePerson());
             System.out.println("Input Day Of Birth");
-            customer.setDayOfBirth(scanner.nextLine());
+            customer.setDayOfBirth(BirthdayException.getBirthday());
             System.out.println("Input Gender");
-            customer.setGender(scanner.nextLine());
+            customer.setGender(GenderException.getGender());
             System.out.println("Input id Number");
-            customer.setIdNumber(scanner.nextLine());
+            customer.setIdNumber(IdException.getId());
             System.out.println("Input phone number");
-            customer.setPhoneNumber(scanner.nextLine());
+            customer.setPhoneNumber(PhoneException.getPhone());
             System.out.println("Input Customer Type");
             customer.setCustomerType(scanner.nextLine());
             System.out.println("Input Address");
             customer.setAddress(scanner.nextLine());
-        }catch (Exception e) {
-            System.out.println("error input");
-        }
 // Add customer
         listCustomer.add(customer);
         MethodFileCustomerCSV.writeToCSV(listCustomer);
-
 //
         System.out.println("add new villa completed");
         MainController.displayMainMenu();
@@ -42,32 +37,24 @@ public class CustomerController {
     public static void showAllCustomer()  {
 
         for (Customer customer : listCustomer) {
-            System.out.println("================");
             System.out.println(customer);
-            System.out.println("=================");
+            System.out.println("--------------------");
         }
         MainController.displayMainMenu();
     }
 //    Hàm show thông tin khách hàng
     public static void showInfomationCustomer() {
-        List<Customer> listCustomerSorted = new ArrayList<>();
-        for (Customer customer : listCustomer) {
-            if (customer.getName().equals("name")) {
-                continue;
-            }
-            listCustomerSorted.add(customer);
-        }
-        Collections.sort(listCustomerSorted);
+        if(listCustomer.get(0).getName().equals("name")) listCustomer.remove(0);
+        Collections.sort(listCustomer);
         System.out.println("bạn muốn xem thông tin khách hàng nào");
         int i = 1;
-        for (Customer customer : listCustomerSorted) {
+        for (Customer customer : listCustomer) {
             System.out.println(i + ". " + customer.getName());
             i++;
         }
-        int choice = Integer.parseInt(scanner.nextLine());
-        System.out.println(listCustomerSorted.get(choice-1));
+                int choice = InputException.getInputList(listCustomer);
+        System.out.println(listCustomer.get(choice-1));
         //        Trở về màn hình chính
         MainController.displayMainMenu();
-        scanner.nextLine();
     }
 }

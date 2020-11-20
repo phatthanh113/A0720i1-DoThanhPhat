@@ -1,18 +1,17 @@
 package Models;
 
-import java.util.Comparator;
-
 public class Villa extends Services implements Comparable<Villa> {
     private String standardsRoom;
     private String facilities ;
     private double areaPool ;
     private int floor ;
-
-    public Villa(String nameService, double usedArea, double priceRent, int numberPeople, int rentType, int id) {
+    public Villa() {
+    }
+    public Villa(String nameService, double usedArea, double priceRent, int numberPeople, String rentType, String id) {
         super(nameService, usedArea, priceRent, numberPeople, rentType, id);
     }
 
-    public Villa(String nameService, double usedArea, double priceRent, int numberPeople, int rentType, int id, String standardsRoom, String facilities, double areaPool, int floor) {
+    public Villa(String nameService, double usedArea, double priceRent, int numberPeople, String rentType, String id, String standardsRoom, String facilities, double areaPool, int floor) {
         super(nameService, usedArea, priceRent, numberPeople, rentType, id);
         this.standardsRoom = standardsRoom;
         this.facilities = facilities;

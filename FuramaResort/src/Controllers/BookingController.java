@@ -47,6 +47,10 @@ public class BookingController {
                 listBookingCustomer.add(listCustomer.get(choice));
                 MethodFileBookingCSV.writeToCSV(listBookingCustomer,listCustomer.get(choice).useServices(bookingRoom()));
                 break;
+            default:
+                System.out.println("Sự lựa chọn này không có !! Press enter to again");
+                scanner.nextLine();
+                addNewBooking();
         }
         MainController.displayMainMenu();
     }

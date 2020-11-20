@@ -70,13 +70,13 @@ public class MethodFileVillaCSV {
                 if(split[0].equals("nameService")){
                     continue;
                 }
-                Villa villa = new Villa(null,0,0,0,0,0);
+                Villa villa = new Villa(null,0,0,0,null,null);
                 villa.setNameService(split[0]);
                 villa.setUsedArea(Double.parseDouble(split[1]));
                 villa.setPriceRent(Double.parseDouble(split[2]));
                 villa.setNumberPeople(Integer.parseInt(split[3]));
-                villa.setRentType(Integer.parseInt(split[4]));
-                villa.setId(Integer.parseInt(split[5]));
+                villa.setRentType(split[4]);
+                villa.setId(split[5]);
                 villa.setStandardsRoom(split[6]);
                 villa.setFacilities(split[7]);
                 villa.setAreaPool(Double.parseDouble(split[8]));
@@ -97,7 +97,7 @@ public class MethodFileVillaCSV {
 
     public static void main(String[] args) {
         List<Villa> villaList = new ArrayList<>();
-        Villa villa = new Villa("12",12,12,12,12,12,"12","12",12,12);
+        Villa villa = new Villa("12",12,12,12,"12",null,"12","12",12,12);
         villaList.add(villa);
         villaList.add(villa);
         writeToCSV(villaList);

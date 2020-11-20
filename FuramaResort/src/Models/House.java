@@ -11,11 +11,14 @@ public class House extends Services implements Comparable<House>{
 
     }
 
-    public House(String nameService, double usedArea, double priceRent, int numberPeople, int rentType, int id) {
+    public House() {
+    }
+
+    public House(String nameService, double usedArea, double priceRent, int numberPeople, String rentType, String id) {
         super(nameService, usedArea, priceRent, numberPeople, rentType, id);
     }
 
-    public House(String nameService, double usedArea, double priceRent, int numberPeople, int rentType, int id, String standardsRoom, String facilities, int floor) {
+    public House(String nameService, double usedArea, double priceRent, int numberPeople, String rentType, String id, String standardsRoom, String facilities, int floor) {
         super(nameService, usedArea, priceRent, numberPeople, rentType, id);
         this.standardsRoom = standardsRoom;
         this.facilities = facilities;

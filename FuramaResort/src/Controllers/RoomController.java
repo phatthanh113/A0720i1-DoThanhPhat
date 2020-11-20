@@ -2,6 +2,7 @@ package Controllers;
 
 import Commons.MethodFileRoomCSV;
 import Commons.MethodFileVillaCSV;
+import Commons.MyRegex;
 import Models.House;
 import Models.Services;
 import Models.Villa;
@@ -14,32 +15,29 @@ public class RoomController {
     static List<Room> listRoom = new ArrayList<>();
     //    Hàm write villa
     static void addNewRoom() {
-        Services room = new Room(null,0,0,0,0,0);
-        try {
+        Services room = new Room();
+//       Set các thuộc tính của room
             System.out.println("Input Name Services");
-            room.setNameService(scanner.nextLine());
+            room.setNameService(MyRegex.getName());
             System.out.println("Input UsedArea");
-            room.setUsedArea(scanner.nextDouble());
+            room.setUsedArea(Double.parseDouble(MyRegex.getArea()));
             System.out.println("Input priceRent");
-            room.setPriceRent(scanner.nextDouble());
+            room.setPriceRent(Double.parseDouble(MyRegex.getPrice()));
             System.out.println("Input NumberPeople");
-            room.setNumberPeople(scanner.nextInt());
+            room.setNumberPeople(Integer.parseInt(MyRegex.getNumberPeople()));
             System.out.println("Input RentType");
-            room.setRentType(scanner.nextInt());
+            room.setRentType(MyRegex.getName());
             System.out.println("Input Id");
-            room.setId(scanner.nextInt());
-            scanner.skip("\n");
+            room.setId(MyRegex.getId(MyRegex.REGEX_ID_ROOM));
             System.out.println("Input Free Services");
             ((Room) room).setFreeServices(scanner.nextLine());
-        }catch (Exception e) {
-            System.out.println("error input");
-        }
+
 //
         listRoom.add((Room) room);
         MethodFileRoomCSV.writeToCSV(listRoom);
 
 //
-        System.out.println("add new villa completed");
+        System.out.println("add new room completed");
         MainController.displayMainMenu();
     }
     //    Hàm show Villa
@@ -59,7 +57,7 @@ public class RoomController {
             listRoomNotDuplicate.add(room);
         }
         int i = 0 ;
-        System.out.println("Danh sách các villa không bị trùng tên");
+        System.out.println("Danh sách các room không bị trùng tên");
         for (Room room : listRoomNotDuplicate) {
             System.out.println(i+ ". "+room.getNameService());
             i++;

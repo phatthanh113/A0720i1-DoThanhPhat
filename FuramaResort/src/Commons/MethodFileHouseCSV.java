@@ -69,13 +69,13 @@ public class MethodFileHouseCSV {
                 if(split[0].equals("nameService")){
                     continue;
                 }
-                House house = new House(null,0,0,0,0,0);
+                House house = new House(null,0,0,0,null,null);
                 house.setNameService(split[0]);
                 house.setUsedArea(Double.parseDouble(split[1]));
                 house.setPriceRent(Double.parseDouble(split[2]));
                 house.setNumberPeople(Integer.parseInt(split[3]));
-                house.setRentType(Integer.parseInt(split[4]));
-                house.setId(Integer.parseInt(split[5]));
+                house.setRentType(split[4]);
+                house.setId(split[5]);
                 house.setStandardsRoom(split[6]);
                 house.setFacilities(split[7]);
                 house.setFloor(Integer.parseInt(split[8]));

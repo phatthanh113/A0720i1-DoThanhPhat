@@ -5,17 +5,30 @@ public abstract class Services {
         private double usedArea ;
         private double priceRent ;
         private int numberPeople ;
-        private int rentType ;
-        private int id ;
+        private String rentType ;
+        private String id ;
+        private AccompanyServices accompanyServices;
         public abstract void showInfo() ;
 
-    public Services(String nameService, double usedArea, double priceRent, int numberPeople, int rentType, int id) {
+    public Services(String nameService, double usedArea, double priceRent, int numberPeople, String rentType, String id) {
         this.nameService = nameService;
         this.usedArea = usedArea;
         this.priceRent = priceRent;
         this.numberPeople = numberPeople;
         this.rentType = rentType;
         this.id = id;
+    }
+
+    public Services(AccompanyServices accompanyServices) {
+        this.accompanyServices = accompanyServices;
+    }
+
+    public AccompanyServices getAccompanyServices() {
+        return accompanyServices;
+    }
+
+    public void setAccompanyServices(AccompanyServices accompanyServices) {
+        this.accompanyServices = accompanyServices;
     }
 
     public Services() {
@@ -53,19 +66,19 @@ public abstract class Services {
         this.numberPeople = numberPeople;
     }
 
-    public int getRentType() {
+    public String getRentType() {
         return rentType;
     }
 
-    public void setRentType(int rentType) {
+    public void setRentType(String rentType) {
         this.rentType = rentType;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

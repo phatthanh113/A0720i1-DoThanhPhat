@@ -9,11 +9,14 @@ public class Room extends Services implements Comparable<Room>{
 
     }
 
-    public Room(String nameService, double usedArea, double priceRent, int numberPeople, int rentType, int id) {
+    public Room() {
+    }
+
+    public Room(String nameService, double usedArea, double priceRent, int numberPeople, String rentType, String id) {
         super(nameService, usedArea, priceRent, numberPeople, rentType, id);
     }
 
-    public Room(String nameService, double usedArea, double priceRent, int numberPeople, int rentType, int id, String freeServices) {
+    public Room(String nameService, double usedArea, double priceRent, int numberPeople, String rentType, String id, String freeServices) {
         super(nameService, usedArea, priceRent, numberPeople, rentType, id);
         this.freeServices = freeServices;
     }

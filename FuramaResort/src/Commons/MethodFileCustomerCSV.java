@@ -33,7 +33,7 @@ public class MethodFileCustomerCSV {
                 stringBuilder.append(customer.getIdNumber()).append(COMMA_DELIMITER);
                 stringBuilder.append(customer.getCustomerType()).append(COMMA_DELIMITER);
                 stringBuilder.append(customer.getPhoneNumber()).append(COMMA_DELIMITER);
-                stringBuilder.append(customer.getAddress()).append(COMMA_DELIMITER);
+                stringBuilder.append(customer.getAddress()).append(NEW_LINE_SEPARATOR);
             }
             bufferedWriter.write(String.valueOf(stringBuilder));
         } catch (Exception e) {

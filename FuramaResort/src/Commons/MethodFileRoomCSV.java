@@ -67,13 +67,13 @@ public class MethodFileRoomCSV {
                 if(split[0].equals("nameService")){
                     continue;
                 }
-                Room room = new Room(null,0,0,0,0,0);
+                Room room = new Room(null,0,0,0,null,null);
                 room.setNameService(split[0]);
                 room.setUsedArea(Double.parseDouble(split[1]));
                 room.setPriceRent(Double.parseDouble(split[2]));
                 room.setNumberPeople(Integer.parseInt(split[3]));
-                room.setRentType(Integer.parseInt(split[4]));
-                room.setId(Integer.parseInt(split[5]));
+                room.setRentType(split[4]);
+                room.setId(split[5]);
                 room.setFreeServices(split[6]);
                 roomArrayList.add(room);
             }
