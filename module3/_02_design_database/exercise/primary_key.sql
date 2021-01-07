@@ -10,6 +10,7 @@ create table customers(
 alter table bank.customers
 add phone int(10) not null unique 
 after email;
+-- tạo bảng accounts với khóa ngoại
 use bank ;
 create table accounts(
  account_number int(12) not null primary key,
@@ -19,11 +20,12 @@ create table accounts(
  account_id int ,
  foreign key(account_id) REFERENCES bank.customers(id) 
 );
+-- tạo bảng transactions với khóa ngoại
 create table transactions(
  code_transactions int not null primary key ,
  balance double not null,
  time_open datetime not null,
  describe_info text ,
  account_transaction int(12) not null ,
- foreign key (account_transactiotransactions_ibfk_1n) references accounts(account_number)
+ foreign key (account_transaction) references accounts(account_number)
 );
