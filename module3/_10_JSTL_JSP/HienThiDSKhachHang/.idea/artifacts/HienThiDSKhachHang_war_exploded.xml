@@ -14,6 +14,9 @@
           <element id="file-copy" path="C:/apache-tomcat-9.0.26/webapps/examples/WEB-INF/lib/taglibs-standard-spec-1.2.5.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/../commons-fileupload-1.4-bin/commons-fileupload-1.4.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/../commons-io-2.8.0/commons-io-2.8.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../library/commons-fileupload-1.4.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../library/commons-io-2.8.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../library/jstl-1.2.jar" />
         </element>
       </element>
     </root>

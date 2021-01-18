@@ -40,4 +40,12 @@ public class CustomerServiceImplement implements ICustomerService {
     public void remove(int id) {
         customerMap.remove(id);
     }
+
+    @Override
+    public Customer findByName(Customer customer,String name) {
+       if(customer.getName().contains("name")) {
+           return customer;
+       }return null;
+    }
+
 }

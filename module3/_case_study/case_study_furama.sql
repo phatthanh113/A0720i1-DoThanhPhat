@@ -270,7 +270,12 @@ select * from khachHangDatNhieu;
 
 
 -- 18. Xóa những khách hàng có hợp đồng trước năm 2016 (chú ý ràngbuộc giữa các bảng).
-
+DELETE FROM khachhang 
+	  WHERE khachhang.idkhachhang 
+      in (SELECT hopdong.idkhachhang 
+	  FROM hopdong 
+	  WHERE year(hopdong.ngaylamhopdong) < 2016
+	  );
 -- 19. Cập nhật giá cho các Dịch vụ đi kèm được sử dụng trên 10 lần trongnăm 2019 lên gấp đôi.
 
 -- 20. Hiển thị thông tin của tất cả các Nhân viên và Khách hàng có trong hệ thống, thông tin hiển thị bao gồm ID (IDNhanVien, IDKhachHang),

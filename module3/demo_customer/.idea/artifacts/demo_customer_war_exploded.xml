@@ -11,6 +11,9 @@
           <element id="file-copy" path="$PROJECT_DIR$/../jstl-1.2.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/../commons-fileupload-1.4.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/../commons-io-2.8.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../library/commons-fileupload-1.4.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../library/commons-io-2.8.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../library/jstl-1.2.jar" />
         </element>
       </element>
     </root>

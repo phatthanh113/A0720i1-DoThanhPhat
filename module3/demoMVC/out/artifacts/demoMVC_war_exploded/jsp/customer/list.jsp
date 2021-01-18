@@ -14,7 +14,7 @@
 <body>
     <h1>Customer</h1>
     <p>
-        <a href="customers?action=create">Create new Customer</a>
+        <a href="${pageContext.request.contextPath}/customers?action=create">Create new Customer</a>
     </p>
     <table border="1">
         <tr>
@@ -26,11 +26,11 @@
         </tr>
         <c:forEach items="${customers}" var="customer">
             <tr>
-                <td><a href="customers?action=view&id=${customer.id}">${customer.name}</a></td>
+                <td><a href="${pageContext.request.contextPath}/customers?action=view&id=${customer.id}">${customer.name}</a></td>
                 <td>${customer.email}</td>
                 <td>${customer.address}</td>
-                <td><a href="customers?action=edit&id=${customer.id}">edit</a></td>
-                <td><a href="customers?action=delete&id=${customer.id}">delete</a></td>
+                <td><a href="${pageContext.request.contextPath}/customers?action=edit&id=${customer.id}">edit</a></td>
+                <td><a href="${pageContext.request.contextPath}/customers?action=delete&id=${customer.id}">delete</a></td>
             </tr>
         </c:forEach>
 

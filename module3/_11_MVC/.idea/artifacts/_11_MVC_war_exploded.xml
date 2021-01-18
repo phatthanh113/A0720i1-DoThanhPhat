@@ -7,6 +7,11 @@
         <element id="directory" name="classes">
           <element id="module-output" name="_11_MVC" />
         </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$PROJECT_DIR$/../jstl-1.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../library/mysql-connector-java-8.0.22.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../library/jstl-1.2.jar" />
+        </element>
       </element>
     </root>
   </artifact>

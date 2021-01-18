@@ -1,5 +1,7 @@
 package service.impl;
 
+import dao.ICustomerDAO;
+import dao.impl.CustomerDAOImpl;
 import model.Customer;
 import service.CustomerService;
 
@@ -7,10 +9,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class CustomerServiceImpl implements CustomerService {
 
     public static Map<Integer,Customer> customerMap;
+    private ICustomerDAO customerDAO = new CustomerDAOImpl();
 
     static {
         customerMap =new HashMap<>();
@@ -20,7 +24,14 @@ public class CustomerServiceImpl implements CustomerService {
     }
     @Override
     public List<Customer> findAll() {
-        return new ArrayList<>(customerMap.values()) ;
+        List<Customer> customerList = new ArrayList<>();
+        try {
+            customerList = customerDAO.getAllCustomer();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return customerList;
     }
 
     @Override
@@ -41,5 +52,10 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public void remove(int id) {
         customerMap.remove(id);
+    }
+
+    @Override
+    public List<Customer> findByName(String name) {
+        return customerMap.values().stream().filter(cus -> cus.getName().contains(name)).collect(Collectors.toList());
     }
 }
