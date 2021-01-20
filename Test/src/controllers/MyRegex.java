@@ -1,4 +1,4 @@
-package Commons;
+package controllers;
 
 import java.util.Scanner;
 

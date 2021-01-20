@@ -12,7 +12,7 @@ public class EmployeeController {
         if(listEmployee.get(0).getName().equals("name")) listEmployee.remove(0);
         Map<String,Employee> listMapEmployee = new LinkedHashMap<>();
         String codeNumber = "00";
-        int count = 0;
+        int count = 1;
 //        Thêm phần tử vào listMap
         for (Employee employee: listEmployee) {
             listMapEmployee.put(codeNumber+count,employee);
@@ -23,5 +23,16 @@ public class EmployeeController {
         for (String key : set) {
             System.out.println("Mã số : "+ key + "- " + listMapEmployee.get(key));
         }
+    }
+    public static void removeEmployee() {
+        if(listEmployee.get(0).getName().equals("name")) listEmployee.remove(0);
+        listEmployee.remove(1);
+        MethodFileEmployeeCSV.writeToCSV(listEmployee);
+    }
+
+    public static void main(String[] args) {
+        showInformationEmployee();
+        removeEmployee();
+        showInformationEmployee();
     }
 }

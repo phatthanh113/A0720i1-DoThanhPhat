@@ -28,7 +28,7 @@ public class MethodFileBookingCSV {
             stringBuilder.append(FILE_HEADER).append(NEW_LINE_SEPARATOR);
             for (Customer customer : list) {
                 stringBuilder.append(customer.getName()).append(COMMA_DELIMITER);
-                stringBuilder.append(customer.useServices(service).getNameService()).append(COMMA_DELIMITER);
+                stringBuilder.append(customer.useServices(service).getNameService()).append(NEW_LINE_SEPARATOR);
             }
             bufferedWriter.write(String.valueOf(stringBuilder));
         } catch (Exception e) {

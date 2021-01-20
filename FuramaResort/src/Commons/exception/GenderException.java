@@ -14,10 +14,10 @@ public class GenderException extends Exception{
         String gender = scanner.nextLine();
         while (!gender.matches(MyRegex.REGEX_GENDER)) {
             try {
-                throw new GenderException("male or female or unknown");
+                throw new GenderException("male hoặc female hoặc unknown");
             }catch (GenderException e) {
                 e.printStackTrace();
-                System.out.println("Mời bạn nhập lại gender");
+                System.out.println("Mời bạn nhập lại giới tính");
                 gender= scanner.nextLine();
             }
         }

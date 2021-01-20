@@ -1,6 +1,8 @@
 package Controllers;
 
 import Models.Villa;
+import Views.FilmController;
+import Views.StorageEmployee;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -17,8 +19,10 @@ public class MainController {
                 "4.\tShow Information of Customer\n" +
                 "5.\tAdd New Booking\n" +
                 "6.\tShow Information of Employee\n" +
-                "7.\tExit\n");
-        int choice = CheckInput.checkInputInterger();
+                "7.\tBooking ticket for customer\n" +
+                "8.\tSearch Employee\n" +
+                "9.\tExit\n");
+        int choice = Integer.parseInt(scanner.nextLine());
         switch (choice) {
             case 1:
                 addNewServices();
@@ -36,8 +40,15 @@ public class MainController {
                 BookingController.addNewBooking();
                 break;
             case 6:
+                EmployeeController.showInformationEmployee();
                 break;
             case 7:
+                FilmController.displayMenuCustomerBuyTicket();
+                break;
+            case 8:
+                StorageEmployee.searchEmployee();
+                break;
+            case 9:
                 System.exit(0);
                 break;
             default:
@@ -56,7 +67,7 @@ public class MainController {
                 "3.\tAdd New Room\n" +
                 "4.\tBack to menu\n" +
                 "5.\tExit\n");
-        int choice = CheckInput.checkInputInterger();
+        int choice = Integer.parseInt(scanner.nextLine());
         switch (choice) {
             case 1:
                 VillaController.addNewVilla();

@@ -17,15 +17,12 @@ public class NameException extends Exception {
             try {
                 throw new NameException("Tên Khách hàng phải in hoa ký tự đầu tiên trong mỗi từ (Ex : Nguyen Van A)");
             } catch (NameException e) {
-                e.printStackTrace();
-                System.out.println("mời bạn nhập lại tên");
-                name = scanner.nextLine();
+                    e.printStackTrace();
+                    System.out.println("mời bạn nhập lại tên");
+                    name = scanner.nextLine();
             }
         }
         return name;
     }
 
-    public static void main(String[] args) {
-        getNamePerson();
-    }
 }

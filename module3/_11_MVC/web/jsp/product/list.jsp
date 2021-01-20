@@ -15,6 +15,8 @@
     <script src="js/customer/validate.js" type="text/javascript"></script>
 </head>
 <body>
+    <p>You have logged in ${username}</p>
+    <p><a href="?action=logout">Log out</a></p>
     <h1>Show infomation Product</h1>
     <table border="1">
         <tr>
@@ -50,5 +52,36 @@
     <input type="button" id="search" value="Submit" >
     <hr/>
     <div id="result"></div>
+<%--    bảng chung của customer và product--%>
+    <table border="1">
+        <tr>
+            <td>Customer Name</td>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Price</td>
+            <td>Description</td>
+            <td>Producer</td>
+            <td>Edit</td>
+            <td>Delete</td>
+            <td>Infomation</td>
+        </tr>
+        <c:forEach items="${productList}" var="product">
+            <c:forEach items="${customerList}" var= "customer">
+                <c:if test="${customerService.getIdProduct(customer.id) == product.id}">
+            <tr>
+                <td>${customer.name}</td>
+                <td>${product.id}</td>
+                <td>${product.name}</td>
+                <td>${product.price}</td>
+                <td>${product.description}</td>
+                <td>${product.producer}</td>
+                <td><a href="?action=edit&id=${product.id} ">Edit</a></td>
+                <td><a id="delete" href="?action=delete&id=${product.id}" >Delete</a></td>
+                <td><a id ="edit" href="?action=view&id=${product.id}" >Infomation</a></td>
+            </tr>
+                </c:if>
+            </c:forEach>
+        </c:forEach>
+    </table>
 </body>
 </html>

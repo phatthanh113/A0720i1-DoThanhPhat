@@ -31,7 +31,7 @@ public class HouseController {
             System.out.println("Input Standards Room");
             ((House) house).setStandardsRoom(MyRegex.getName());
             System.out.println("Input Facilities");
-            ((House) house).setFacilities(scanner.nextLine());
+            ((House) house).setFacilities(MyRegex.getName());
             System.out.println("Input Floor");
             ((House) house).setFloor(Integer.parseInt(MyRegex.getFloor()));
 // Ghi house vào file CSV
@@ -46,7 +46,6 @@ public class HouseController {
     //    Hàm show House
     public static void showAllHouse() {
         for (House house : listHouse) {
-            System.out.println("================");
             System.out.println(house.toString());
             System.out.println("=================");
         }

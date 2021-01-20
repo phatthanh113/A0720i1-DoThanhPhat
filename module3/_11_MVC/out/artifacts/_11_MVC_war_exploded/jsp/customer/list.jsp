@@ -38,7 +38,7 @@
     <input type="submit" value="Gửi">
     <input type="hidden" name="action" value="search">
 </form>
-<%--<c:set var="customerListSearch" scope="request" value="${customerListSearch}"/>--%>
+
 <c:if test="${customerListSearch.size() != 0}">
     <table border="1">
         <tr>

@@ -1,6 +1,7 @@
 package Controllers;
 
 import Commons.*;
+import Commons.exception.InputException;
 import Models.*;
 import javafx.concurrent.Service;
 
@@ -22,7 +23,7 @@ public class BookingController {
             System.out.println(i+ ". "+listCustomer.get(i).getName());
         }
 //        Chọn khách hàng muốn booking
-        int choice = Integer.parseInt(scanner.nextLine());
+        int choice = InputException.getInputList(listCustomer);
 //        Chọn loại dịch vụ cần booking
         System.out.println("Bạn muốn booking loại dịch vụ nào"+
                 "1.\tBooking Villa\n" +
@@ -61,7 +62,7 @@ public class BookingController {
             System.out.println(i+ ". "+listVilla.get(i).getNameService());
         }
         System.out.println("Bạn muốn chọn căn villa nào");
-        int choiceVilla = Integer.parseInt(scanner.nextLine());
+        int choiceVilla = InputException.getInputList(listVilla);
         return listVilla.get(choiceVilla);
     }
 //    Hàm booking house
@@ -71,7 +72,7 @@ public class BookingController {
             System.out.println(i+ ". "+listHouse.get(i).getNameService());
         }
         System.out.println("Bạn muốn chọn căn house nào");
-        int choiceHouse = Integer.parseInt(scanner.nextLine());
+        int choiceHouse = InputException.getInputList(listHouse);
         return listHouse.get(choiceHouse);
     }
 //    Hàm booking room
@@ -81,7 +82,7 @@ public class BookingController {
             System.out.println(i+ ". "+listRoom.get(i).getNameService());
         }
         System.out.println("Bạn muốn chọn căn villa nào");
-        int choiceRoom = Integer.parseInt(scanner.nextLine());
+        int choiceRoom = InputException.getInputList(listRoom);
         return listRoom.get(choiceRoom);
     }
 }

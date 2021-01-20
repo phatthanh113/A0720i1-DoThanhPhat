@@ -15,13 +15,11 @@ public class VillaController {
 
     //            Hàm write villa
     static void addNewVilla() {
-        final String VALIDATE_ID_VILLA = "^SVVL-\\d{4}";
-        listVilla = MethodFileVillaCSV.getFileCSV();
         Services villa = new Villa();
 //       Set các thuộc tính của VIlla
         System.out.println("Input Name Services");
         villa.setNameService(MyRegex.getName());
-        System.out.println("Input UsedArea");
+        System.out.println("Input UsedArea (Must > 30)(m2)");
         villa.setUsedArea(Double.parseDouble(MyRegex.getArea()));
         System.out.println("Input priceRent");
         villa.setPriceRent(Double.parseDouble(MyRegex.getPrice()));
@@ -34,7 +32,7 @@ public class VillaController {
         System.out.println("Input Standards Room");
         ((Villa) villa).setStandardsRoom(MyRegex.getName());
         System.out.println("Input Facilities");
-        ((Villa) villa).setFacilities(scanner.nextLine());
+        ((Villa) villa).setFacilities(MyRegex.getName());
         System.out.println("Input Area Pool");
         ((Villa) villa).setAreaPool(Double.parseDouble(MyRegex.getArea()));
         System.out.println("Input Floor");
@@ -50,7 +48,6 @@ public class VillaController {
     //       Hàm show Villa
     public static void showAllVilla() {
         for (Villa villa : listVilla) {
-            System.out.println("=================");
             System.out.println(villa.toString());
             System.out.println("=================");
         }
@@ -70,5 +67,10 @@ public class VillaController {
             System.out.println(i + ". " + villa.getNameService());
             i++;
         }
+    }
+
+    public static void main(String[] args) {
+        listVilla.remove(1);
+        MethodFileVillaCSV.writeToCSV(listVilla);
     }
 }

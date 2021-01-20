@@ -1,8 +1,11 @@
 package service.impl;
 
+import dao.ICustomerDAO;
+import dao.customer.CustomerDAOImpl;
 import model.Customer;
 import service.ICustomerService;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -10,15 +13,22 @@ import java.util.Map;
 
 public class CustomerServiceImplement implements ICustomerService {
     public static Map<Integer,Customer> customerMap;
-    static {
-        customerMap= new HashMap<>();
-        customerMap.put(1,new Customer("1","Dat","datmaster@codegym","Dalat"));
-        customerMap.put(2,new Customer("2","Nam","Nam2000@codegym","Dalat"));
-        customerMap.put(3,new Customer("3","Sang","ChayDoAn@codegym","Dalat"));
-    }
+   private ICustomerDAO customerDAO = new CustomerDAOImpl();
+//    static {
+//        customerMap= new HashMap<>();
+//        customerMap.put(1,new Customer("1","Dat","datmaster@codegym","Dalat"));
+//        customerMap.put(2,new Customer("2","Nam","Nam2000@codegym","Dalat"));
+//        customerMap.put(3,new Customer("3","Sang","ChayDoAn@codegym","Dalat"));
+//    }
     @Override
     public List<Customer> findAll() {
-        return new ArrayList<>(customerMap.values());
+        List<Customer> customerList = new ArrayList<>();
+        try {
+            customerList = customerDAO.getAllCustomer();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return customerList;
     }
 
     @Override
@@ -46,6 +56,16 @@ public class CustomerServiceImplement implements ICustomerService {
        if(customer.getName().contains("name")) {
            return customer;
        }return null;
+    }
+
+    @Override
+    public String getIdProduct(String id) {
+        try {
+           return customerDAO.getIdProduct(id);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 }

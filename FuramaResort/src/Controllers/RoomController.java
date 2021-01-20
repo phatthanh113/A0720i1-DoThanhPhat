@@ -30,7 +30,7 @@ public class RoomController {
             System.out.println("Input Id");
             room.setId(MyRegex.getId(MyRegex.REGEX_ID_ROOM));
             System.out.println("Input Free Services");
-            ((Room) room).setFreeServices(scanner.nextLine());
+            ((Room) room).setFreeServices(MyRegex.getName());
 
 //
         listRoom.add((Room) room);
@@ -44,7 +44,6 @@ public class RoomController {
     public static void showAllRoom() {
         listRoom = MethodFileRoomCSV.getFileCSV();
         for (Room room : listRoom) {
-            System.out.println("================");
             System.out.println(room.toString());
             System.out.println("=================");
         }

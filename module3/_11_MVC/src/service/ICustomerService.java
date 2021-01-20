@@ -16,5 +16,7 @@ public interface ICustomerService {
     void remove(int id);
 
     Customer findByName(Customer customer,String name);
+
+    String getIdProduct(String id) ;
 }
 

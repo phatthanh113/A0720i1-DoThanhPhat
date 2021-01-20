@@ -12,7 +12,7 @@ public class EmailException extends Exception{
 //    Hàm lấy email dùng exception
     public static String getEmail() {
         String email = scanner.nextLine();
-        while (!email.matches(MyRegex.REGEX_GENDER)){
+        while (!email.matches(MyRegex.REGEX_EMAIL)){
             try {
                 throw new EmailException("Email phải đúng định dạng abc@abc.abc");
             }catch (EmailException e) {

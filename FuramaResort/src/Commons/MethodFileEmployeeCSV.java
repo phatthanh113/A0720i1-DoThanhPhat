@@ -7,19 +7,20 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.EnumMap;
 import java.util.List;
 
 public class MethodFileEmployeeCSV {
     private static final String COMMA_DELIMITER = "," ;
     private static final String NEW_LINE_SEPARATOR = "\n";
-    private static final String EMPLOYEE_CSV = "src/Data/Employee.csv";
+    private static final String EMPLOYEE_CSV = "src/Data/Employee1.csv";
     private static List<Employee> employeeArrayList = new ArrayList<>();
     //    Header file CSV Villa
     private static final String FILE_HEADER =  "name,age,address";
     //    Write file CSV
     public static void writeToCSV (List<Employee> list) {
         FileWriter fileWriter = null ;
-        BufferedWriter bufferedWriter = null;
+        BufferedWriter bufferedWriter;
         try {
             fileWriter = new FileWriter(EMPLOYEE_CSV);
             bufferedWriter = new BufferedWriter(fileWriter);
@@ -28,7 +29,7 @@ public class MethodFileEmployeeCSV {
             for (Employee employee : list) {
                 stringBuilder.append(employee.getName()).append(COMMA_DELIMITER);
                 stringBuilder.append(employee.getAge()).append(COMMA_DELIMITER);
-                stringBuilder.append(employee.getAddress()).append(COMMA_DELIMITER);
+                stringBuilder.append(employee.getAddress()).append(NEW_LINE_SEPARATOR);
             }
             bufferedWriter.write(String.valueOf(stringBuilder));
         }catch (Exception e) {
@@ -79,5 +80,13 @@ public class MethodFileEmployeeCSV {
             }
         }
         return employeeArrayList;
+    }
+
+    public static void main(String[] args) {
+        List<Employee> employeeList = new ArrayList<>();
+        employeeList.add(new Employee("nam1","12","12"));
+        employeeList.add(new Employee("nam2","12","12"));
+        employeeList.add(new Employee("nam3","12","12"));
+        writeToCSV(employeeList);
     }
 }

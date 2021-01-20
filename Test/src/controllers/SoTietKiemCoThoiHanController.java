@@ -1,6 +1,7 @@
 package controllers;
 
 import Commons.FileUtils;
+import Commons.exception.BirthdayException;
 import models.SoTietKiemCoThoiHan;
 import models.SoTietKiemDaiHan;
 
@@ -9,14 +10,14 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
-public class SoTietKiemDaiHanController {
+public class SoTietKiemCoThoiHanController {
     public static List<SoTietKiemCoThoiHan> STKDH_List = new ArrayList<>();
-    static String fileSTKDH = "src/data/STKDH.csv";
+    static String fileSTKDH = "src/data/STKCTH.csv";
     static Scanner scanner= new Scanner(System.in);
     //Customer
     //Phương thức add customer
-    public static void addNewSTKDH() {
-        SoTietKiemCoThoiHan STKDN = new SoTietKiemCoThoiHan("1", "1", "1", "1", "1", "1", "1");
+    public static void addNewSTKCTH() {
+        SoTietKiemCoThoiHan STKDN = new SoTietKiemCoThoiHan(MainController.getString(), MainController.getString(), BirthdayException.getBirthday(), BirthdayException.getBirthday(), MainController.getString(), MainController.getString(), MainController.getString());
         STKDH_List.add(STKDN);
         FileUtils.writeFile(fileSTKDH, STKDN.getId() + "," + STKDN.getIdCustomer()
                 + "," + STKDN.getDateOpen() + "," + STKDN.getDateSend() + "," + STKDN.getMoney()
@@ -24,7 +25,7 @@ public class SoTietKiemDaiHanController {
     }
 
     //Phương thức hiện danh sách customer đã lưu
-    public static List<SoTietKiemCoThoiHan> showInformationSTKDH() {
+    public static List<SoTietKiemCoThoiHan> showInformationSTKCTH() {
         List<String[]> listSTKDH = FileUtils.readFile(fileSTKDH);
         STKDH_List.clear();
         for (String[] stkdh : listSTKDH) {
@@ -37,13 +38,13 @@ public class SoTietKiemDaiHanController {
         return STKDH_List;
     }
 
-        public static void deleteSTKDH() {
-        STKDH_List = showInformationSTKDH();
-        System.out.println("Input your name you want remove: ");
+        public static void deleteSTKCTH() {
+        STKDH_List = showInformationSTKCTH();
+        System.out.println("Input your id you want remove: ");
         String input = scanner.nextLine();
         FileUtils.removeFile(fileSTKDH);
         for (int i = 0; i < STKDH_List.size(); i++) {
-            if (input.contains(STKDH_List.get(i).getId())) {
+            if (STKDH_List.get(i).getId().contains(input)) {
                 STKDH_List.remove(i);
                 i--;
             }
@@ -54,5 +55,14 @@ public class SoTietKiemDaiHanController {
                     + "," + STKDH.getLai_suat() +  "," + STKDH.getKy_han());
         }
     }
-
+    public static void setSTCTH_List() {
+        STKDH_List = showInformationSTKCTH();
+        System.out.println("Input your id you want search: ");
+        String input = scanner.nextLine();
+        for (int i = 0; i < STKDH_List.size(); i++) {
+            if (STKDH_List.get(i).getId().contains(input)){
+                System.out.println(STKDH_List.get(i));
+            }
+        }
+    }
 }

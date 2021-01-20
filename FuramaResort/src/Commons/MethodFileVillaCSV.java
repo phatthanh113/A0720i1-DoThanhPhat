@@ -1,5 +1,6 @@
 package Commons;
 
+import Models.AccompanyServices;
 import Models.Villa;
 
 import java.io.*;
@@ -70,7 +71,7 @@ public class MethodFileVillaCSV {
                 if(split[0].equals("nameService")){
                     continue;
                 }
-                Villa villa = new Villa(null,0,0,0,null,null);
+                Villa villa = new Villa();
                 villa.setNameService(split[0]);
                 villa.setUsedArea(Double.parseDouble(split[1]));
                 villa.setPriceRent(Double.parseDouble(split[2]));

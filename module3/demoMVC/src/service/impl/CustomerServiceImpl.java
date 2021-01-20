@@ -16,12 +16,12 @@ public class CustomerServiceImpl implements CustomerService {
     public static Map<Integer,Customer> customerMap;
     private ICustomerDAO customerDAO = new CustomerDAOImpl();
 
-    static {
-        customerMap =new HashMap<>();
-        customerMap.put(1,new Customer(1,"Dat","datmaster@codegym","Dalat"));
-        customerMap.put(2,new Customer(2,"Nam","Nam2000@codegym","Dalat"));
-        customerMap.put(3,new Customer(3,"Sang","ChayDoAn@codegym","Dalat"));
-    }
+//    static {
+//        customerMap =new HashMap<>();
+//        customerMap.put(1,new Customer(1,"Dat","datmaster@codegym","Dalat"));
+//        customerMap.put(2,new Customer(2,"Nam","Nam2000@codegym","Dalat"));
+//        customerMap.put(3,new Customer(3,"Sang","ChayDoAn@codegym","Dalat"));
+//    }
     @Override
     public List<Customer> findAll() {
         List<Customer> customerList = new ArrayList<>();
@@ -30,7 +30,6 @@ public class CustomerServiceImpl implements CustomerService {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         return customerList;
     }
 

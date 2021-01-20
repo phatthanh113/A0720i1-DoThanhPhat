@@ -1,7 +1,10 @@
 package controller.product;
 
+import model.Customer;
 import model.Product;
+import service.ICustomerService;
 import service.IProductService;
+import service.impl.CustomerServiceImplement;
 import service.impl.ProductServiceImplement;
 
 import javax.servlet.ServletException;
@@ -9,17 +12,25 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
 @WebServlet(name = "ProductServlet", urlPatterns = "/product")
 public class ProductServlet extends HttpServlet {
     IProductService productService = new ProductServiceImplement();
-
+    ICustomerService customerService = new CustomerServiceImplement();
     //    Hiển thị danh sách sản phầm
     protected void listProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Product> productList = productService.findAll();
+        List<Customer> customerList = customerService.findAll();
+        HttpSession session = request.getSession();
+//        Trả về  username
+        String username = (String) session.getAttribute("username");
+        request.setAttribute("username",username);
         request.setAttribute("productList", productList);
+        request.setAttribute("customerList",customerList);
+        request.setAttribute("customerService",customerService);
         request.getRequestDispatcher("jsp/product/list.jsp").forward(request, response);
     }
 
@@ -76,6 +87,13 @@ public class ProductServlet extends HttpServlet {
         request.setAttribute("productListSearch", this.productService.findByName(nameProduct));
         request.getRequestDispatcher("jsp/product/search.jsp").forward(request, response);
     }
+//
+    protected void logOut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        session.removeAttribute("username");
+        request.getRequestDispatcher("jsp/product/login.jsp").forward(request,response);
+    }
+
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
@@ -118,6 +136,9 @@ public class ProductServlet extends HttpServlet {
                 break;
             case "create":
                 viewCreateProduct(request, response);
+                break;
+            case "logout":
+                logOut(request,response);
                 break;
             default:
                 listProduct(request, response);

@@ -1,14 +1,5 @@
 package Commons;
 
-import Commons.exception.EmailException;
-import Commons.exception.GenderException;
-import Commons.exception.NameException;
-import Models.Villa;
-
-import java.io.IOException;
-import java.time.LocalDate;
-import java.time.LocalTime;
-import java.time.Period;
 import java.util.Scanner;
 
 public class MyRegex {
@@ -24,7 +15,8 @@ public class MyRegex {
     public static final String REGEX_GENDER ="^male$|^female$|^unknown$";
     public static final String REGEX_ID_NUMBER = "^[\\d]{9}$";
     public static final String REGEX_PHONE = "^(090|091|\\(84\\)\\+90|\\(84\\)\\+91)[\\d]{7}$";
-
+    public static final String REGEX_NAME_ACCOMPANY_SERVICES="^massage$|^karaoke$|^food$|^drink$|^car$";
+//set validate
     public static boolean setValidate(String string, String regex) {
         return string.matches(regex);
     }
@@ -33,7 +25,7 @@ public class MyRegex {
     public static String getName() {
         String string = scanner.nextLine();
         while (!setValidate(string, REGEX_NAME)) {
-            System.out.println("Invalid!! Chữ đầu tên phải viết hoa");
+            System.out.println("Sai định dạng !! Chữ đầu tên các từ phải viết hoa");
             string = scanner.nextLine();
             string.toLowerCase();
         }
@@ -44,7 +36,7 @@ public class MyRegex {
         String string = scanner.nextLine();
 
         while (!setValidate(string, REGEX_POSITIVE_NUMBER) || Double.parseDouble(string) < 30) {
-            System.out.println("Invalid !! Phải lớn hơn 30");
+            System.out.println("Sai định dạng !! Phải lớn hơn 30");
             string = scanner.nextLine();
         }
         return string;
@@ -53,7 +45,7 @@ public class MyRegex {
     public static String getPrice() {
         String string = scanner.nextLine();
         while (!setValidate(string, REGEX_POSITIVE_NUMBER) || Double.parseDouble(string) < 0) {
-            System.out.println("Invalid !! Phải là số dương");
+            System.out.println("Sai định dạng !! Phải là số dương");
             string = scanner.nextLine();
         }
         return string;
@@ -63,7 +55,7 @@ public class MyRegex {
         String string = scanner.nextLine();
         int number = Integer.parseInt(string);
         while (!setValidate(string, REGEX_POSITIVE_INTEGER) || number > 20 || number < 0) {
-            System.out.println("Invalid  !! Trên 0 dưới 20");
+            System.out.println("Sai định dạng  !! Trên 0 dưới 20");
             string = scanner.nextLine();
         }
         return string;
@@ -72,7 +64,7 @@ public class MyRegex {
     public static String getId(String regex) {
         String string = scanner.nextLine();
         while (!setValidate(string, regex)) {
-            System.out.println("Invalid !! (Ex : SVXX-YYYY, XX là VI hoặc HO hoặc RO ,YYYY là 4 số");
+            System.out.println("Sai định dạng !! (Ví dụ : SVXX-YYYY, XX là VI hoặc HO hoặc RO ,YYYY là 4 số");
             string = scanner.nextLine();
             string.toUpperCase();
         }
@@ -82,7 +74,15 @@ public class MyRegex {
     public static String getFloor() {
         String string = scanner.nextLine();
         while (!setValidate(string, REGEX_POSITIVE_INTEGER)) {
-            System.out.println("Invalid");
+            System.out.println("Sai định dạng || Phải là số dương ");
+            string = scanner.nextLine();
+        }
+        return string;
+    }
+    public static String getNameAccompanyServices() {
+        String string = scanner.nextLine();
+        while (!setValidate(string, REGEX_NAME_ACCOMPANY_SERVICES)) {
+            System.out.println("Sai dịnh dạng !! Chỉ được nhập massage, karaoke, food, drink, car");
             string = scanner.nextLine();
         }
         return string;

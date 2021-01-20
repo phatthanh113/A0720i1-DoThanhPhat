@@ -1,4 +1,7 @@
 package controllers;
 
-public class NotFoundSavingException {
+public class NotFoundSavingException extends Exception {
+    public NotFoundSavingException(String message) {
+        super(message);
+    }
 }

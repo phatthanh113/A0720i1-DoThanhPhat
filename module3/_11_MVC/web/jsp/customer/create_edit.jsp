@@ -12,7 +12,7 @@
     <title>Title</title>
 </head>
 <body>
-<form action="" method="post">
+<form action="" method="post" class="form">
     <table border="1">
         <tr>
             <td>ID</td>
