@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBConnection {
-    private static String jdbcURL = "jdbc:mysql://localhost:3306/test?useSSL=false&allowPublicKeyRetrieval=true";// name database : test
+    private static String jdbcURL = "jdbc:mysql://localhost:3306/furama?useSSL=false&allowPublicKeyRetrieval=true";
     private static String jdbcUsername = "phat";
     private static String jdbcPassword = "123123";
 
@@ -23,5 +23,4 @@ public class DBConnection {
         }
         return connection;
     }
-
 }

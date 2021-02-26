@@ -2,7 +2,10 @@ package service.impl;
 
 import dao.IProductDao;
 import dao.product.ProductDaoImplement;
+import model.Customer;
 import model.Product;
+import model.ShopDTO;
+import service.ICustomerService;
 import service.IProductService;
 
 import java.sql.SQLException;
@@ -20,6 +23,7 @@ public class ProductServiceImplement implements IProductService {
 //        productMap.put("3",new Product("3","Nước","20000","Nước","Nhà"));
 //    }
     public static IProductDao productDaoImplement = new ProductDaoImplement();
+    public static ICustomerService customerService = new CustomerServiceImplement();
     @Override
     public List<Product> findAll() {
         try {
@@ -71,4 +75,21 @@ public class ProductServiceImplement implements IProductService {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public List<ShopDTO> getCustomer() {
+        List<ShopDTO> shopDTOList = new ArrayList<>();
+        List<Customer> customerList = customerService.findAll();
+        List<Product> productList = this.findAll();
+        for (Customer customer : customerList) {
+            ShopDTO shopDTO = new ShopDTO();
+            shopDTO.setId(customer.getId());
+            shopDTO.setName(customer.getName());
+            shopDTO.setProductName(this.findById(customerService.getIdProduct(customer.getId())).getName());
+            shopDTO.setPrice(this.findById(customerService.getIdProduct(customer.getId())).getPrice());
+            shopDTOList.add(shopDTO);
+        }
+        return shopDTOList;
+    }
+
 }

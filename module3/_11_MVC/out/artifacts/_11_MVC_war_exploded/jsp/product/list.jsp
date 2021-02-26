@@ -11,8 +11,8 @@
 <head>
     <title>List</title>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" type="text/javascript"></script>
-    <script src="js/customer/search.js" type="text/javascript"></script>
-    <script src="js/customer/validate.js" type="text/javascript"></script>
+    <script src="assert/js/customer/search.js" type="text/javascript"></script>
+    <script src="assert/js/customer/validate.js" type="text/javascript"></script>
 </head>
 <body>
     <p>You have logged in ${username}</p>
@@ -59,28 +59,20 @@
             <td>Id</td>
             <td>Name</td>
             <td>Price</td>
-            <td>Description</td>
-            <td>Producer</td>
             <td>Edit</td>
             <td>Delete</td>
             <td>Infomation</td>
         </tr>
-        <c:forEach items="${productList}" var="product">
-            <c:forEach items="${customerList}" var= "customer">
-                <c:if test="${customerService.getIdProduct(customer.id) == product.id}">
+      <c:forEach items="${shopDTOList}" var="shop">
             <tr>
-                <td>${customer.name}</td>
-                <td>${product.id}</td>
-                <td>${product.name}</td>
-                <td>${product.price}</td>
-                <td>${product.description}</td>
-                <td>${product.producer}</td>
+                <td>${shop.id}</td>
+                <td>${shop.name}</td>
+                <td>${shop.productName}</td>
+                <td>${shop.price}</td>
                 <td><a href="?action=edit&id=${product.id} ">Edit</a></td>
                 <td><a id="delete" href="?action=delete&id=${product.id}" >Delete</a></td>
                 <td><a id ="edit" href="?action=view&id=${product.id}" >Infomation</a></td>
             </tr>
-                </c:if>
-            </c:forEach>
         </c:forEach>
     </table>
 </body>

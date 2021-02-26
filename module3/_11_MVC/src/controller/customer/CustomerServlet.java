@@ -17,7 +17,6 @@ import java.util.List;
 @WebServlet(name = "CustomerServlet", urlPatterns = "/customer")
 public class CustomerServlet extends HttpServlet {
     private ICustomerService customerService = new CustomerServiceImplement();
-    private String submit= null;
     protected void listCustomer(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Customer> customerList = this.customerService.findAll();
         request.setAttribute("customerList", customerList);
@@ -62,8 +61,6 @@ public class CustomerServlet extends HttpServlet {
     }
     protected void viewCreate(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String submit = "create";
-        int random = (int) (1000*Math.random());
-        request.setAttribute("random",String.valueOf(random));
         request.setAttribute("submit",submit);
         request.getRequestDispatcher("jsp/customer/create_edit.jsp").forward(request,response);
     }

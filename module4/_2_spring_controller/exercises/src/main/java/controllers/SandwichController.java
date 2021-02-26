@@ -17,8 +17,8 @@ public class SandwichController {
     @PostMapping("/result")
     public String resultCheckBox(@RequestParam(required = false) String[] condiments, Model model) {
         if(condiments != null) {
-        model.addAttribute("message","Your Choose");
-        model.addAttribute("results",condiments);
+            model.addAttribute("message","Your Choose");
+            model.addAttribute("results",condiments);
         }else {
             model.addAttribute("message","không có sự lựa chọn nào");
         }

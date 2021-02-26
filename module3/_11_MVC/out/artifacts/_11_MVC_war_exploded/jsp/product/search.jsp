@@ -38,6 +38,5 @@
     </c:forEach>
     <a href="product">Back to main menu</a>
 </table>
-</table>
 </body>
 </html>

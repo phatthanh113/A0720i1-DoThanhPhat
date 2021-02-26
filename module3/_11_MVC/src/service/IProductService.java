@@ -2,6 +2,7 @@ package service;
 
 import model.Customer;
 import model.Product;
+import model.ShopDTO;
 
 import java.util.List;
 
@@ -18,4 +19,5 @@ public interface IProductService {
 
     void remove(String id);
 
+    List<ShopDTO> getCustomer();
 }

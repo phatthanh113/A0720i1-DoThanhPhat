@@ -10,18 +10,21 @@
 <html>
 <head>
     <title>Create or Edit Product</title>
-<%--    <link rel="stylesheet" href="library/bootstrap/css/bootstrap.css">--%>
+    <link rel="stylesheet" href="library/bootstrap/css/bootstrap.css">
         <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/library/bootstrap/css/bootstrap.min.css">
-
+        <script type="text/javascript" src="assert/library/jquery/dist/jquery.js"></script>
+        <script src="assert/jquery_vaidate/dist/jquery.validate.js"></script>
+        <script type="text/javascript" src="assert/js/regex/validate.js"></script>
 </head>
 <body>
-<form action="product" method="post">
+<form action="product" method="post" id="form">
     <table class="table table-hover table-bordered border-1">
             <c:choose>
                 <c:when test="${product.id == null}">
                     <tr>
                         <td>Name</td>
-                        <td><input type="text" name="name"></td>
+                        <td><input type="text" name="name"><p>${message}</p></td>
+
                     </tr>
                     <tr>
                         <td>Price</td>
@@ -43,7 +46,7 @@
                     </tr>
                     <tr>
                         <td>Name</td>
-                        <td><input type="text" name="name" value="${product.name}" ></td>
+                        <td><input type="text" name="name" value="${product.name}"></td>
                     </tr>
                     <tr>
                         <td>Price</td>
@@ -68,6 +71,9 @@
     <input type="hidden" name="action" value="${submit}">
     <a href="product">Back to list</a>
 </form>
+<button id="button">Button</button>
     <script type="text/javascript" src="${pageContext.request.contextPath}/library/bootstrap/js/bootstrap.js"></script>
+
+
 </body>
 </html>

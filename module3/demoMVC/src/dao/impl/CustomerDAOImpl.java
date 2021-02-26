@@ -30,6 +30,7 @@ public class CustomerDAOImpl implements ICustomerDAO {
         preparedStatement.setString(4, customer.getAddress());
 
         preparedStatement.executeUpdate();
+        connection.close();
     }
 
     @Override
@@ -50,7 +51,7 @@ public class CustomerDAOImpl implements ICustomerDAO {
             customer = new Customer(id, name, email, address);
         }
 
-
+        connection.close();
         return customer;
     }
 
@@ -71,7 +72,7 @@ public class CustomerDAOImpl implements ICustomerDAO {
 
             customerList.add(new Customer(id, name, email, address));
         }
-
+        connection.close();
         return customerList;
     }
 
@@ -80,7 +81,7 @@ public class CustomerDAOImpl implements ICustomerDAO {
         Connection connection = DBConnection.getConnection();
         PreparedStatement preparedStatement = connection.prepareStatement(DELETE_USER_BY_ID);
         preparedStatement.setInt(1, id);
-
+        connection.close();
         return preparedStatement.executeUpdate() > 0;
     }
 
@@ -92,7 +93,7 @@ public class CustomerDAOImpl implements ICustomerDAO {
         preparedStatement.setString(2, customer.getEmail());
         preparedStatement.setString(3, customer.getAddress());
         preparedStatement.setInt(4, customer.getId());
-
+        connection.close();
         return preparedStatement.executeUpdate() > 0;
     }
 }

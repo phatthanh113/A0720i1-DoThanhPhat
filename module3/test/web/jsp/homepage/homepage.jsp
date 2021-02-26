@@ -24,7 +24,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="customer">Customer</a>
+                    <a class="nav-link" href="phongtro">PhongTro</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Link</a>
@@ -46,7 +46,7 @@
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="name" >
-                <input type="text" class="path" value="${path}" readonly>
+                <input type="hidden" class="path" value="${path}" readonly>
                 <button class="btn btn-outline-success my-2 my-sm-0" type="button" id="search">Search</button>
             </form>
         </div>

@@ -1,6 +1,7 @@
 package model.entity;
 
 public class Customer {
+    private String id ;
     private String name ;
     private String birthday ;
     private String gender ;
@@ -14,6 +15,7 @@ public class Customer {
     public Customer() {
     }
 
+
     public Customer(String name, String birthday, String gender, String idCard, String phone, String email, String typeId, String address, Service service) {
         this.name = name;
         this.birthday = birthday;
@@ -24,6 +26,18 @@ public class Customer {
         this.typeId = typeId;
         this.address = address;
         this.service = service;
+    }
+
+    public Customer(String id, String name, String birthday, String gender, String idCard, String phone, String email, String typeId, String address) {
+        this.id = id;
+        this.name = name;
+        this.birthday = birthday;
+        this.gender = gender;
+        this.idCard = idCard;
+        this.phone = phone;
+        this.email = email;
+        this.typeId = typeId;
+        this.address = address;
     }
 
     public String getName() {
@@ -72,6 +86,14 @@ public class Customer {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getTypeId() {

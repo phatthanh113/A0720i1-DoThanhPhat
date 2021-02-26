@@ -2,6 +2,7 @@ package controller.product;
 
 import model.Customer;
 import model.Product;
+import model.ShopDTO;
 import service.ICustomerService;
 import service.IProductService;
 import service.impl.CustomerServiceImplement;
@@ -24,6 +25,8 @@ public class ProductServlet extends HttpServlet {
     protected void listProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Product> productList = productService.findAll();
         List<Customer> customerList = customerService.findAll();
+        List<ShopDTO> shopDTOList = productService.getCustomer();
+        request.setAttribute("shopDTOList",shopDTOList);
         HttpSession session = request.getSession();
 //        Trả về  username
         String username = (String) session.getAttribute("username");
@@ -37,7 +40,6 @@ public class ProductServlet extends HttpServlet {
     //    Xem thong tin san pham
     protected void viewProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String id = request.getParameter("id");
-
         request.setAttribute("product", productService.findById(id));
         request.getRequestDispatcher("jsp/product/view.jsp").forward(request, response);
     }
@@ -67,8 +69,14 @@ public class ProductServlet extends HttpServlet {
 
     //    Sửa và thêm sản phẩm
     protected void createOrEditProduct(HttpServletRequest request, HttpServletResponse response, String path) throws ServletException, IOException {
+        String message = null ;
         String id = request.getParameter("id");
         String name = request.getParameter("name");
+        if(!name.matches("^KH-[\\d]{4}$")){
+            message = "Ban nhap sai";
+            request.setAttribute("message",message);
+            viewCreateProduct(request,response);
+        }
         String price = request.getParameter("price");
         String description = request.getParameter("description");
         String producer = request.getParameter("producer");
@@ -84,7 +92,8 @@ public class ProductServlet extends HttpServlet {
     //    Tìm kiếm sản phẩm theo tên
     protected void searchProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String nameProduct = request.getParameter("nameProduct");
-        request.setAttribute("productListSearch", this.productService.findByName(nameProduct));
+        List<Product> productListSearch = nameProduct == null ? productService.findAll() : productService.findByName(nameProduct);
+        request.setAttribute("productListSearch", productListSearch);
         request.getRequestDispatcher("jsp/product/search.jsp").forward(request, response);
     }
 //
@@ -93,8 +102,12 @@ public class ProductServlet extends HttpServlet {
         session.removeAttribute("username");
         request.getRequestDispatcher("jsp/product/login.jsp").forward(request,response);
     }
-
-
+//
+//    protected void getCustomerById(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//        List<ShopDTO> shopDTOList = productService.getCustomer();
+//        request.setAttribute("shopDTOList",shopDTOList);
+//        request.getRequestDispatcher("jsp/product/list.jsp").forward(request,response);
+//    }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
         if (action == null) {
