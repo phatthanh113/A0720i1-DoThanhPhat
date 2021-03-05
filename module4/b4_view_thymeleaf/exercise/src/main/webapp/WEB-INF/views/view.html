@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View Customer</title>
+</head>
+<body>
+<p>
+    <a th:href="@{/customer/}">
+        Back to customer list
+    </a>
+</p>
+<div>
+    <div>
+        <label>Name:</label>
+        <label th:text="${customer.getName()}"></label>
+    </div>
+    <div class="cusdetail">
+        <label>Gender:</label>
+        <label th:text="${customer.getGender()}"></label>
+    </div>
+    <div class="cusdetail">
+        <label>Product Use:</label>
+        <label th:text="${customer.getProductUse()}"></label>
+    </div>
+</div>
+</body>
+</html>
