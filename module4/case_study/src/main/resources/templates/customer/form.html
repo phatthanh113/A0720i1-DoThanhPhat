@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${action}"></title>
+</head>
+<body>
+    <form th:method="post" th:action="@{/customer/create-edit(action = ${action})}" th:object="${customer}">
+        <div>
+            <input th:if="${action.equals('edit')}" th:field="*{id}" type="hidden">
+        </div>
+        <div>
+            <label>Type Customer</label>
+            <select th:field="*{customerType}">
+                <option th:each="type : ${customerTypes}" th:text="${type.name}" th:value="${type.id}"></option>
+            </select>
+        </div>
+        <div>
+            <label>Name Customer</label>
+            <input type="text" th:field="*{name}"/>
+        </div>
+        <div>
+            <label>Birthday</label>
+            <input type="date" th:field="*{birthday}"/>
+        </div>
+        <div>
+            <label>Gender</label>
+            <select th:field="*{gender}">
+                     <option th:each="gender : ${genders}" th:value="${gender}" th:text="${gender}"></option>
+            </select>
+
+        </div>
+        <div>
+            <label>ID Card</label>
+            <input type="text" th:field="*{idCard}"/>
+        </div>
+        <div>
+            <label>Phone Number</label>
+            <input type="text" th:field="*{phone}"/>
+        </div>
+        <div>
+            <label>Email</label>
+            <input type="text" th:field="*{email}"/>
+        </div>
+        <div>
+            <label>Address</label>
+            <input type="text" th:field="*{address}"/>
+        </div>
+        <div>
+            <input type="submit" value="SUBMIT"/>
+        </div>
+    </form>
+</body>
+</html>

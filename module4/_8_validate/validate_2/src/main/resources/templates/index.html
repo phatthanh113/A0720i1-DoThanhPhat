@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign-up</title>
+</head>
+<body>
+    <form th:object="${userDTO}" th:action="@{/user/signup}" th:method="post" >
+          <p>UserName: <input type="text" th:field="*{user.username}"></p>
+        <p th:if="${#fields.hasErrors('user.username')}" th:errors="*{user.username}" style="color: red"></p>
+        Password : <input type="text" th:field="*{user.password}">
+        <p th:if="${#fields.hasErrors('user.password')}" th:errors="*{user.password}" style="color: red"></p>
+        Confirm Password : <input type="text" th:field="*{passwordConfirm}">
+        <p th:if="${#fields.hasErrors('${userDTO}')}" th:errors="${userDTO}" style="color: red"></p>
+<!--         <p th:each="err : ${#fields.errors('*')}" th:text="${err}"></p>-->
+<!--        </p>-->
+        <p th:text="#{error.user.login}"></p>
+        <input type="submit" value="Sign-up">
+    </form>
+</body>
+</html>

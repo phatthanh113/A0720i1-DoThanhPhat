@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <td>Name Product</td>
+                <td>Price</td>
+                <td>Amount</td>
+                <td>Total Price</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="product : ${cart.findAllProduct()}">
+                <td th:text="${product.name}"></td>
+                <td th:text="${product.price}"></td>
+                <td th:text="${cart.getCart().get(product)}"></td>
+                <td th:text="${product.price*cart.getCart().get(product)}"></td>
+            </tr>
+        </tbody>
+    </table>
+    <h2 th:if="${totalPrice>0}">Tong tien : <th:block th:text="${totalPrice}"/></h2>
+    <a th:href="@{/cart/product}">Xem sản phẩm</a>
+</body>
+</html>

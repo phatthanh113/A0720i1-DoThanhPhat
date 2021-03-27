@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Table</title>
+</head>
+<body>
+<table>
+    <thead th:fragment="fields(theadFields)">
+    <tr>
+        <th th:each="field : ${theadFields}" th:text="${field}"></th>
+    </tr>
+    </thead>
+    <div th:fragment="action(object,id)">
+        <td><a th:href="@{/{object}/{action}(action='edit',id=${id},object=${object})}">Edit</a></td>
+        <td><a th:href="@{/{object}/delete(id=${id},object=${object})}">Delete</a></td>
+        <td><a th:href="@{/{object}/view(id=${id},object=${object})}">View</a></td>
+    </div>
+    <tfoot>
+    </tfoot>
+</table>
+</body>
+</html>
