@@ -6,12 +6,25 @@
     <title>Title</title>
 </head>
 <body>
-<form th:method="post" th:object="${product}" th:action="@{/cart/product}">
-    <input th:field="*{id}" readonly>
-    <input th:field="*{name}" readonly>
-    <input th:field="*{price}" readonly>
-    <input type="submit" value="ADD">
-</form>
+<!--<form th:method="post" th:object="${product}" th:action="@{/cart/product}">-->
+<!--    <input th:field="*{id}" readonly>-->
+<!--    <input th:field="*{name}" readonly>-->
+<!--    <input th:field="*{price}" readonly>-->
+<!--    <input type="submit" value="ADD">-->
+<!--</form>-->
+<table>
+    <tbody th:object="${product}">
+        <tr>
+            <td>Name</td>
+            <td th:text="${product.name}"></td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td th:text="${product.price}"></td>
+        </tr>
+    <a th:href="@{/cart/product/__${product.id}__}">Add Product</a>
 
+    </tbody>
+</table>
 </body>
 </html>
