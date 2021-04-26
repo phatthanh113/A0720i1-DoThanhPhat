@@ -24,9 +24,9 @@
     </tr>
     </thead>
     <tbody>
-    <tr th:each="customer,rowStat : ${customers}">
+    <tr th:each="customer,rowStat : ${employees}">
         <td th:text="${rowStat.index + 1}" scope="row"></td>
-        <td th:text="${customer.customerType.name}"></td>
+        <td th:text="${employees.customerType.name}"></td>
         <td th:text="${customer.name}"></td>
         <td th:text="${customer.birthday}"></td>
         <td th:text="${customer.gender}"></td>

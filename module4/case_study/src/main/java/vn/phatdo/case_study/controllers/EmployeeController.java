@@ -16,7 +16,7 @@ public class EmployeeController {
     @GetMapping("")
     public String getListEmployee(Model model,
                                   Pageable pageable) {
-        model.addAttribute("list",employeeService.findAll(pageable));
+        model.addAttribute("employees",employeeService.findAll(pageable));
         return "/employee/list";
     }
 }
