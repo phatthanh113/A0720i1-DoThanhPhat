@@ -12,6 +12,7 @@
         <thead class="thead-dark">
         <tr>
             <th scope="col">Stt</th>
+            <th scope="col">ID</th>
             <th scope="col">Type Customer</th>
             <th scope="col">Name Customer</th>
             <th scope="col">Birthday</th>
@@ -26,6 +27,7 @@
         <tbody>
         <tr th:each="customer,rowStat : ${customers}">
             <td th:text="${rowStat.index + 1}" scope="row"></td>
+            <td th:text="${customer.id}"></td>
             <td th:text="${customer.customerType.name}"></td>
             <td th:text="${customer.name}"></td>
             <td th:text="${customer.birthday}"></td>
