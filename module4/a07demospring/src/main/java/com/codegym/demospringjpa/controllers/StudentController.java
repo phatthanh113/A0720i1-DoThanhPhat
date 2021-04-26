@@ -19,10 +19,10 @@ public class StudentController {
     StudentService studentService;
 
 //    @GetMapping("/")
-//    public ModelAndView getStudentList(@RequestParam String search,PageableDefault(size = 5) Pageable pageable){
-//        Page<Student> students = search==null ? studentService.findAll(pageable) : studentService.findByName(search,pageable);
-//        return new ModelAndView("list", "students", studentService.findAll(pageable));
-//    }
+////    public ModelAndView getStudentList(@RequestParam String search,PageableDefault(size = 5) Pageable pageable){
+////        Page<Student> students = search==null ? studentService.findAll(pageable) : studentService.findByName(search,pageable);
+////        return new ModelAndView("list", "students", studentService.findAll(pageable));
+////    }
 
     @GetMapping("/create")
     public ModelAndView getFormCreate(){
@@ -44,7 +44,7 @@ public class StudentController {
                                       @PageableDefault(size = 5) Pageable pageable,
                                       Model model){
 
-        Page<Student> students = search==null ? studentService.findAll(pageable) : studentService.findByName(search,pageable);
+        Page<Student> students = search == null ? studentService.findAll(pageable) : studentService.findByName(search,pageable);
         model.addAttribute("search",search);
         return new ModelAndView("list", "students", students);
     }

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <div th:replace="/fragments/layout :: headerfiles"></div>
+</head>
+<body>
+<form th:method="post" th:action="@{/service/create}" th:object="${service}" name="service">
+    <div>
+        <input th:field="*{id}" type="hidden">
+    </div>
+    <div>
+        <label>Name Service</label>
+        <input type="text" th:field="*{name}"/>
+    </div>
+    <div>
+        <label>Area</label>
+        <input type="text" th:field="*{area}"/>
+    </div>
+    <div>
+        <label>Cost</label>
+        <input type="text" th:field="*{cost}"/>
+    </div>
+    <div>
+        <label>Max people</label>
+        <input type="number" th:field="*{maxPeople}"/>
+    </div>
+    <div>
+        <label>Rent Types</label>
+        <select th:field="*{rentType}">
+            <option th:each="type : ${rentTypes}" th:text="${type.name}" th:value="${type.id}"></option>
+        </select>
+    </div>
+    <div>
+        <label>Service Types</label>
+        <select th:field="*{serviceType}" class="serviceTypes">
+            <option th:each="type : ${serviceTypes}" th:text="${type.name}" th:value="${type.id}"></option>
+        </select>
+    </div>
+    <div class="stardard-room">
+        <label>Stardard Room</label>
+        <input type="text" th:field="*{stardardRoom}"/>
+    </div>
+    <div class="description">
+        <label>Description</label>
+        <input type="text" th:field="*{descriptionOtherConvinience}"/>
+    </div>
+    <div class="pool">
+        <label>Pool Area</label>
+        <input type="text" th:field="*{poolArea}"/>
+    </div>
+    <div class="number-floor">
+        <label>Number Of floors</label>
+        <input type="number" th:field="*{numberFloor}"/>
+    </div>
+    <ul>
+        <li th:each="err : ${#fields.errors('*')}" th:text="${err}"></li>
+    </ul>
+    <div>
+        <input type="submit" value="SUBMIT"/>
+    </div>
+</form>
+<div th:insert="fragments/layout :: scriptfiles"></div>
+<script>
+    $(document).ready(() => {
+        $(".serviceTypes").change(() => {
+            let stardardRoom = $(".stardard-room");
+            let description =$(".description");
+            let pool = $(".pool");
+            let numberFloor =$(".number-floor");
+            if($(".serviceTypes").val() === '1') {
+                stardardRoom.show() && description.show() && pool.show() && numberFloor.show();
+            }
+            else if($(".serviceTypes").val() === '2') {
+                stardardRoom.show() && description.show() && pool.show() && numberFloor.hide();
+            }
+            else if($(".serviceTypes").val() === '3') {
+                stardardRoom.hide() && description.show() && pool.hide() && numberFloor.hide();
+            }
+        })
+    });
+
+</script>
+</body>
+</html>

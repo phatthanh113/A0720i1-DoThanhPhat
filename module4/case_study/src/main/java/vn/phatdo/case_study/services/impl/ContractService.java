@@ -8,10 +8,18 @@ import vn.phatdo.case_study.models.entity.contract.Contract;
 import vn.phatdo.case_study.repositories.IContractRepository;
 import vn.phatdo.case_study.services.IContractService;
 
+import java.util.List;
+
 @Service
 public class ContractService implements IContractService {
     @Autowired
     IContractRepository contractRepository ;
+
+    @Override
+    public List<Contract> findAll() {
+        return null;
+    }
+
     @Override
     public Page<Contract> findAll(Pageable pageable) {
         return contractRepository.findAll(pageable);

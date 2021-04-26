@@ -18,4 +18,6 @@ public interface IServiceRepository extends JpaRepository<Service,Integer> {
     List<ServiceType> findAllServiceType();
     @Query("select ct from RentType ct")
     List<RentType> findAllRentType();
+    Service findById(String id);
+
 }

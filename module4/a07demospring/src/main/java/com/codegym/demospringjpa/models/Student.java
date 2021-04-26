@@ -1,16 +1,23 @@
 package com.codegym.demospringjpa.models;
 
+import org.hibernate.annotations.GenericGenerator;
+import org.springframework.data.repository.query.Param;
+
 import javax.persistence.*;
 
 @Entity
 public class Student {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    @GeneratedValue(generator = "id")
+    @GenericGenerator(name = "id",
+            strategy = "com.codegym.demospringjpa.models.generator.MyGenerator",
+            parameters = {@org.hibernate.annotations.Parameter(name = "prefix", value = "STU-"),
+                    @org.hibernate.annotations.Parameter(name = "sequence", value = "student_sequence")})
+    private String id;
 
     private String name;
 
-    @ManyToOne(cascade = CascadeType.MERGE)
+    @ManyToOne
     private School school;
     @ManyToOne
     private Batch batch;
@@ -18,11 +25,11 @@ public class Student {
     public Student() {
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

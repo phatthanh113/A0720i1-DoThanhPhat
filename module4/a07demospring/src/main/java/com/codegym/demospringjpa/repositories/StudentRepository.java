@@ -15,4 +15,5 @@ public interface StudentRepository extends JpaRepository<Student, Integer> {
             +"like %?1%"
             )
     Page<Student> findStudentsByName(String name ,Pageable pageable);
+    Student findById(String id);
 }

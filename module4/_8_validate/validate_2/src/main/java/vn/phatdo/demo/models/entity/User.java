@@ -20,6 +20,7 @@ public class User {
     @NotBlank(message = "user name ko duoc de trong")
     @NotNull(message = "ten khong duoc de trong")
     private String username ;
+    @NotBlank
     @NotNull
     private String password ;
 

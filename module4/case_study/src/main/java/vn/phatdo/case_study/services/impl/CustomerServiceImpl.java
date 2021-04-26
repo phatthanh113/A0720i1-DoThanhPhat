@@ -25,6 +25,26 @@ public class CustomerServiceImpl implements ICustomerService {
     }
 
     @Override
+    public Page<Customer> findByName(String name, Pageable pageable) {
+       return name.equals("") ? customerRepository.findAll(pageable) : customerRepository.findCustomerByName(name,pageable);
+    }
+
+    @Override
+    public Customer findById(String id) {
+       return customerRepository.findById(id);
+    }
+
+    @Override
+    public void deleteById(String id) {
+         customerRepository.deleteCustomerById(id);
+    }
+
+    @Override
+    public List<Customer> findAll() {
+        return customerRepository.findAll();
+    }
+
+    @Override
     public Page<Customer> findAll(Pageable pageable) {
         return customerRepository.findAll(pageable);
     }
@@ -43,4 +63,5 @@ public class CustomerServiceImpl implements ICustomerService {
     public Customer findById(int id) {
         return customerRepository.findById(id).orElse(null);
     }
+
 }

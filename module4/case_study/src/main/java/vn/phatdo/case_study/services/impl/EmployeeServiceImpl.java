@@ -33,6 +33,11 @@ public class EmployeeServiceImpl implements IEmployeeService {
     }
 
     @Override
+    public List<Employee> findAll() {
+        return null;
+    }
+
+    @Override
     public Page<Employee> findAll(Pageable pageable) {
         return employeeRepository.findAll(pageable);
     }

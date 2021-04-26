@@ -14,7 +14,9 @@
         <p th:if="${#fields.hasErrors('${userDTO}')}" th:errors="${userDTO}" style="color: red"></p>
 <!--         <p th:each="err : ${#fields.errors('*')}" th:text="${err}"></p>-->
 <!--        </p>-->
-        <p th:text="#{error.user.login}"></p>
+        <ul>
+            <li th:each="err : ${#fields.errors('*')}" th:text="${err}"></li>
+        </ul>
         <input type="submit" value="Sign-up">
     </form>
 </body>

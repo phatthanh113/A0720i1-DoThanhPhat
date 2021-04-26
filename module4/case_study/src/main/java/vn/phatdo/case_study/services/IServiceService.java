@@ -9,4 +9,5 @@ import java.util.List;
 public interface IServiceService extends IService<Service> {
     List<ServiceType> getListServiceType() ;
     List<RentType> getListRentType() ;
+    Service findById(String id);
 }

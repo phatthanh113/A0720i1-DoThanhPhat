@@ -21,6 +21,11 @@ public class ContractDetailService implements IContractDetailService {
     }
 
     @Override
+    public List<ContractDetail> findAll() {
+        return null;
+    }
+
+    @Override
     public Page findAll(Pageable pageable) {
         return contractDetailRepository.findAll(pageable);
     }

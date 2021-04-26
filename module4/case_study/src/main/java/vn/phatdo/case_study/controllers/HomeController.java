@@ -10,6 +10,6 @@ import org.springframework.web.servlet.ModelAndView;
 public class HomeController {
     @GetMapping("/")
     public ModelAndView getIndex() {
-        return new ModelAndView("index");
+        return new ModelAndView("/customer/form_cs");
     }
 }

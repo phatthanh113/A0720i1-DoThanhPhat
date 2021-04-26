@@ -26,6 +26,16 @@ public class ServiceServiceImpl implements IServiceService {
     }
 
     @Override
+    public Service findById(String id) {
+        return serviceRepository.findById(id);
+    }
+
+    @Override
+    public List<Service> findAll() {
+        return null;
+    }
+
+    @Override
     public Page<Service> findAll(Pageable pageable) {
         return serviceRepository.findAll(pageable);
     }

@@ -8,10 +8,17 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class StudentServiceImpl implements StudentService {
     @Autowired
     StudentRepository studentRepository;
+
+    @Override
+    public List<Student> findAll() {
+        return studentRepository.findAll();
+    }
 
     @Override
     public Page<Student> findAll(Pageable pageable) {
@@ -32,6 +39,11 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public Student findById(int id) {
         return studentRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public Student findById(String id) {
+        return studentRepository.findById(id);
     }
 
     @Override
