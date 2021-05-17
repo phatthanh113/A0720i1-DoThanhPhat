@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirm Delete</title>
+</head>
+<body>
+    <p>Bạn muốn xóa khách hàng này không?</p>
+    <a class="btn btn-secondary" th:href="@{/customer/deleteCustomer(id=${id})}">Confirm</a>
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+</body>
+</html>
