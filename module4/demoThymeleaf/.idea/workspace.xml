@@ -7,72 +7,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="95c35c76-9904-4516-8336-94328fce2068" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../_demo_/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_demo_/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_demo_/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_demo_/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_demo_/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_1_springMVC/exercise/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_1_springMVC/exercise/.idea/exercise.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_1_springMVC/exercise/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_1_springMVC/exercise/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_1_springMVC/exercise/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_1_springMVC/practise/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_1_springMVC/practise/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_1_springMVC/practise/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_1_springMVC/practise/.idea/practise.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_1_springMVC/practise/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_2_spring_controller/A07Demo/_demo_customers/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_2_spring_controller/A07Demo/_demo_customers/.idea/modules/_demo_customers.main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_2_spring_controller/A07Demo/_demo_customers/src/main/java/com/codegym/controllers/CustomerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_2_spring_controller/A07Demo/_demo_customers/src/main/java/com/codegym/models/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_2_spring_controller/A07Demo/_demo_customers/src/main/java/com/codegym/repository/ICustomerRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_2_spring_controller/A07Demo/_demo_customers/src/main/java/com/codegym/repository/impl/CustomerRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_2_spring_controller/A07Demo/_demo_customers/src/main/java/com/codegym/services/ICustomerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_2_spring_controller/A07Demo/_demo_customers/src/main/java/com/codegym/services/impl/CustomerServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_2_spring_controller/A07Demo/_demo_customers/src/main/webapp/WEB-INF/views/add_edit.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_2_spring_controller/customers/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_2_spring_controller/customers/.idea/artifacts/customers_main_war_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_2_spring_controller/customers/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_2_spring_controller/customers/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_2_spring_controller/customers/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_2_spring_controller/customers/.idea/modules/customers.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_2_spring_controller/customers/.idea/modules/customers.main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_2_spring_controller/customers/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_2_spring_controller/customers/src/main/java/com/codegym/controllers/CustomerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_2_spring_controller/customers/src/main/java/com/codegym/models/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_2_spring_controller/customers/src/main/java/com/codegym/repository/ICustomerRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_2_spring_controller/customers/src/main/java/com/codegym/repository/impl/CustomerRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_2_spring_controller/customers/src/main/java/com/codegym/services/ICustomerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_2_spring_controller/customers/src/main/java/com/codegym/services/impl/ICustomerServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_2_spring_controller/customers/src/main/webapp/webapp/WEB-INF/applicationContext.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_2_spring_controller/customers/src/main/webapp/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_2_spring_controller/customers/src/main/webapp/webapp/WEB-INF/views/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_2_spring_controller/customers/src/main/webapp/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_2_spring_controller/exercises/src/main/java/controllers/CalculatorController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_2_spring_controller/exercises/src/main/webapp/WEB-INF/views/calculator/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_3_databinding/exercises/.idea/exercises.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_3_databinding/exercises/src/main/java/vn/phatdo/controllers/WebAppController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_3_databinding/exercises/src/main/java/vn/phatdo/models/WebApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_3_databinding/exercises/src/main/java/vn/phatdo/services/IWebAppService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_3_databinding/exercises/src/main/java/vn/phatdo/services/impl/WebAppServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_3_databinding/exercises/src/main/webapp/WEB-INF/views/add_edit.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../_3_databinding/exercises/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../b4_view_thymeleaf/exercise/src/main/java/vn/phatdo/controllers/CustomerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../b4_view_thymeleaf/exercise/src/main/java/vn/phatdo/models/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../b4_view_thymeleaf/exercise/src/main/java/vn/phatdo/repository/ICustomerRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../b4_view_thymeleaf/exercise/src/main/java/vn/phatdo/repository/IRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../b4_view_thymeleaf/exercise/src/main/java/vn/phatdo/services/ICustomerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../b4_view_thymeleaf/exercise/src/main/java/vn/phatdo/services/impl/CustomerServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../b4_view_thymeleaf/exercise/src/main/java/vn/phatdo/services/impl/ListService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../b4_view_thymeleaf/exercise/src/main/webapp/WEB-INF/views/edit_add.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../b4_view_thymeleaf/exercise/src/main/webapp/WEB-INF/views/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../b4_view_thymeleaf/exercise/src/main/webapp/WEB-INF/views/view.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../_2_spring_controller/exercises/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../_2_spring_controller/exercises/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../_2_spring_controller/list_student/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../_2_spring_controller/list_student/.idea/list_student.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../_2_spring_controller/practises/practises/src/main/java/controllers/time/TimeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../_2_spring_controller/practises/practises/src/main/java/controllers/time/TimeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../_2_spring_controller/practises/practises/src/main/webapp/WEB-INF/views/time/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../_2_spring_controller/practises/practises/src/main/webapp/WEB-INF/views/time/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/src/main/resources/templates/fragments/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module3/java-cleancode-refactoring-exercise" beforeDir="false" afterPath="$PROJECT_DIR$/../../module3/java-cleancode-refactoring-exercise" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module3/java-cleancode-refactoring-method-extraction" beforeDir="false" afterPath="$PROJECT_DIR$/../../module3/java-cleancode-refactoring-method-extraction" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_4_view_thymeleaf/Spring-Entity-Manager" beforeDir="false" afterPath="$PROJECT_DIR$/../_4_view_thymeleaf/Spring-Entity-Manager" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_8_validate/validate_2/src/main/java/vn/phatdo/demo/validation/UserLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/../_8_validate/validate_2/src/main/java/vn/phatdo/demo/validation/UserLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_8_validate/validate_2/src/main/java/vn/phatdo/demo/validation/UserLoginValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../_8_validate/validate_2/src/main/java/vn/phatdo/demo/validation/UserLoginValidation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study/src/main/java/vn/phatdo/case_study/controllers/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study/src/main/java/vn/phatdo/case_study/controllers/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study/src/main/resources/static/js/customer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study/src/main/resources/static/js/customer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study/src/main/resources/templates/customer/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study/src/main/resources/templates/customer/list.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,9 +110,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../b4_view_thymeleaf/exercise" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -260,6 +204,18 @@
       </method>
     </configuration>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -284,6 +240,7 @@
       <workItem from="1614787905416" duration="1781000" />
       <workItem from="1614872321231" duration="3634000" />
       <workItem from="1614919046506" duration="833000" />
+      <workItem from="1619592479447" duration="27000" />
     </task>
     <servers />
   </component>
@@ -291,10 +248,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1614919126225">
+    <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1619592505605">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1614919126225" />
+    <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1619592505605" />
     <state x="375" y="190" key="com.intellij.ide.util.TipDialog" timestamp="1614919046020">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

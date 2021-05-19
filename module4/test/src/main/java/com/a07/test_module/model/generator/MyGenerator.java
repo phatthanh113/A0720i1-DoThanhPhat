@@ -1,4 +1,4 @@
-package vn.phatdo.case_study.models.generator;
+package com.a07.test_module.model.generator;
 
 import org.hibernate.HibernateException;
 import org.hibernate.MappingException;
@@ -15,7 +15,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Properties;
 
-public class MyGenerator implements IdentifierGenerator,Configurable{
+public class MyGenerator implements IdentifierGenerator, Configurable {
     private String prefix;
     private String sequence;
     @Override

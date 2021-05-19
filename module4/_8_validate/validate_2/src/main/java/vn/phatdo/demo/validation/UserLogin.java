@@ -11,7 +11,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = UserLoginValidation.class)
 public @interface UserLogin {
-    String message() default "password not unmatch";
+    String message();
     Class<?>[] groups() default {};
     public abstract Class<? extends Payload>[] payload() default {} ;
 }

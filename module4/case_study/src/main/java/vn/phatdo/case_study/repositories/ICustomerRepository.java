@@ -18,7 +18,8 @@ public interface ICustomerRepository extends JpaRepository<Customer,Integer> {
     @Query("select ct from CustomerType ct")
     List<CustomerType> findAllCustomerType();
     @Query("select c from Customer c where "
-            +"concat(c.name,'')"
+            +"c.name LIKE %?1%"
+            +"or concat(c.phone,c.customerType.name,'')"
             +"like %?1%"
     )
     Page<Customer> findCustomerByName(String name,Pageable pageable);

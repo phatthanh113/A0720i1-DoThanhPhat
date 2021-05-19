@@ -14,9 +14,6 @@ $(document).ready((e) => {
         })
     });
     $(".customer-delete").click((e) => {
-        if(!confirm("Bạn có chắc muốn xóa khách hàng này")) {
-            e.preventDefault()  ;
-        }else {
             $.ajax({
                 type:"GET",
                 url : "/customer/delete",
@@ -25,10 +22,10 @@ $(document).ready((e) => {
                 },
                 dataType: "html",
                 success : (data) => {
-                    $("#list").html(data);
+                    $(".modal-body").html(data);
+                    $("#modelId").modal('show');
                 }
             })
-        }
     });
     $(".customer-edit").click(() => {
         $.ajax({

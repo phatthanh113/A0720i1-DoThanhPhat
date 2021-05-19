@@ -14,6 +14,10 @@ public class UserLoginValidation implements ConstraintValidator<UserLogin, UserD
 
     @Override
     public boolean isValid(UserDTO userDTO, ConstraintValidatorContext constraintValidatorContext) {
-        return userDTO.getUser().getPassword().equals(userDTO.getPasswordConfirm());
+        if(!userDTO.getUser().getPassword().equals(userDTO.getPasswordConfirm())){
+            constraintValidatorContext.buildConstraintViolationWithTemplate("Bạn nhập sai");
+            return false;
+        }
+        return true ;
     }
 }

@@ -16,7 +16,7 @@
         cursor: pointer;
     }</style>
 </head>
-<body>
+<body class="container">
     <form th:method="post" th:action="@{/customer/create-edit(action=${action})}" th:object="${customer}" name="customer">
         <div>
             <input th:field="*{id}" type="hidden">
@@ -35,9 +35,6 @@
         <div id="datepicker" class="input-group date" data-date-format="dd-mm-yyyy">
             <input class="form-control"  readonly="" type="text">
             <div class="input-group-addon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
-                     <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
-                 </svg>
             </div>
         </div>
 
@@ -64,6 +61,12 @@
             <label>Address</label>
             <input type="text" th:field="*{address}"/>
         </div>
+        <div>
+            <label>Amount</label>
+            <input type="text" th:field="*{amount}"/>
+<!--            <div class="invalid-feedback" th:if="${#fields.hasErrors('amount')}" th:errors="*{amount}"></div>-->
+            <p class="error" th:if="${#fields.hasErrors('amount')}" th:errors="*{amount}"></p>
+        </div>
         <ul>
             <li th:each="err : ${#fields.errors('*')}" th:text="${err}"></li>
         </ul>
@@ -71,9 +74,136 @@
             <input type="submit" value="SUBMIT"/>
         </div>
     </form>
+<!--        <form class="well form-horizontal p-1" action=" " method="post"  id="contact_form">-->
+<!--            <fieldset>-->
+
+<!--                &lt;!&ndash; Form Name &ndash;&gt;-->
+<!--                <legend><h2><b>Registration Form</b></h2></legend><br>-->
+
+<!--                &lt;!&ndash; Text input&ndash;&gt;-->
+
+<!--                <div class="form-group">-->
+<!--                    <label class="col-md-4 control-label">First Name</label>-->
+<!--                    <div class="col-md-4 inputGroupContainer">-->
+<!--                        <div class="input-group">-->
+<!--                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>-->
+<!--                            <input  name="first_name" placeholder="First Name" class="form-control"  type="text">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                &lt;!&ndash; Text input&ndash;&gt;-->
+
+<!--                <div class="form-group">-->
+<!--                    <label class="col-md-4 control-label" >Last Name</label>-->
+<!--                    <div class="col-md-4 inputGroupContainer">-->
+<!--                        <div class="input-group">-->
+<!--                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>-->
+<!--                            <input name="last_name" placeholder="Last Name" class="form-control"  type="text">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                <div class="form-group">-->
+<!--                    <label class="col-md-4 control-label">Department / Office</label>-->
+<!--                    <div class="col-md-4 selectContainer">-->
+<!--                        <div class="input-group">-->
+<!--                            <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>-->
+<!--                            <select name="department" class="form-control selectpicker">-->
+<!--                                <option value="">Select your Department/Office</option>-->
+<!--                                <option>Department of Engineering</option>-->
+<!--                                <option>Department of Agriculture</option>-->
+<!--                                <option >Accounting Office</option>-->
+<!--                                <option >Tresurer's Office</option>-->
+<!--                                <option >MPDC</option>-->
+<!--                                <option >MCTC</option>-->
+<!--                                <option >MCR</option>-->
+<!--                                <option >Mayor's Office</option>-->
+<!--                                <option >Tourism Office</option>-->
+<!--                            </select>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                &lt;!&ndash; Text input&ndash;&gt;-->
+
+<!--                <div class="form-group">-->
+<!--                    <label class="col-md-4 control-label">Username</label>-->
+<!--                    <div class="col-md-4 inputGroupContainer">-->
+<!--                        <div class="input-group">-->
+<!--                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>-->
+<!--                            <input  name="user_name" placeholder="Username" class="form-control"  type="text">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                &lt;!&ndash; Text input&ndash;&gt;-->
+
+<!--                <div class="form-group">-->
+<!--                    <label class="col-md-4 control-label" >Password</label>-->
+<!--                    <div class="col-md-4 inputGroupContainer">-->
+<!--                        <div class="input-group">-->
+<!--                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>-->
+<!--                            <input name="user_password" placeholder="Password" class="form-control"  type="password">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                &lt;!&ndash; Text input&ndash;&gt;-->
+
+<!--                <div class="form-group">-->
+<!--                    <label class="col-md-4 control-label" >Confirm Password</label>-->
+<!--                    <div class="col-md-4 inputGroupContainer">-->
+<!--                        <div class="input-group">-->
+<!--                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>-->
+<!--                            <input name="confirm_password" placeholder="Confirm Password" class="form-control"  type="password">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                &lt;!&ndash; Text input&ndash;&gt;-->
+<!--                <div class="form-group">-->
+<!--                    <label class="col-md-4 control-label">E-Mail</label>-->
+<!--                    <div class="col-md-4 inputGroupContainer">-->
+<!--                        <div class="input-group">-->
+<!--                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>-->
+<!--                            <input name="email" placeholder="E-Mail Address" class="form-control"  type="text">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+
+<!--                &lt;!&ndash; Text input&ndash;&gt;-->
+
+<!--                <div class="form-group">-->
+<!--                    <label class="col-md-4 control-label">Contact No.</label>-->
+<!--                    <div class="col-md-4 inputGroupContainer">-->
+<!--                        <div class="input-group">-->
+<!--                            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>-->
+<!--                            <input name="contact_no" placeholder="(639)" class="form-control" type="text">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                &lt;!&ndash; Select Basic &ndash;&gt;-->
+
+<!--                &lt;!&ndash; Success message &ndash;&gt;-->
+<!--                <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Success!.</div>-->
+
+<!--                &lt;!&ndash; Button &ndash;&gt;-->
+<!--                <div class="form-group">-->
+<!--                    <label class="col-md-4 control-label"></label>-->
+<!--                    <div class="col-md-4"><br>-->
+<!--                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="submit" class="btn btn-warning" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSUBMIT <span class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--            </fieldset>-->
+<!--        </form>-->
     <div th:insert="fragments/layout :: scriptfiles"></div>
 
-    <link rel="stylesheet prefetch" href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css"><script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+    <link rel="stylesheet prefetch" href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
     <script type="text/javascript">
         $(function () {
             $("#datepicker").datepicker({

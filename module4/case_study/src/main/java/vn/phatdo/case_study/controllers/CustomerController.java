@@ -23,11 +23,11 @@ public class CustomerController {
     ICustomerService customerService ;
 
     @GetMapping("/")
-    public ModelAndView getList(@PageableDefault(size = 5) Pageable pageable,
+    public ModelAndView getList(@PageableDefault(size = 2) Pageable pageable,
                                 @RequestParam(value = "search",defaultValue = "") String search,
                                 Model model) {
         model.addAttribute("search",search);
-        return new ModelAndView("customer/list", "customers", customerService.findByName(search,pageable));
+        return new ModelAndView("customer/list", "customers", customerService.findByName(search.trim(),pageable));
     }
     @GetMapping("/{action}")
     public ModelAndView getFormAddCustomer(Model model,
@@ -58,8 +58,14 @@ public class CustomerController {
         return "redirect:/customer/";
     }
     @GetMapping("/delete")
-    public ModelAndView delete(@RequestParam String id) {
-        customerService.deleteById(id) ;
+    public ModelAndView delete(@RequestParam("id") String id,
+                               Model model) {
+        model.addAttribute("id",id);
+        return new ModelAndView("/customer/form-delete");
+    }
+    @GetMapping("/deleteCustomer")
+    public ModelAndView deleteCustomer(@RequestParam("id")String id) {
+        customerService.deleteById(id);
         return new ModelAndView("redirect:/customer/");
     }
     @GetMapping("/view")

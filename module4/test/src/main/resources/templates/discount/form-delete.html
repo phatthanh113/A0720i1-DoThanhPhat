@@ -5,8 +5,8 @@
     <title>Confirm Delete</title>
 </head>
 <body>
-    <p>Bạn muốn xóa khách hàng này không?</p>
-    <a class="btn btn-secondary" th:href="@{/customer/deleteCustomer(id=${id})}">Confirm</a>
+<p>Bạn muốn xóa mã giảm giá này không?<i th:text="${discount.title}"></i></p>
+    <a class="btn btn-secondary" th:href="@{/discount/deleteDiscount(id=${id})}">Confirm</a>
     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 </body>
 </html>
