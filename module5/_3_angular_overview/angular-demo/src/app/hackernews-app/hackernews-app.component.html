@@ -1,0 +1,15 @@
+<p>hackernews-app works!</p>
+<div *ngFor="let art of articles">
+  <hr>
+  <a href="{{ art.url }}" target="_blank">{{art.title}}</a><br>
+  <button class="btn btn-primary" (click)='handleViewClick(art)'>Edit</button>
+  <hr>
+</div>
+<hr>
+<app-article-detail [article]='article' (editArticle)='changeArticleHandler($event)'></app-article-detail>
+<h1> Add new Title</h1>
+title :<input [(ngModel)]='articleForm.title'><br>
+url : <input [(ngModel)]='articleForm.url'>
+<p>{{articleForm.title}}</p>
+<button (click)='handleClick()'>Add article</button>
+

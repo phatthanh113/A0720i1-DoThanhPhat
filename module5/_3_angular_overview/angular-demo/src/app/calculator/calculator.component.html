@@ -1,0 +1,10 @@
+<input type='number' [(ngModel)]="firstNumber">
+<select [(ngModel)]="calcu" required>
+    <option>+</option>
+    <option>-</option>
+    <option>*</option>
+    <option>/</option>
+</select>
+<input type='number' [(ngModel)]="secondNumber">
+<button (click)='onClick()'>Submit</button>
+<p>{{result}}</p>

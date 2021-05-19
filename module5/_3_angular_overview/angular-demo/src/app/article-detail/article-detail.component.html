@@ -1,0 +1,10 @@
+<div *ngIf="article">
+  <p>Title : {{article.title}}</p>
+  <p>Url : {{article.url}}</p>
+  <div>
+    <label>Edit article:</label>
+    <input type="text" [value]="article.title" #articleTitle>
+    <button (click)="edit(articleTitle)">Edit title</button>
+  </div>
+</div>
+
