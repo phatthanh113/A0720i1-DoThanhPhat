@@ -24,6 +24,6 @@
     <!-- <div class="alert alert-danger" role="alert" *ngIf="createForm.get('price').invalid && createForm.get('price').touched">
     </div> -->
   </div>
-  <button class="btn btn-info" type="submit" [disabled]='createForm.invalid'>Submit</button>
+  <button class="btn btn-info" type="submit" [disabled]='createForm.invalid' [mat-dialog-close]='createForm'>Submit</button>
 </form>
 

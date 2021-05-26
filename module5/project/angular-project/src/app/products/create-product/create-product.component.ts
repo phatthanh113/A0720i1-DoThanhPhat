@@ -20,7 +20,9 @@ export class CreateProductComponent implements OnInit {
       {type : 'required',message : 'Name is required'},
     ]
   }
-  constructor(private productService : ProductService , private fb : FormBuilder , private router: Router) { }
+  constructor(private productService : ProductService ,
+    private fb : FormBuilder ,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.initForm();
@@ -36,11 +38,11 @@ export class CreateProductComponent implements OnInit {
       price : [''],
     });
   }
-  onSubmit() {
-    if(this.createForm.valid) {
-      this.productService.createProduct(this.createForm.value);
-      console.log(this.productService.getAllProduct());
-      this.router.navigateByUrl("/products")
-    }
-  }
+  // onSubmit() {
+  //   if(this.createForm.valid) {
+  //     this.productService.createProduct(this.createForm.value);
+  //     console.log(this.productService.getAllProduct());
+  //     this.router.navigateByUrl("/products")
+  //   }
+  // }
 }

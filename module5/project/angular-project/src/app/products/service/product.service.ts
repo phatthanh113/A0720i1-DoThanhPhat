@@ -35,7 +35,7 @@ export class ProductService {
     if(index < 0 ) return ;
     else this.products.splice(index,1) ;
    }
-   getBySearch(value:any) : IProduct[] {
+   getBySearch(value:string) : IProduct[] {
       return this.products.filter(x => x.name.includes(value));
    }
 }
