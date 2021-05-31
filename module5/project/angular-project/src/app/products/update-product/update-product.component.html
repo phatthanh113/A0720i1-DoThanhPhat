@@ -1,4 +1,4 @@
-<h2 class="text-center">Update Product</h2>
+<h2 class="text-center">Edit Product</h2>
 <form [formGroup]="updateForm" (ngSubmit)="onSubmit()" class="col-md-6 offset-md-3">
   <div class="form-group row">
     <label class="col">
@@ -6,9 +6,14 @@
       <input type="text" class="form-control" formControlName="name">
     </label>
   </div>
-  <!-- <div class="alert alert-danger" role="alert" *ngIf="createForm.get('email').invalid && createForm.get('email').touched">
-    Invalid email!
-  </div> -->
+  <!-- <ng-container *ngFor="let valid of validation_messages.name">
+    <p class="text-danger" *ngIf="createForm.get('name').hasError(valid.type)
+    && (createForm.get('name').dirty
+    && createForm.get('name').touched)">
+    {{valid.message}}
+  </p>
+  </ng-container> -->
+
   <div>
     <div class="form-group row">
       <label class="col">
@@ -19,6 +24,8 @@
     <!-- <div class="alert alert-danger" role="alert" *ngIf="createForm.get('price').invalid && createForm.get('price').touched">
     </div> -->
   </div>
-  <button class="btn btn-info" type="submit">Submit</button>
+  <button class="btn btn-info" type="submit" [disabled]='updateForm.invalid' [mat-dialog-close]='updateForm'>Submit</button>
+  <button mat-raised-button (click)="onCancel()">Close</button>
 </form>
+
 

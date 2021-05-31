@@ -1,9 +1,116 @@
 {
   "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" }
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
   ],
   "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "name": "typicode"
+  },
+  "products": [
+    {
+      "id": 2745,
+      "name": "321311",
+      "price": "123123",
+      "periodTime": {
+        "startDate": "",
+        "endDate": ""
+      }
+    },
+    {
+      "id": 1539,
+      "name": "12312",
+      "price": "123312",
+      "periodTime": {
+        "startDate": "",
+        "endDate": ""
+      }
+    },
+    {
+      "id": 9350,
+      "name": "213",
+      "price": "123312",
+      "periodTime": {
+        "startDate": "",
+        "endDate": ""
+      }
+    },
+    {
+      "id": 8757,
+      "name": "3213",
+      "price": "123312",
+      "periodTime": {
+        "startDate": "",
+        "endDate": ""
+      }
+    },
+    {
+      "id": 6953,
+      "name": "3123",
+      "price": "12312",
+      "periodTime": {
+        "startDate": "",
+        "endDate": ""
+      }
+    },
+    {
+      "id": 8761,
+      "name": "3213",
+      "price": "13232"
+    },
+    {
+      "id": 49355,
+      "name": "ad",
+      "price": "ád",
+      "periodTime": {
+        "startDate": "",
+        "endDate": ""
+      }
+    },
+    {
+      "id": 49356,
+      "name": "213",
+      "price": "123123",
+      "periodTime": {
+        "startDate": "",
+        "endDate": ""
+      }
+    },
+    {
+      "id": 49357,
+      "name": "3213",
+      "price": "123",
+      "periodTime": {
+        "startDate": "",
+        "endDate": ""
+      }
+    },
+    {
+      "id": 49358,
+      "name": "123",
+      "price": "123",
+      "periodTime": {
+        "startDate": "2021-05-22T17:00:00.000Z",
+        "endDate": "2021-05-26T17:00:00.000Z"
+      }
+    },
+    {
+      "id": 1867,
+      "name": "3213",
+      "price": "1231",
+      "periodTime": {
+        "startDate": "2021-12-02T17:00:00.000Z",
+        "endDate": "2021-12-29T17:00:00.000Z"
+      }
+    }
+  ]
 }

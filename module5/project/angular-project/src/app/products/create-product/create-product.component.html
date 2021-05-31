@@ -21,9 +21,33 @@
         <input type="text" class="form-control" formControlName="price">
       </label>
     </div>
-    <!-- <div class="alert alert-danger" role="alert" *ngIf="createForm.get('price').invalid && createForm.get('price').touched">
-    </div> -->
+    <ng-container *ngFor="let valid of validation_messages.price">
+      <p class="text-danger" *ngIf="createForm.get('price').hasError(valid.type)
+      && (createForm.get('price').dirty
+      && createForm.get('price').touched)">
+      {{valid.message}}
+    </p>
+    </ng-container>
   </div>
+  <fieldset formGroupName='periodTime'>
+  <div>
+  <mat-form-field color="accent">
+    <mat-label>Choose start date</mat-label>
+    <input matInput [matDatepicker]="picker1" formControlName='startDate'>
+    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+    <mat-datepicker #picker1></mat-datepicker>
+  </mat-form-field>
+</div>
+<div>
+  <mat-form-field color="accent">
+    <mat-label>Choose end date</mat-label>
+    <input matInput [matDatepicker]="picker2" formControlName='endDate'>
+    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+    <mat-datepicker #picker2></mat-datepicker>
+  </mat-form-field>
+</div>
+</fieldset>
   <button class="btn btn-info" type="submit" [disabled]='createForm.invalid' [mat-dialog-close]='createForm'>Submit</button>
+  <button mat-raised-button (click)="onCancel()">Close</button>
 </form>
 
