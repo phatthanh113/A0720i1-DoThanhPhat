@@ -1,72 +1,5 @@
 {
-  "posts": [
-    {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  },
   "products": [
-    {
-      "id": 2745,
-      "name": "321311",
-      "price": "123123",
-      "periodTime": {
-        "startDate": "",
-        "endDate": ""
-      }
-    },
-    {
-      "id": 1539,
-      "name": "12312",
-      "price": "123312",
-      "periodTime": {
-        "startDate": "",
-        "endDate": ""
-      }
-    },
-    {
-      "id": 9350,
-      "name": "213",
-      "price": "123312",
-      "periodTime": {
-        "startDate": "",
-        "endDate": ""
-      }
-    },
-    {
-      "id": 8757,
-      "name": "3213",
-      "price": "123312",
-      "periodTime": {
-        "startDate": "",
-        "endDate": ""
-      }
-    },
-    {
-      "id": 6953,
-      "name": "3123",
-      "price": "12312",
-      "periodTime": {
-        "startDate": "",
-        "endDate": ""
-      }
-    },
-    {
-      "id": 8761,
-      "name": "3213",
-      "price": "13232"
-    },
     {
       "id": 49355,
       "name": "ad",
@@ -79,7 +12,7 @@
     {
       "id": 49356,
       "name": "213",
-      "price": "123123",
+      "price": "1211",
       "periodTime": {
         "startDate": "",
         "endDate": ""
@@ -111,6 +44,96 @@
         "startDate": "2021-12-02T17:00:00.000Z",
         "endDate": "2021-12-29T17:00:00.000Z"
       }
+    },
+    {
+      "id": 2436,
+      "name": "1",
+      "price": "1",
+      "periodTime": {
+        "startDate": "2021-05-22T17:00:00.000Z",
+        "endDate": "2021-05-25T17:00:00.000Z"
+      },
+      "color": "red"
+    },
+    {
+      "id": 9427,
+      "name": "a",
+      "price": "a",
+      "periodTime": {
+        "startDate": "2021-05-22T17:00:00.000Z",
+        "endDate": "2021-05-25T17:00:00.000Z"
+      },
+      "color": "blue"
+    },
+    {
+      "id": 5019,
+      "name": "dasd",
+      "price": "đá",
+      "periodTime": {
+        "startDate": "2021-06-22T17:00:00.000Z",
+        "endDate": "2021-06-24T17:00:00.000Z"
+      },
+      "color": "blue"
+    },
+    {
+      "id": 9653,
+      "name": "đá",
+      "price": "ád",
+      "periodTime": {
+        "startDate": "2021-06-23T17:00:00.000Z",
+        "endDate": "2021-06-24T17:00:00.000Z"
+      },
+      "color": "blue"
+    },
+    {
+      "id": 9853,
+      "name": "đá",
+      "price": "ád",
+      "periodTime": {
+        "startDate": "2021-05-22T17:00:00.000Z",
+        "endDate": "2021-06-22T17:00:00.000Z"
+      },
+      "color": "blue"
+    },
+    {
+      "id": 1459,
+      "name": "21",
+      "price": "12",
+      "periodTime": {
+        "startDate": "2021-06-24T17:00:00.000Z",
+        "endDate": "2021-06-25T17:00:00.000Z"
+      },
+      "color": ""
+    },
+    {
+      "id": 1286,
+      "name": "dá",
+      "price": "adddad",
+      "periodTime": {
+        "startDate": "2021-05-22T17:00:00.000Z",
+        "endDate": "2021-05-25T17:00:00.000Z"
+      },
+      "color": ""
+    },
+    {
+      "id": 9709,
+      "name": "ad",
+      "price": "ád",
+      "periodTime": {
+        "startDate": "2021-06-22T17:00:00.000Z",
+        "endDate": "2021-06-24T17:00:00.000Z"
+      },
+      "color": "red"
+    },
+    {
+      "name": "ads",
+      "price": "dá",
+      "periodTime": {
+        "startDate": "2021-06-23T17:00:00.000Z",
+        "endDate": "2021-06-24T17:00:00.000Z"
+      },
+      "color": "red",
+      "id": 49359
     }
   ]
 }

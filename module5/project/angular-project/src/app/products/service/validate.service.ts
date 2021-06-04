@@ -8,7 +8,9 @@ import * as moment from 'moment';
 export class ValidateService {
 
   public validationMessage_products = {
-
+    'date' : [
+      {type: 'invalid', message: 'Name is required'},
+    ],
     'name': [
       {type: 'required', message: 'Name is required'},
     ],
@@ -22,8 +24,8 @@ export class ValidateService {
     'end_date': [
       {type: 'required', message: 'Ngày không để trống'},
       {type: 'pattern', message: 'Ngày không đúng định dạng dd/MM/yyyy'},
-      {type: 'invalid', message: 'Ngày không hợp lệ'}
-    ],
+      {type: 'period', message: 'Ngày kết thúc phải sau ngày bắt đầu '}
+    ]
   };
   validateDate(formControl: AbstractControl) {
     const inputDate = formControl.value;

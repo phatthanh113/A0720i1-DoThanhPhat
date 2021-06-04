@@ -11,21 +11,27 @@
     </tr>
   </thead>
   <tbody *ngIf='products'>
-    <tr  *ngFor="let product of products| filter:search">
+    <tr  *ngFor="let product of products  | filter:search | paginate: { itemsPerPage: pageSize, currentPage: p }">
       <th scope="row">{{product.id | changeId  : 'PRO'}} </th>
       <td>{{product.name | uppercase}}</td>
       <td>{{product.price}}</td>
-      <td *ngIf="product.periodTime else loading">{{product.periodTime.startDate | date}}</td>
+      <td *ngIf="product.periodTime else loading">{{product.periodTime.startDate | date : "dd/MM/yyyy"}}</td>
       <td *ngIf="product.periodTime else loading">{{product.periodTime.endDate | date}}</td>
       <td>
         <!-- <a class="btn btn-primary" [routerLink]="['/products/update',product.id]" routerLinkActive="router-link-active" >Edit </a> -->
         <button mat-button color='accent' (click) = "handleEdit(product.id)">Edit </button>
-        <button mat-button color="primary" (click) = "handleDelete(product.id)"><mat-icon svgIcon="thumbs-up" aria-hidden="false" aria-label="Example thumbs up SVG icon"></mat-icon> </button>
+        <button mat-button color="primary" (click) = "handleDelete(product.id)"><mat-icon svgIcon="delete" aria-hidden="false"></mat-icon> </button>
         <button mat-button (click) = "handleView(product.id)">View </button>
       </td>
     </tr>
   </tbody>
 </table>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+<!-- <mat-paginator [length]="length"
+               [pageSize]="pageSize"
+               [pageSizeOptions]="pageSizeOptions"
+               (page)="pageEvent = $event" showFirstLastButtons>
+</mat-paginator> -->
 <!-- <a class="btn btn-primary" [routerLink]="['/products/create']" routerLinkActive="router-link-active" >Create Product </a> -->
 <button class="btn btn-primary" (click)="handleCreate()" >Create Product </button>
 <ng-template #loading>

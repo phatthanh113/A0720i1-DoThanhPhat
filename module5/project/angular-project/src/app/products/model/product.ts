@@ -4,4 +4,5 @@ export interface IProduct {
   name : string ;
   price : number ;
   periodTime? : IPeriodTime;
+  color? : string ;
 }

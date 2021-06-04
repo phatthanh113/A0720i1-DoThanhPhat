@@ -1,4 +1,8 @@
-::ng-deep.mat-dialog-container{
-  text-align: center;
+::ng-deep.view {
+  mat-dialog-container{
+    text-align: center;
+    background-color: #daeddd;
+  }
 }
+
 

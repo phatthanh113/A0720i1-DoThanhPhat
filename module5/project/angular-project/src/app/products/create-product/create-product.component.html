@@ -46,7 +46,19 @@
     <mat-datepicker #picker2></mat-datepicker>
   </mat-form-field>
 </div>
+<ng-container *ngFor="let valid of validation_messages.end_date">
+  <p class="text-danger" *ngIf="createForm.get('periodTime').hasError(valid.type)
+  && (createForm.get('periodTime').dirty
+  && createForm.get('periodTime').touched)">
+  {{valid.message}}
+</p>
+</ng-container>
 </fieldset>
+<div>
+  <mat-radio-group aria-label="Select an option" formControlName='color'>
+    <mat-radio-button *ngFor="let color of colors" [value]="color">{{color | uppercase}}</mat-radio-button>
+  </mat-radio-group>
+</div>
   <button class="btn btn-info" type="submit" [disabled]='createForm.invalid' [mat-dialog-close]='createForm'>Submit</button>
   <button mat-raised-button (click)="onCancel()">Close</button>
 </form>

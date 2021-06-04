@@ -18,5 +18,8 @@ export class ProductDetailComponent implements OnInit {
 }
 onCancel(): void {
   this.dialogRef.close();
-}
+  this.dialogRef.afterClosed().subscribe(result => {
+    console.log(`Dialog result: ${result}`);
+  })
+  }
 }

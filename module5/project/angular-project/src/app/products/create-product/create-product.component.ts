@@ -5,8 +5,6 @@ import { ProductService } from './../service/product.service';
 import { Component, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { ProductDetailComponent } from '../product-detail/product-detail.component';
-let faker = require('faker');
 @Component({
   selector: 'app-create-product',
   templateUrl: './create-product.component.html',
@@ -17,6 +15,7 @@ export class CreateProductComponent implements OnInit {
   createForm! : FormGroup ;
   periodTime : FormGroup ;
   product : IProduct ;
+  colors : string[]= ['red','yellow','blue'];
   validation_messages = this.validateService.validationMessage_products;
   constructor(private validateService : ValidateService,
     private productService : ProductService ,
@@ -30,23 +29,13 @@ export class CreateProductComponent implements OnInit {
   }
   initForm() {
     this.createForm = this.fb.group({
-      id : [faker.random.number({max : 9999})],
-      name : ['',Validators.compose([
-        Validators.required
-      ])],
-      price : ['',Validators.compose([
-        Validators.required
-      ])],
+      name : ['',Validators.compose([Validators.required])],
+      price : ['',Validators.compose([Validators.required])],
       periodTime : this.fb.group({
-        startDate : ['',Validators.compose([
-          Validators.required,
-          this.validateService.validateDate
-        ])],
-        endDate : ['',Validators.compose([
-          Validators.required,
-          this.validateService.validateDate
-        ])],
-      },{validators: this.validateService.checkPeriod})
+        startDate : ['',Validators.compose([Validators.required,this.validateService.validateDate])],
+        endDate : ['',Validators.compose([Validators.required,this.validateService.validateDate])],
+      },{validators: this.validateService.checkPeriod}),
+      color : ['red']
     })
   }
   onSubmit() {
